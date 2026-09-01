@@ -1,0 +1,40 @@
+{
+  "schema_version": "gcdv2-symbolic-candidate-beam-result-1.0",
+  "status": "PASS_HONEST_RETRIEVED_PROGRAM_SYMBOLIC_BEAM",
+  "date": "2026-08-29",
+  "split_authority": "gcdv2_pattern_dsl_v1 garment-ID-disjoint split",
+  "candidate_source": "train-only complete Pattern DSL programs",
+  "counts": {
+    "train_bank": 1570,
+    "validation_queries": 194,
+    "test_queries": 198,
+    "beam_size": 10,
+    "test_candidate_programs": 1980
+  },
+  "validation_selected_weights": {
+    "similarity": 1.0,
+    "category_agreement": 0.0,
+    "projected_role_confidence": 0.025,
+    "no_repair_fraction": 0.0
+  },
+  "frozen_test": {
+    "raw_similarity_top1_category_match": 0.9747474747474747,
+    "raw_similarity_top1_exact_primitive_topology": 0.17676767676767677,
+    "symbolic_reranked_top1_category_match": 0.9747474747474747,
+    "symbolic_reranked_top1_exact_primitive_topology": 0.17676767676767677,
+    "beam_exact_primitive_topology_coverage": 0.5,
+    "mean_unique_topology_hypotheses": 6.378787878787879,
+    "symbolic_valid_candidate_rate": 1.0,
+    "raw_role_grammar_violations": 416,
+    "projected_role_grammar_violations": 0,
+    "changed_role_edges": 347
+  },
+  "inference_excludes": [
+    "held-out target DSL",
+    "held-out target category",
+    "held-out target topology signature",
+    "source semantic labels",
+    "source stitch labels"
+  ],
+  "claim_boundary": "A symbolic-valid beam over retrieved train programs. It is not new SVG/DSL command generation, and symbolic reranking did not improve frozen-test topology top-1."
+}

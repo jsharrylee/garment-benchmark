@@ -1,0 +1,11 @@
+{
+  "width": 128,
+  "heads": 4,
+  "set_layers": 3,
+  "graph_layers": 2,
+  "dropout": 0.1,
+  "image_size": 128,
+  "maximum_edges": 36,
+  "input_contract": "unordered set of normalized single-panel silhouettes plus one cm_per_pixel scale token per panel",
+  "output_contract": "garment category plus per-panel source/weak-role classes and ordered closed vector boundary"
+}

@@ -1,0 +1,34 @@
+{
+  "run": {"seed": 20260825, "max_attempts_per_stage": 3, "non_improving_limit": 2},
+  "budgets": {"initial_raw_download_gb": 20, "preferred_raw_download_gb": 5},
+  "paths": {"state": "state", "artifacts": "artifacts", "logs": "logs"},
+  "reconstruction_contract": {
+    "mode": "retrieval_anchored_v2",
+    "generate_variable_topology": false,
+    "template_retrieval_allowed": true,
+    "nearest_pattern_selection_allowed": true,
+    "limited_topology_edit_after_refinement_failure": true,
+    "garmentcode_roles": ["anchor_retrieval", "training", "supervision", "evaluation", "simulation_validation"],
+    "anchor_top_k": 5,
+    "selection_requires_structural_validation": true,
+    "selection_requires_simulation_rerank_for_final_acceptance": true,
+    "acceptance_target": "perceptual_similarity_and_structural_validity"
+  },
+  "legacy_reconstruction_contract": {
+    "mode": "generative_v1",
+    "generate_variable_topology": true,
+    "template_retrieval_allowed": false,
+    "status": "preserved_for_benchmark_reproduction_not_default"
+  },
+  "pattern_pipeline": {
+    "canonical_schema_version": "1.0",
+    "units": "cm",
+    "closure_ratio_limit": 0.02,
+    "repair_max_gap_ratio": 0.05,
+    "seam_length_ratio_warning": 0.25,
+    "repair_hypotheses_per_attempt": 1,
+    "required_simulation_views": ["front", "back", "left", "right"],
+    "simulation_proxy_allowed": false,
+    "exports": ["canonical_json", "stitch_manifest", "svg", "generic_dxf_r12"]
+  }
+}

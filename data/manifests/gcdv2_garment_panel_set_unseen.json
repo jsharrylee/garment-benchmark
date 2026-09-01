@@ -1,0 +1,53 @@
+{
+  "schema_version": "gcdv2-garment-panel-set-benchmark-1.0",
+  "status": "PARTIAL_PASS_EXACT_GRAPH_FAILED",
+  "dataset": "GarmentCodeData v2 exact single-panel v1.1",
+  "input": "unordered set of every normalized single-panel image in one garment plus per-panel cm_per_pixel",
+  "split": {
+    "seed": 20260829,
+    "garment_id_disjoint": true,
+    "train": {"pants": 207, "skirt": 640, "top": 740},
+    "validation": {"pants": 26, "skirt": 80, "top": 92},
+    "test": {"pants": 26, "skirt": 80, "top": 92}
+  },
+  "model": {
+    "parameters": 1359095,
+    "best_epoch": 28,
+    "panel_encoder": "four-stage grayscale CNN with 8x8 learned spatial positions",
+    "garment_context": "three-layer permutation-equivariant Transformer encoder",
+    "panel_graph_decoder": "two-layer Transformer decoder with 36 ordered queries"
+  },
+  "unseen_test": {
+    "garments": 198,
+    "panels": 1503,
+    "garment_category_accuracy": 1.0,
+    "weak_part_macro_f1": 0.9719060666648692,
+    "weak_surface_macro_f1": 0.8459260572891395,
+    "weak_side_macro_f1": 0.9105895081640306,
+    "source_panel_id_accuracy": 0.6726546906187625,
+    "source_panel_id_macro_f1": 0.31057255626220603,
+    "curve_type_macro_f1": 0.8903403453670755,
+    "vertex_count_exact_accuracy": 0.8070525615435795,
+    "vertex_count_mae": 0.26280771789753826,
+    "ordered_vertex_mae_px": 81.16026478953712,
+    "ordered_vertex_mae_cm": 5.224228467509475,
+    "cyclic_aligned_vertex_mae_px": 51.10470240389328,
+    "edge_length_mae_cm": 6.119677043971725,
+    "chord_direction_mae_deg": 14.635724634646754,
+    "endpoint_tangent_mae_deg": 15.909353147804238,
+    "relative_control_component_mae": 0.04522013828648836,
+    "arc_radius_mae_cm": 8.461298955834074,
+    "arc_flag_accuracy": 0.9808219178082191,
+    "silhouette_iou_mean": 0.7168425194139632,
+    "silhouette_iou_median": 0.7643666323377961,
+    "boundary_chamfer_px_at_1024_mean": 34.35444115791053,
+    "exact_graph_edge_f1_at_8px_and_type": 0.003991816775609999
+  },
+  "hashes": {
+    "panel_index_sha256": "2e1b63902d7bc053278692c6f451053cc5e8f18b585e830445fd8e003ba1dd12",
+    "checkpoint_sha256": "2318a86b0180733b7099df59f6a332cd88910bd1092b45cc24aef42ff195c32d",
+    "test_predictions_sha256": "70398eaa3a51b18442d541a9099a93311fd074a25d7971682932d4bf1f9310ad",
+    "test_metrics_sha256": "cdd394cbc4ea2eccdd784e5383ab59ab543bfa0bfbeb305466b54bdd4e98c97a"
+  },
+  "claim_boundary": "Unseen means garment-ID-disjoint samples from the same GCDv2 generator. Shape approximation partially succeeds; exact ordered CAD graph recovery fails."
+}

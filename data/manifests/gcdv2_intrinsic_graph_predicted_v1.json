@@ -1,0 +1,27 @@
+{
+  "schema_version": "gcdv2-intrinsic-visible-graph-1.0",
+  "status": "PASS",
+  "panel_count": 15702,
+  "segment_count": 93232,
+  "panel_split_counts": {
+    "train": 12668,
+    "validation": 1531,
+    "test": 1503
+  },
+  "segment_split_counts": {
+    "train": 75352,
+    "validation": 9030,
+    "test": 8850
+  },
+  "primitive_counts": {
+    "line": 73100,
+    "quadratic_bezier": 4234,
+    "cubic_bezier": 9764,
+    "circular_arc": 6134
+  },
+  "input_contract": "cyclic multi-scale length/turn/chord ratios only; no absolute x/y supplied to the corner model",
+  "contour_source": "learned_image_mask_sdf",
+  "predicted_contour_artifact": "artifacts/gcdv2_predicted_contours_v1/predicted_contours.npz",
+  "segment_contract": "unit chord-frame samples, tangent/curvature/step features, relative cubic controls and ratios",
+  "artifact": "artifacts/gcdv2_intrinsic_graph_predicted_v1/intrinsic_graph.npz"
+}

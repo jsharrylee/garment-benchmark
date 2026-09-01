@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "resnet50-global-token-curve-ablation",
+  "reference_config": "benchmark/configs/multiview_curve_parameters_fpn.json",
+  "input": "the same four actual orthographic RGB views represented by one frozen global-average-pooled ResNet-50 feature token per view",
+  "target": "masked named neckline/front-back-armhole/sleeve-head landmarks, scale metrics, and two-cubic semantic-path formulas",
+  "image_size": 256,
+  "pyramid_levels": ["global"],
+  "pyramid_grid_sizes": [1],
+  "spatial_feature_dim": 2048,
+  "width": 256,
+  "heads": 8,
+  "memory_layers": 2,
+  "decoder_layers": 4,
+  "feedforward_multiplier": 4,
+  "dropout": 0.12,
+  "precomputed_feature_batch_size": 64,
+  "end_to_end_image_batch_size": 4,
+  "epochs": 220,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.002,
+  "early_stopping_patience": 30,
+  "view_dropout_probability": 0.25,
+  "seed": 20260831,
+  "loss_weights": {
+    "parameter": 1.0,
+    "sampled_curve": 0.35,
+    "presence": 0.3
+  },
+  "feature_encoder_description": "frozen local Mask R-CNN v2 ResNet-50 global-average-pooled to one 2048D token/view",
+  "trainable_description": "shared memory Transformer + the same five target-specific role queries + the same landmark/metric/two-cubic heads",
+  "ablation_contract": "Same samples, official splits, five queries, 16 targets, decoder depth/width/heads, losses, optimizer, schedule, dropout, and seed as the FPN run; within-view spatial tokens are replaced by one existing global token per view.",
+  "network_download": false,
+  "notes": [
+    "The feature archive is a lossless singleton-token-axis conversion of the already extracted [N,4,2048] float16 archive.",
+    "No images or backbone features are recomputed for this ablation.",
+    "The 2048-to-256 input projection differs in shape from the FPN 256-to-256 projection because the required existing global feature has 2048 channels; all downstream Transformer and prediction heads are unchanged."
+  ]
+}

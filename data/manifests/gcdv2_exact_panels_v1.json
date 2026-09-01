@@ -1,0 +1,65 @@
+{
+  "category_panel_counts": {
+    "pants": 1952,
+    "skirt": 4492,
+    "top": 9258
+  },
+  "claim_boundary": "Vector geometry is exact source-derived truth. Normalized panel roles are lexical weak labels, not expert-verified garment drafting semantics. The normalized image must be paired with its cm_per_pixel scale token for absolute lengths; the fixed-scale image is retained for validation.",
+  "failures": [],
+  "four_view_paired_panel_count": 15638,
+  "index_artifact": "artifacts/gcdv2_exact_panels_v1/index.jsonl",
+  "index_sha256": "2e1b63902d7bc053278692c6f451053cc5e8f18b585e830445fd8e003ba1dd12",
+  "input_contract": {
+    "canvas_size_px": [
+      1024,
+      1024
+    ],
+    "centering": "source local curve bbox center",
+    "metric_validation_image_pixels_per_cm": 3.0,
+    "metric_validation_physical_span_cm": 341.3333333333333,
+    "one_panel_per_image": true,
+    "primary_panel_image": "tight normalized silhouette plus cm_per_pixel scale token",
+    "uniform_fill_no_category_or_role_color": true
+  },
+  "maximum_edges_per_panel": 36,
+  "maximum_vertices_per_panel": 36,
+  "panel_count": 15702,
+  "sample_count": 1983,
+  "schema_version": "gcdv2-exact-single-panel-1.1",
+  "source_dataset": "GarmentCodeData v2",
+  "source_license": "CC BY 4.0",
+  "status": "PASS",
+  "target_contract": [
+    "garment_category",
+    "source_panel_id",
+    "weak_lexical_part_surface_side",
+    "ordered_closed_boundary_vertices_in_source_and_centered_cm",
+    "edge_start_and_end_vertex_indices",
+    "line_quadratic_bezier_cubic_bezier_circular_arc_type",
+    "directed_curve_parameters",
+    "length_and_direction_and_tangents"
+  ],
+  "two_dimensional_only_panel_count": 64,
+  "weak_role_part_counts": {
+    "bodice": 3696,
+    "collar": 628,
+    "hood": 156,
+    "pants_cuff": 632,
+    "pants_leg": 1036,
+    "skirt_insert": 1032,
+    "skirt_panel": 2520,
+    "sleeve": 2070,
+    "sleeve_cuff": 1906,
+    "waistband": 2026
+  },
+  "weak_role_side_counts": {
+    "left": 5082,
+    "right": 5042,
+    "unspecified": 5578
+  },
+  "weak_role_surface_counts": {
+    "back": 7424,
+    "front": 7424,
+    "unspecified": 854
+  }
+}

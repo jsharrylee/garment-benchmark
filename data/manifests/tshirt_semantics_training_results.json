@@ -1,0 +1,184 @@
+{
+  "schema_version": "tshirt-semantics-training-results-1.0",
+  "status": "PROVISIONAL_GENERATOR_TRUTH_EVALUATED",
+  "scope": "basic_tshirt_only",
+  "seed": 2027,
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "corpus": {
+    "garmentcode_records": 2592,
+    "garmentcode_failures": 0,
+    "garmentcode_raw_sha256": "81eafd546bdb65b36ea5fb94e88c0eb66b6152b0578e2864402025212279aaa4",
+    "freesewing_unseen_source_records": 80,
+    "freesewing_raw_sha256": "ddf3d4e9b2401d99bd83075d0283217e244e674f96e7fe4c3e1ee00ca1023793",
+    "training_projection_records": 2672,
+    "training_projection_panels": 20976,
+    "training_projection_sha256": "e8e29b77686b2efaf6288d84854639f7c1506d1f01c7277505e0283674e7a4f1"
+  },
+  "pattern_only": {
+    "status": "EDGE_PRIMARY_BASELINE",
+    "parameter_count": 702878,
+    "epochs_run": 30,
+    "selected_epoch": 12,
+    "training_seconds": 77.85260820000258,
+    "peak_cuda_memory_bytes": 230025216,
+    "checkpoint_bytes": 2841324,
+    "checkpoint_sha256": "ae37da9dc8708a98db22fea0a4a094aa2f71639c1bae01eb0976c039bd3ca50b",
+    "frozen_results": {
+      "iid_test": {
+        "panel_accuracy": 0.9462890625,
+        "edge_macro_f1": 0.980682443800218,
+        "edge_length_weighted_macro_f1": 0.9769439734355801,
+        "landmark_existence_micro_f1": 0.9645528455284553,
+        "landmark_gt_positive_conditional_median_error_cm": 2.215856909751892,
+        "landmark_detection_aware_pck_2pct": 0.09049479166666667
+      },
+      "test_body": {
+        "panel_accuracy": 0.94384765625,
+        "edge_macro_f1": 0.9792907186710004,
+        "edge_length_weighted_macro_f1": 0.9762386978610932,
+        "landmark_existence_micro_f1": 0.9640708827832873,
+        "landmark_gt_positive_conditional_median_error_cm": 2.2220678329467773,
+        "landmark_detection_aware_pck_2pct": 0.099609375
+      },
+      "test_design": {
+        "panel_accuracy": 0.90625,
+        "edge_macro_f1": 0.963078632668924,
+        "edge_length_weighted_macro_f1": 0.9559219493457431,
+        "landmark_existence_micro_f1": 0.9361979166666666,
+        "landmark_gt_positive_conditional_median_error_cm": 2.419422149658203,
+        "landmark_detection_aware_pck_2pct": 0.083984375
+      },
+      "test_double": {
+        "panel_accuracy": 0.91796875,
+        "edge_macro_f1": 0.967967967967968,
+        "edge_length_weighted_macro_f1": 0.9620599061887105,
+        "landmark_existence_micro_f1": 0.9440104166666666,
+        "landmark_gt_positive_conditional_median_error_cm": 2.3827462196350098,
+        "landmark_detection_aware_pck_2pct": 0.08463541666666667
+      },
+      "unseen_body": {
+        "panel_accuracy": 0.95751953125,
+        "edge_macro_f1": 0.9837274687992709,
+        "edge_length_weighted_macro_f1": 0.9818693300550754,
+        "landmark_existence_micro_f1": 0.9717348927875242,
+        "landmark_gt_positive_conditional_median_error_cm": 2.3726755380630493,
+        "landmark_detection_aware_pck_2pct": 0.10188802083333333
+      },
+      "unseen_design": {
+        "panel_accuracy": 0.93310546875,
+        "edge_macro_f1": 0.9753566885550246,
+        "edge_length_weighted_macro_f1": 0.9733040726422104,
+        "landmark_existence_micro_f1": 0.9549813099301154,
+        "landmark_gt_positive_conditional_median_error_cm": 2.4189151525497437,
+        "landmark_detection_aware_pck_2pct": 0.13411458333333334
+      },
+      "unseen_double": {
+        "panel_accuracy": 0.94140625,
+        "edge_macro_f1": 0.9770888947181632,
+        "edge_length_weighted_macro_f1": 0.9783566423198614,
+        "landmark_existence_micro_f1": 0.9609375,
+        "landmark_gt_positive_conditional_median_error_cm": 2.4522292613983154,
+        "landmark_detection_aware_pck_2pct": 0.12890625
+      },
+      "freesewing_unseen_source": {
+        "panel_accuracy": 0.3333333333333333,
+        "edge_macro_f1": 0.18344629344162164,
+        "edge_length_weighted_macro_f1": 0.1493580039376685,
+        "landmark_existence_micro_f1": 0.0,
+        "landmark_gt_positive_conditional_median_error_cm": 24.076562881469727,
+        "landmark_detection_aware_pck_2pct": 0.0
+      }
+    }
+  },
+  "pattern_only_landmark_primary": {
+    "status": "LANDMARK_PRIMARY_BASELINE",
+    "parameter_count": 702878,
+    "epochs_run": 30,
+    "selected_epoch": 27,
+    "training_seconds": 78.11503970000194,
+    "peak_cuda_memory_bytes": 230025216,
+    "checkpoint_bytes": 2842658,
+    "checkpoint_sha256": "d764f01e8b48185d70d542465c12c541c3f377799354b1dfde97e412267e2e0e",
+    "frozen_results": {
+      "iid_test": {
+        "panel_accuracy": 0.962890625,
+        "edge_macro_f1": 0.9828083028083029,
+        "landmark_existence_micro_f1": 0.975641442026632,
+        "landmark_gt_positive_conditional_median_error_cm": 1.3095075488090515,
+        "landmark_detection_aware_pck_2pct": 0.4016927083333333
+      },
+      "test_body": {
+        "panel_accuracy": 0.9677734375,
+        "edge_macro_f1": 0.9859374463556151,
+        "landmark_existence_micro_f1": 0.9785365853658536,
+        "landmark_gt_positive_conditional_median_error_cm": 1.2270461320877075,
+        "landmark_detection_aware_pck_2pct": 0.4020182291666667
+      },
+      "test_design": {
+        "panel_accuracy": 0.82763671875,
+        "edge_macro_f1": 0.9318343123033597,
+        "landmark_existence_micro_f1": 0.8844401041666666,
+        "landmark_gt_positive_conditional_median_error_cm": 1.3653636574745178,
+        "landmark_detection_aware_pck_2pct": 0.4108072916666667
+      },
+      "test_double": {
+        "panel_accuracy": 0.83984375,
+        "edge_macro_f1": 0.9351315046328097,
+        "landmark_existence_micro_f1": 0.8920676202860857,
+        "landmark_gt_positive_conditional_median_error_cm": 1.3444024920463562,
+        "landmark_detection_aware_pck_2pct": 0.4114583333333333
+      },
+      "unseen_body": {
+        "panel_accuracy": 0.94970703125,
+        "edge_macro_f1": 0.9810325287320106,
+        "landmark_existence_micro_f1": 0.9663797303881762,
+        "landmark_gt_positive_conditional_median_error_cm": 1.2606520056724548,
+        "landmark_detection_aware_pck_2pct": 0.3818359375
+      },
+      "unseen_design": {
+        "panel_accuracy": 0.93408203125,
+        "edge_macro_f1": 0.9747965603704216,
+        "landmark_existence_micro_f1": 0.9604153147306944,
+        "landmark_gt_positive_conditional_median_error_cm": 1.4406036734580994,
+        "landmark_detection_aware_pck_2pct": 0.2747395833333333
+      },
+      "unseen_double": {
+        "panel_accuracy": 0.912109375,
+        "edge_macro_f1": 0.9681195516811956,
+        "landmark_existence_micro_f1": 0.953307392996109,
+        "landmark_gt_positive_conditional_median_error_cm": 1.5555824041366577,
+        "landmark_detection_aware_pck_2pct": 0.2643229166666667
+      },
+      "freesewing_unseen_source": {
+        "panel_accuracy": 0.3333333333333333,
+        "edge_macro_f1": 0.23135522774641334,
+        "landmark_existence_micro_f1": 0.0,
+        "landmark_gt_positive_conditional_median_error_cm": 24.1143159866333,
+        "landmark_detection_aware_pck_2pct": 0.0
+      }
+    }
+  },
+  "pattern_plus_body_ablation": {
+    "status": "REJECTED_AS_DEFAULT_DUE_TO_OOD_BODY_COLLAPSE",
+    "parameter_count": 711454,
+    "epochs_run": 30,
+    "selected_epoch": 19,
+    "training_seconds": 80.10063169999921,
+    "peak_cuda_memory_bytes": 229566976,
+    "checkpoint_bytes": 2877650,
+    "checkpoint_sha256": "03cf505a2e8306b2715db14652649e2fb8f4defa01dd62b6acc9aa8d297c6179",
+    "iid_test_edge_macro_f1": 0.988644802098509,
+    "unseen_body_edge_macro_f1": 0.6794142834491109,
+    "unseen_body_landmark_median_error_cm": 13.95006275177002,
+    "unseen_double_edge_macro_f1": 0.6727774847208791,
+    "freesewing_edge_macro_f1": 0.21100695310790768
+  },
+  "interpretation": {
+    "same_recipe_geometry_semantics": "PASS",
+    "same_recipe_professional_landmark_precision": "PARTIAL_BELOW_0.5_CM_EXPERT_TARGET",
+    "supported_parameter_ood_pattern_only": "PASS",
+    "cross_source_professional_drafting_semantics": "FAIL",
+    "expert_ground_truth": "PENDING",
+    "bp_and_darts": "NOT_EVALUABLE_FROM_BASIC_TSHIRT"
+  }
+}

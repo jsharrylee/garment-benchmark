@@ -1,0 +1,57 @@
+{
+  "schema_version": "2.0",
+  "mode": "retrieval_anchored_v2",
+  "source": "maria-korosteleva/GarmentCode",
+  "source_commit": "d449629979028123a5c4dc9e732a2ec19b7fce31",
+  "source_code_license": "MIT",
+  "generated_anchor_scope": "local_retrieval_and_simulation_evaluation",
+  "record_count": 5,
+  "downloaded_source_bytes": 84081332,
+  "records": [
+    {
+      "anchor_id": "tshirt_short_sleeve",
+      "category": "top",
+      "panel_count": 8,
+      "stitch_count": 16,
+      "self_intersecting": false,
+      "specification_sha256": "20cbcac26874812713aba656f8c77de6ae7addbc384ccbdaac19eb8337ac42b3",
+      "source_design_sha256": "f3f384d5275c68e25698bb5d505eddae8b5486b097adb912b913a2ccbd33920a"
+    },
+    {
+      "anchor_id": "top_sleeveless",
+      "category": "top",
+      "panel_count": 4,
+      "stitch_count": 6,
+      "self_intersecting": false,
+      "specification_sha256": "ec4525a3556d919a303c7a0700b25ef6b8695a5aebdd0cb32698cbd78f170e93",
+      "source_design_sha256": "575af4a5e1486983b87eed66607eb261a95cf02c2aa3c707c05d90e2c33106e0"
+    },
+    {
+      "anchor_id": "pants_straight",
+      "category": "pants",
+      "panel_count": 6,
+      "stitch_count": 24,
+      "self_intersecting": false,
+      "specification_sha256": "54935ef5016466831bfe4770ef6757c8f947c1ef53b16c6b28f0b0038eb2f0f1",
+      "source_design_sha256": "51bbb16fe136614649e4b18325b91391c678701ff7cf85967f6e2ff6368dce0d"
+    },
+    {
+      "anchor_id": "shorts_straight",
+      "category": "shorts",
+      "panel_count": 6,
+      "stitch_count": 24,
+      "self_intersecting": false,
+      "specification_sha256": "87d21e8852bf671cfe2ac71c7ff9b2e47fcdd1cba0ea28b1e78ae20948c24caa",
+      "source_design_sha256": "dc0c30d21ed03f382b06a5e77ff542c5e7295eb9f359b6eacc4c637a476408c4"
+    },
+    {
+      "anchor_id": "skirt_two_panel",
+      "category": "skirt",
+      "panel_count": 4,
+      "stitch_count": 6,
+      "self_intersecting": false,
+      "specification_sha256": "9d0a085b5091bcf22512a7f4cfb5acdae38b1a82577ecbd134e081f62c76037e",
+      "source_design_sha256": "1e7cca09fbdf06d8f480857314a5d0a0237cadd023a4b6e8ec24867ee7b74681"
+    }
+  ]
+}

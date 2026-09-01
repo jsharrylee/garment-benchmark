@@ -1,0 +1,84 @@
+{
+  "schema_version": "multiview-element-geometry-result-1.0",
+  "status": "PASS_SAME_DOMAIN_CONTINUOUS_SEMANTIC_GEOMETRY_BASELINE",
+  "input": {
+    "dataset": "GarmentCodeData v2",
+    "views": [
+      "front",
+      "back",
+      "left",
+      "right"
+    ],
+    "feature": "frozen COCO-pretrained ResNet-50 global embedding",
+    "feature_dimension_per_view": 2048
+  },
+  "model": {
+    "architecture": "five-layer view encoder plus two-layer semantic role-query decoder",
+    "width": 256,
+    "attention_heads": 8,
+    "parameter_count_excluding_frozen_resnet": 6656777,
+    "checkpoint": "checkpoints/drafting_semantics/multiview_element_geometry_resnet50.pt",
+    "checkpoint_sha256": "dfe613e4b3f592dfa421912605917c02ba654cdd6ac6475cb80d8487b790100b"
+  },
+  "configuration": {
+    "path": "benchmark/configs/multiview_element_geometry_resnet50.json",
+    "sha256": "a116ed7eb74664ad68b463844fad0a938790dffaaf60f3b24e0d9e57fc8e351a"
+  },
+  "split_counts": {
+    "train": 2236,
+    "validation": 150,
+    "test": 144,
+    "official_split_unused": 407
+  },
+  "targets": {
+    "continuous_declared": 64,
+    "continuous_with_test_support": 54,
+    "role_presence": 22,
+    "description": "scale-normalized, role-aggregated panel extents/area, semantic-path length/chord/primitive-curvedness, and aggregate sleeve-head-to-armhole ratio"
+  },
+  "training": {
+    "device": "NVIDIA GeForce RTX 5070",
+    "best_epoch": 98,
+    "stopped_epoch": 122,
+    "seconds": 115.22914900000615,
+    "peak_cuda_memory_bytes": 248797696
+  },
+  "frozen_test": {
+    "category_accuracy": 0.9583333333333334,
+    "category_macro_f1": 0.9720125786163523,
+    "role_presence_macro_f1": 0.982305886568669,
+    "exact_role_inventory_rate": 0.7361111111111112,
+    "geometry_dimension_balanced_normalized_mae": 0.47411048467512484,
+    "oracle_true_category_mean_normalized_mae": 0.7643363718633298,
+    "normalized_mae_gain_over_oracle_true_category_mean": 0.29022588718820497
+  },
+  "metrics": {
+    "path": "artifacts/drafting_semantics/multiview_element_geometry/training_metrics.json",
+    "sha256": "fffd595744da48d1a28fc6ef98e25336f09db0ef0339c0fd785ba85cc42f8352"
+  },
+  "attention_and_pair_delta_audit": {
+    "path": "artifacts/drafting_semantics/multiview_element_geometry/attention_audit.json",
+    "sha256": "d640413429b1ca4b800abc88d606365a9529cd993de30711247aa444b7e6d9c6",
+    "attention_ablation_pearson": 0.13094278740307175,
+    "attention_ablation_spearman": -0.03395442217604171,
+    "top_view_match_rate": 0.2727272727272727,
+    "same_category_pair_count": 70,
+    "pair_delta_normalized_mae": 0.6541282945359883,
+    "zero_delta_baseline_normalized_mae": 1.0343285784215004,
+    "material_delta_sign_accuracy": 0.8168828302071679,
+    "top_5_changed_target_overlap": 0.4828571428571428
+  },
+  "representative_board": {
+    "path": "artifacts/drafting_semantics/multiview_element_geometry/prediction_board.json",
+    "sha256": "8ce64db7f42420f4829857fc2f8b8f67a3f0dac86865a709f37d4512714abe39",
+    "selection": "correctly classified median masked normalized-error test example per garment category"
+  },
+  "claim_boundary": [
+    "same GCDv2 generator, renderer, material style, neutral body, and official random-sample split only",
+    "targets are normalized aggregate descriptors, not panel vertices, spline control points, landmarks, or stitch graphs",
+    "the comparison baseline is deliberately strong because it receives the ground-truth garment category",
+    "absolute centimetre dimensions are not identifiable after per-garment camera auto-fit",
+    "global-view attention is not spatial evidence and observational prediction is not a causal pattern-edit estimate",
+    "source-derived semantic labels and measurements are not independent expert ground truth"
+  ]
+}

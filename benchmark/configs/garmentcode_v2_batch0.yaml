@@ -1,0 +1,31 @@
+dataset: GarmentCodeData v2
+doi: https://doi.org/10.3929/ethz-b-000690432
+license: CC BY 4.0
+batch: garments_5000_0/default_body
+expected_archive_bytes: 5121727032
+archive_sha256: 66a4ce54c0211f199867da3285b30a52fbeed185f06554f0d8cf7dada382f001
+catalog:
+  render_quality_gate: true
+  canonical_panel_caps:
+    top: 10
+    pants: 8
+    shorts: 8
+    skirt: 8
+    dress: 14
+    jumpsuit: 16
+subset:
+  per_category: 8
+  categories: [dress, jumpsuit, pants, skirt, top]
+pattern_repair_experiment:
+  steps: 1800
+  batch_size: 32
+  official_accepted_pattern_count: 2953
+  official_clean_panel_count_raw: 31115
+  official_clean_panel_count_model_eligible: 23298
+  checkpoints:
+    baseline: checkpoints/pattern_repair/pattern_repair_net.pt
+    official_80_percent: checkpoints/pattern_repair/gcdv2_batch0_pattern_repair_net.pt
+    balanced_50_percent: checkpoints/pattern_repair/gcdv2_batch0_balanced_pattern_repair_net.pt
+    full_pool_50_percent: checkpoints/pattern_repair/gcdv2_batch0_full_pattern_repair_net.pt
+  default_checkpoint_changed: false
+  reason: dataset-adapted models preserve official coordinates better but resolve fewer complete self-intersections

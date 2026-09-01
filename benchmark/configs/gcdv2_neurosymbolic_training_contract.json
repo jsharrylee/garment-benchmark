@@ -1,0 +1,31 @@
+{
+  "schema_version": "gcdv2-neurosymbolic-training-contract-1.0",
+  "input": {
+    "garment": "unordered set of every panel record belonging to one garment",
+    "panel": ["panel.png", "cm_per_pixel"],
+    "forbidden_leakage": ["source panel filename as model input", "packed layout coordinates", "category color", "ground-truth panel order"]
+  },
+  "stage_1_visual_geometry": {
+    "outputs": ["mask", "signed_distance_cm", "dense_contour_uv_256", "visible_junction_heatmap"],
+    "losses": ["mask BCE plus Dice", "SDF robust L1", "cyclic contour Chamfer", "junction focal heatmap"],
+    "claim": "only raster-observable geometry"
+  },
+  "stage_2_formal_graph": {
+    "inputs": ["stage-1 spatial features", "dense contour", "garment-set context"],
+    "outputs": ["point objects", "curve objects", "NEXT", "SHARED_ENDPOINT", "CLOSED_CYCLE", "DEGREE_EQUALS", "curve parameters"],
+    "losses": ["cyclic-shift-invariant point loss", "primitive cross entropy", "curve parameter loss", "incidence relation loss"],
+    "latent_policy": "LATENT_SMOOTH_SOURCE_SUBDIVISION is source-formal supervision, not claimed as directly visible"
+  },
+  "stage_3_garment_constraints": {
+    "inputs": ["unordered predicted panel graphs", "garment category context"],
+    "outputs": ["SEWN_TO pairs", "constraint-solved panel graph"],
+    "hard_constraints": ["single closed cycle", "point degree 2", "shared endpoints", "seam compatibility"],
+    "solver": "non-neural projection/optimization after neural proposals"
+  },
+  "evaluation": {
+    "split": "garment-ID-disjoint",
+    "visual_metrics": ["silhouette IoU", "boundary Chamfer", "visible junction F1"],
+    "formal_metrics": ["cyclic point error", "primitive macro-F1", "graph relation F1", "curve parameter error"],
+    "constraint_metrics": ["closed-cycle pass", "degree pass", "stitch-pair accuracy", "seam-length residual"]
+  }
+}

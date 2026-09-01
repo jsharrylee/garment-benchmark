@@ -1,0 +1,43 @@
+{
+  "schema_version": "source-provenance/v1",
+  "source_id": "freesewing-teagan-4.10.1",
+  "purpose": "Basic T-shirt cross-source evaluation and production-mark supplement",
+  "official": {
+    "design": "Teagan T-shirt",
+    "package": "@freesewing/teagan",
+    "version": "4.10.1",
+    "documentation": "https://freesewing.eu/docs/designs/teagan/",
+    "repository": "https://codeberg.org/freesewing/freesewing",
+    "npm": "https://www.npmjs.com/package/@freesewing/teagan/v/4.10.1"
+  },
+  "local_runtime": {
+    "directory": "external/freesewing-tshirt-runtime",
+    "package_lock": "external/freesewing-tshirt-runtime/package-lock.json",
+    "ignored": true,
+    "node_engine": ">=20",
+    "install_is_not_performed_by_extractor": true
+  },
+  "package_evidence": {
+    "resolved_archive": "https://registry.npmjs.org/@freesewing/teagan/-/teagan-4.10.1.tgz",
+    "sha512_integrity": "sha512-jfnAEQi/h24QlGRKiff8pgMI1hTeIRFjOK8V4Cq+hkS9ahOt4C7A+AMUl7KQETIImDHxMQg98nO9NLfceFyiKQ==",
+    "source_code_license_spdx": "MIT",
+    "license_evidence": "@freesewing/teagan@4.10.1 package.json and package-lock.json",
+    "license_scope_note": "MIT identifies the installed source-code package license. This manifest does not make a legal determination about rights in generated pattern output or third-party body measurements."
+  },
+  "semantic_scope": {
+    "preserved": [
+      "author-named points",
+      "author-named paths and cubic Bezier operations",
+      "notch snippets",
+      "grainline and cut-on-fold annotations",
+      "cutlist",
+      "seam-allowance path"
+    ],
+    "not_claimed": [
+      "creation-time operation DAG",
+      "expert-validated BNP/SNP/SP/BP terminology",
+      "dart supervision for a dartless T-shirt",
+      "cross-source equivalence to GarmentCode panel topology"
+    ]
+  }
+}

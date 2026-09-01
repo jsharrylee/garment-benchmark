@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "dataset": "GarmentCodeData v2",
+  "batch": "garments_5000_0/default_body",
+  "license": "CC BY 4.0",
+  "view_generation": "official reference sim PLY rerendered front/back/left/right in Blender orthographic cameras",
+  "record_count": 2937,
+  "category_counts": {
+    "dress": 970,
+    "jumpsuit": 202,
+    "pants": 259,
+    "skirt": 716,
+    "top": 790
+  },
+  "skipped": {
+    "canonical_validation": 492,
+    "render_quality": 21
+  },
+  "index_sha256": "111e6ca2d92393f76164be34cab6108ca282da91d0fb61d93ff3715444f96c77",
+  "local_paths_omitted": true
+}

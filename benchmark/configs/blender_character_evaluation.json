@@ -1,0 +1,38 @@
+{
+  "generation_contract": {
+    "variable_topology": true,
+    "template_retrieval": false,
+    "nearest_pattern_selection": false,
+    "exact_source_pattern_required": false,
+    "target": "visually similar structured sewing-pattern draft"
+  },
+  "samples": [
+    {
+      "sample_id": "mpfb_female_sportsuit",
+      "source": "MPFB",
+      "bundle": "data/processed/mpfb/mpfb_female_sportsuit",
+      "reweaver": "artifacts/reweaver_mpfb/mpfb_female_sportsuit",
+      "pattern_pipeline": "artifacts/pattern_pipeline_mpfb/mpfb_female_sportsuit",
+      "garment_particles": "artifacts/garment_particles/mpfb_female_sportsuit",
+      "garment_particles_pattern_pipeline": "artifacts/pattern_pipeline_garment_particles/mpfb_female_sportsuit"
+    },
+    {
+      "sample_id": "mpfb_male_worksuit",
+      "source": "MPFB",
+      "bundle": "data/processed/mpfb/mpfb_male_worksuit",
+      "reweaver": "artifacts/reweaver_mpfb/mpfb_male_worksuit",
+      "pattern_pipeline": "artifacts/pattern_pipeline_mpfb/mpfb_male_worksuit",
+      "garment_particles": "artifacts/garment_particles/mpfb_male_worksuit",
+      "garment_particles_pattern_pipeline": "artifacts/pattern_pipeline_garment_particles/mpfb_male_worksuit"
+    },
+    {
+      "sample_id": "blender_studio_einar",
+      "source": "Blender Studio",
+      "bundle": "data/processed/blender_studio/blender_studio_einar",
+      "reweaver": "artifacts/reweaver_blender_studio/blender_studio_einar",
+      "pattern_pipeline": "artifacts/pattern_pipeline_blender_studio/blender_studio_einar",
+      "garment_particles": "artifacts/garment_particles/blender_studio_einar",
+      "garment_particles_pattern_pipeline": "artifacts/pattern_pipeline_garment_particles/blender_studio_einar"
+    }
+  ]
+}

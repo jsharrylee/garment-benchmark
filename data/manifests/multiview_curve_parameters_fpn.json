@@ -1,0 +1,286 @@
+{
+  "schema_version": "multiview-curve-parameters-result/v1",
+  "verified_date": "2026-08-28",
+  "status": "PASS_BOUNDED_SAME_DOMAIN_CURVE_FORMULA_BENCHMARK",
+  "claim_boundary": {
+    "supported": "Five named normalized curve formulas are predicted from four GCDv2 renders, and controlled generator inputs produce audited pattern-only deltas.",
+    "not_supported": "This is not complete CAD generation, cross-domain validation, or causal 3D-image-to-2D-formula learning. No controlled pair has a validated four-view render yet."
+  },
+  "hardware_observation": {
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "memory_mib": 12227,
+    "driver": "610.88"
+  },
+  "data": {
+    "source": "GarmentCodeData v2 garments_5000_0/default_body",
+    "indexed_samples": 2937,
+    "indexed_view_images": 11748,
+    "split_counts": {
+      "train": 2236,
+      "validation": 150,
+      "test": 144,
+      "auxiliary_not_used": 407
+    },
+    "frozen_test_sample_count": 144,
+    "frozen_test_observed_curve_count": 382,
+    "truth_provenance": "DENSE_CURVE_TWO_CUBIC_APPROXIMATION",
+    "truth_instance_count_across_used_splits": 8234,
+    "truth_meaning": "Least-squares normalized two-cubic approximation of a paired dense canonical semantic path; not the generator's original Bezier controls."
+  },
+  "target": {
+    "queries": [
+      "front_neckline",
+      "back_neckline",
+      "front_armhole",
+      "back_armhole",
+      "sleeve_head"
+    ],
+    "parameters_per_query": [
+      "start_u_in_panel",
+      "start_v_in_panel",
+      "end_u_in_panel",
+      "end_v_in_panel",
+      "chord_over_garment",
+      "arc_over_garment",
+      "knot_x_over_chord",
+      "knot_y_over_chord",
+      "segment_0_control_1_x",
+      "segment_0_control_1_y",
+      "segment_0_control_2_x",
+      "segment_0_control_2_y",
+      "segment_1_control_1_x",
+      "segment_1_control_1_y",
+      "segment_1_control_2_x",
+      "segment_1_control_2_y"
+    ]
+  },
+  "spatial_fpn": {
+    "architecture": {
+      "backbone": "frozen local Mask R-CNN v2 ResNet-50-FPN",
+      "pooled_grids_per_view": [8, 4, 2, 1],
+      "tokens_per_view": 85,
+      "views": 4,
+      "width": 256,
+      "attention_heads": 8,
+      "memory_layers": 2,
+      "decoder_layers": 4,
+      "role_queries": 5,
+      "trainable_parameters": 6088209
+    },
+    "training": {
+      "best_epoch": 137,
+      "stopped_epoch": 167,
+      "seconds": 543.560922199991,
+      "peak_cuda_bytes": 1470509568
+    },
+    "frozen_test": {
+      "presence_macro_f1": 0.998019801980198,
+      "exact_inventory_rate": 0.9930555555555556,
+      "parameter_macro_normalized_mae": 0.40488757768433886,
+      "parameter_macro_r2": 0.2593145920541599,
+      "mean_arc_relative_error": 0.21471992272560475,
+      "mean_chord_relative_error": 0.21835885644295186,
+      "mean_pointwise_rmse_over_chord": 0.03638465502006713,
+      "mean_symmetric_chamfer_over_chord": 0.029297931376577116,
+      "mean_hausdorff_over_chord": 0.05090627437002747,
+      "mean_endpoint_tangent_error_degrees": 10.925731706182566
+    },
+    "checkpoint": {
+      "relative_path": "checkpoints/drafting_semantics/multiview_curve_parameters_fpn.pt",
+      "bytes": 24407455,
+      "sha256": "b48b04ad4e5591d7f49f7a23a6041ebbc70bd7e44c33677e263459bbed0f57fe",
+      "tracked": false
+    }
+  },
+  "global_token_ablation": {
+    "contract": "Same samples, official splits, five queries, 16 targets, decoder width/depth/heads, losses, optimizer, schedule, dropout, and seed; each view's spatial tokens are replaced by one 2048D global token. The input projection shape necessarily differs.",
+    "training": {
+      "best_epoch": 186,
+      "stopped_epoch": 216,
+      "seconds": 323.201591600009,
+      "peak_cuda_bytes": 201032192
+    },
+    "frozen_test": {
+      "presence_macro_f1": 1.0,
+      "exact_inventory_rate": 1.0,
+      "parameter_macro_normalized_mae": 0.45772577266207143,
+      "parameter_macro_r2": 0.20356796347594686,
+      "mean_arc_relative_error": 0.24520083741686424,
+      "mean_chord_relative_error": 0.2453460972017293,
+      "mean_pointwise_rmse_over_chord": 0.040283178267809416,
+      "mean_symmetric_chamfer_over_chord": 0.032423583288438335,
+      "mean_hausdorff_over_chord": 0.055503157326530786,
+      "mean_endpoint_tangent_error_degrees": 11.684470912025574
+    },
+    "checkpoint": {
+      "relative_path": "checkpoints/drafting_semantics/multiview_curve_parameters_resnet50_global.pt",
+      "bytes": 26157519,
+      "sha256": "53954df3d71c99ac03a3677d4095b2058b05c74b342948c4b20e248aed770444",
+      "tracked": false
+    }
+  },
+  "spatial_relative_gain_over_global": {
+    "parameter_normalized_mae_reduction": 0.115436355419606,
+    "pointwise_rmse_reduction": 0.0967779459163882,
+    "symmetric_chamfer_reduction": 0.0964005700435883,
+    "hausdorff_reduction": 0.0828220082951206,
+    "arc_relative_error_reduction": 0.124309994257642,
+    "chord_relative_error_reduction": 0.109996617295232,
+    "endpoint_tangent_error_reduction": 0.0649356921298096
+  },
+  "counterfactual_pattern_only": {
+    "source_pairs": 448,
+    "source_counts": {
+      "GarmentCode": 256,
+      "FreeSewing Teagan": 192
+    },
+    "pairs_per_parameter": 32,
+    "exactly_one_author_facing_input_changed": 448,
+    "pattern_geometry_changed": 448,
+    "topology_stable": 445,
+    "semantic_delta_coverage_full": 443,
+    "accepted_for_pattern_only_training": 440,
+    "quarantined": 8,
+    "quarantine_reasons": {
+      "SEMANTIC_DELTA_COVERAGE_NOT_FULL": 5,
+      "TOPOLOGY_CHANGED": 3
+    },
+    "true_four_view_pairs": 0,
+    "render_status": "PENDING_VALIDATED_SIMULATOR"
+  },
+  "creation_formula_smoke": {
+    "schema_version": "tshirt-construction-trace-1.1",
+    "garmentcode": {
+      "panels": 8,
+      "operations": 64,
+      "runtime_events": 54,
+      "formula_targets": 12,
+      "training_eligible_targets": 12,
+      "target_counts": {
+        "neckline": 4,
+        "armhole": 4,
+        "sleeve_head": 4
+      },
+      "evidence": "creation_event_formula_and_live_geometry"
+    },
+    "freesewing_teagan": {
+      "panels": 3,
+      "operations": 3,
+      "formula_targets": 5,
+      "training_eligible_targets": 5,
+      "target_counts": {
+        "neckline": 2,
+        "armhole": 2,
+        "sleeve_head": 1
+      },
+      "evidence": "author_named_completed_path_and_public_source_formula",
+      "creation_time_dag_available": false
+    }
+  },
+  "creation_formula_full_corpus": {
+    "source": "artifacts/drafting_semantics/tshirt_traces.jsonl.gz",
+    "source_sha256_before_and_after": "81eafd546bdb65b36ea5fb94e88c0eb66b6152b0578e2864402025212279aaa4",
+    "output": "artifacts/drafting_semantics/tshirt_traces_formula_augmented.jsonl.gz",
+    "output_bytes": 106123151,
+    "output_sha256": "cc9dff2d0a3bf376521f5008cab7a9d7af879cd3e54a47f9d82c603b6ebc3a3e",
+    "record_count": 2592,
+    "formula_target_count": 31104,
+    "target_counts": {
+      "neckline": 10368,
+      "armhole": 10368,
+      "sleeve_head": 10368
+    },
+    "seam_relation_count": 2592,
+    "all_targets_training_eligible": true,
+    "completed_topology_role_inference_used": false,
+    "tracked_audit_manifest": "data/manifests/tshirt_construction_formula_augmented.json"
+  },
+  "artifact_evidence": [
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/training_metrics.json",
+      "bytes": 141348,
+      "sha256": "75eedf0ee02417715158fea17d6b2e3e6c4b973bbe6d1fb19ebeb48e1342c25c"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/frozen_test_evaluation.json",
+      "bytes": 51774,
+      "sha256": "1c3f700d9436462915bc7c680fb79567700ec977bc4984e8863338b0ee4a1e0b"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/global_training_metrics.json",
+      "bytes": 158965,
+      "sha256": "1ec8be38b60c2018d40942c070a69c516da078027fbc70bd1b82dbe575d99e4d"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/global_frozen_test_evaluation.json",
+      "bytes": 51746,
+      "sha256": "853daece49343adffeb506b4269588df00d6f06bad5e677adb6b1c55bb42a28a"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/frozen_test_curve_board.png",
+      "bytes": 1546830,
+      "sha256": "346e71cf2ba5cf41e9486b76ecdd04767b93fe07222f7f47229d203d8dbfb078"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/resnet50_fpn_tokens_manifest.json",
+      "bytes": 776,
+      "sha256": "5654c189cb420fac6a26e984c99c1984236d1d9be51bb0464fac30c895aae12e"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/resnet50_global_tokens_manifest.json",
+      "bytes": 773,
+      "sha256": "63bbccb010b47ce87b5c8d4be8f7c22a26c468c00cfe3ff5dad80d39d99eac93"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/counterfactual_pairs/corpus32_manifest.json",
+      "bytes": 11973498,
+      "sha256": "a83332d4595a231d1e280c4c5599d7843971229b8be8cc36a7064db2135c4871"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/counterfactual_pairs/corpus32_training_audit.json",
+      "bytes": 216193,
+      "sha256": "afed0baa4908cd298f728ef5477c1a9a225236dd2ecf8521d4824dfd31aeaccd"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/counterfactual_pairs/corpus32_training_manifest.json",
+      "bytes": 11790635,
+      "sha256": "08c2655dc797d12b84ee1b1e1f98bb8c9636f5266bc86dc24d291903039860dc"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/counterfactual_pairs/corpus32_quarantine_manifest.json",
+      "bytes": 314981,
+      "sha256": "66c09e27d3cf612dea32fdab4050fd4f540a3d851347e46d8de64a28c4c163a1"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/formula_target_smoke.json",
+      "bytes": 299409,
+      "sha256": "b4ae07e464d6663e941762b560308f23e18f98879793c4c1958803383223d7d5"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/tshirt_traces_formula_augmented.jsonl.gz",
+      "bytes": 106123151,
+      "sha256": "cc9dff2d0a3bf376521f5008cab7a9d7af879cd3e54a47f9d82c603b6ebc3a3e"
+    },
+    {
+      "relative_path": "data/manifests/tshirt_construction_formula_augmented.json",
+      "bytes": 5377,
+      "sha256": "1a1dbc66520389c0df5a2fff63d90dda7e45fb8c7512235e4961ebc1832f23f0"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/mobile_curve_boards.json",
+      "bytes": 23260,
+      "sha256": "ad003801ec3cad8bd6300322954b51b97bdd3e3c6e7a4e029a89f509d4e67eec"
+    },
+    {
+      "relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/mobile_curve_boards/rand_84S0X0BUH1_mobile_curve_comparison.png",
+      "bytes": 640558,
+      "sha256": "f93fe2702ad7e52e4f2c6d2578c23dbc7b3e12d58369e2749db14e421791e3a2"
+    }
+  ],
+  "verification": {
+    "focused_test_count": 27,
+    "focused_test_result": "PASS",
+    "ignored_artifacts_tracked": false
+  },
+  "report": "reports/spatial_curve_formula_counterfactual_benchmark_ko.md"
+}

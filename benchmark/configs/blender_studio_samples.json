@@ -1,0 +1,41 @@
+{
+  "source": {
+    "name": "Blender Studio Einar",
+    "official_page": "https://studio.blender.org/characters/einar/v1/",
+    "official_archive": "https://studio.blender.org/download-source/files/41/419e83fb75f30b989adf7920dec7a21c/419e83fb75f30b989adf7920dec7a21c.zip",
+    "archive_size_bytes": 579834421,
+    "archive_sha256": "3cbb5a1dd9ffd3ca39edab420a83ea7f7db337b435a78ef27a0c87ff3e6977f7",
+    "license": "CC-BY-4.0",
+    "credit": "Einar Rig (CC-BY) Blender Foundation | studio.blender.org",
+    "minimum_blender_version": "3.5"
+  },
+  "samples": [
+    {
+      "sample_id": "blender_studio_einar",
+      "blend_file": "data/raw/blender_studio/einar/einar_release_v1.blend",
+      "character_collection": "CH-einar",
+      "rgb_collection_roots": [
+        "einar.geometry.retopo",
+        "einar.geometry.arm"
+      ],
+      "garment_collections": [
+        "jacket",
+        "pants",
+        "sweater",
+        "boots"
+      ],
+      "excluded_name_fragments": [
+        "_surfdef",
+        ".proxy",
+        ".base"
+      ],
+      "excluded_name_prefixes": [
+        "HLP-",
+        "LTC-",
+        "META-",
+        "RIG-",
+        "WGT-"
+      ]
+    }
+  ]
+}

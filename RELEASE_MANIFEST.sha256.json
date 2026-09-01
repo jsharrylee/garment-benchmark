@@ -1,0 +1,1968 @@
+{
+  "algorithm": "sha256",
+  "archive_root": "game-garment-benchmark/",
+  "file_count": 389,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "55fc4744cc9de838537cb471c442e825d7da1d35f690359793e4accad7e71e28",
+      "size_bytes": 759
+    },
+    {
+      "path": "benchmark/__init__.py",
+      "sha256": "8dcc592c3cbbf6add7ab6272161ab22556b5b6def0bdb07dc684974d39b27738",
+      "size_bytes": 65
+    },
+    {
+      "path": "benchmark/adapters/__init__.py",
+      "sha256": "7d6fdd888a8ea2debe5bc515e561ee23d43ae7adbac1e7bc40f545ac71253d54",
+      "size_bytes": 43
+    },
+    {
+      "path": "benchmark/adapters/blender_character.py",
+      "sha256": "c05e8c4702538cc0f90400cad979e7f056f93aa9cba790ec5d83bab97b100e6d",
+      "size_bytes": 8109
+    },
+    {
+      "path": "benchmark/adapters/flash_attn_compat.py",
+      "sha256": "594457f553a835b0feea24b9bfa7b2b3848674bdffe3dc3f7a31398c4edc74fa",
+      "size_bytes": 7393
+    },
+    {
+      "path": "benchmark/adapters/garment_particles.py",
+      "sha256": "4e0e6044f9fd4b547860c1119629ea57f32b4765710d661fccfb00b3d15c2adf",
+      "size_bytes": 6833
+    },
+    {
+      "path": "benchmark/adapters/reweaver.py",
+      "sha256": "de647b9b42cc4e2e5c3fa4604548f271d9e825953c18f39728299fd10339ac9f",
+      "size_bytes": 6601
+    },
+    {
+      "path": "benchmark/adapters/synbody.py",
+      "sha256": "84f46b064b69f62ed018b07f3614256df8c0a1fa403e8a69e9cbc4e24d430cb3",
+      "size_bytes": 2245
+    },
+    {
+      "path": "benchmark/blender_scripts/blender_studio_render.py",
+      "sha256": "eae624538d98716e094d9bd3d3f772d49009971a0535b487c75716e4c3c092de",
+      "size_bytes": 8934
+    },
+    {
+      "path": "benchmark/blender_scripts/measure_body.py",
+      "sha256": "3fea3c1e188e04ea8dcfb7063f8bcbb4cfcadeef0270adb169a7370d71c743a6",
+      "size_bytes": 4031
+    },
+    {
+      "path": "benchmark/blender_scripts/mpfb_generate_render.py",
+      "sha256": "90b11398c6f75fe4ac57a7cc276e3fd7addbfc933794e1076c0ef83632412cc6",
+      "size_bytes": 10174
+    },
+    {
+      "path": "benchmark/blender_scripts/render_garmentcode_multiview.py",
+      "sha256": "00cba07901d592dc72cacf7da727be9f12aa8973c2efc94cb25aef87931ecb3d",
+      "size_bytes": 6121
+    },
+    {
+      "path": "benchmark/blender_scripts/simulate_canonical_pattern.py",
+      "sha256": "e1b536856ab27172dc449a91c58bcc2129ee7ca6d66962723444f98200031e8b",
+      "size_bytes": 11016
+    },
+    {
+      "path": "benchmark/configs/basic_semantic_teacher_student.json",
+      "sha256": "becd5698cfde16af478e01ab7f28330a2bd30c6af517ac5793b08b28d5713361",
+      "size_bytes": 2415
+    },
+    {
+      "path": "benchmark/configs/benchmark.yaml",
+      "sha256": "93dc7a15955cde955ec074128b8c08e154b76c0d12ddf29f6be0467c917bf6a4",
+      "size_bytes": 1471
+    },
+    {
+      "path": "benchmark/configs/blender_character_evaluation.json",
+      "sha256": "d095e4cfcfb6bc81f5b0ead6630748b0b278acbe81c02b61b78f28d9c058aa00",
+      "size_bytes": 1738
+    },
+    {
+      "path": "benchmark/configs/blender_cloth_gcd_transfer.json",
+      "sha256": "7d7e29804b518aea7b79fa7566a1530e0c25c3c5f8b60b6e89903cb354dd7ca1",
+      "size_bytes": 620
+    },
+    {
+      "path": "benchmark/configs/blender_studio_samples.json",
+      "sha256": "988e876ec919a31a15e87a6b6e65c804493a3e596353a54c4cd2c75b93498249",
+      "size_bytes": 1172
+    },
+    {
+      "path": "benchmark/configs/drafting_counterfactual_pairs.json",
+      "sha256": "cac167e2e5303db58677335ad7eeff7379240ca94d46ff9281a48631658052bf",
+      "size_bytes": 5144
+    },
+    {
+      "path": "benchmark/configs/drafting_semantics_gcdv2.json",
+      "sha256": "2085d731540b98c7864aceaef50d01c1feeb7bdc09e1b44d300ad109e1ac555c",
+      "size_bytes": 765
+    },
+    {
+      "path": "benchmark/configs/freesewing_teagan_source.json",
+      "sha256": "d9db8eff80853945787be5d34d341601bb55d55863429c688cc0c67091132253",
+      "size_bytes": 1812
+    },
+    {
+      "path": "benchmark/configs/freesewing_teagan_training.json",
+      "sha256": "99a0c3c5b3c6a8e31596231e3c582a692813b867882719da09bc3d493dcb4b88",
+      "size_bytes": 1337
+    },
+    {
+      "path": "benchmark/configs/garmentcode_v2_batch0.yaml",
+      "sha256": "3b55e70d93ce78cca9b3a2a98ebc0793a341ab26dcd8d1e0877d7442fabc35a1",
+      "size_bytes": 1161
+    },
+    {
+      "path": "benchmark/configs/gcdv2_garment_panel_set.json",
+      "sha256": "935bdd5e752bc4e5e282a0e0bcdf1ec5ad46388fbd296c588ae886acda132b15",
+      "size_bytes": 371
+    },
+    {
+      "path": "benchmark/configs/gcdv2_neurosymbolic_training_contract.json",
+      "sha256": "300f4394657247104fb96f360952957a2d7e4cf502c032a18002baaf2e674f93",
+      "size_bytes": 1875
+    },
+    {
+      "path": "benchmark/configs/gcdv2_pattern_dsl_alpha_geometry.json",
+      "sha256": "fff386f7489608c6bcafcdd002600cea0f16a5abb3785a2b7bf6691e437757f6",
+      "size_bytes": 5073
+    },
+    {
+      "path": "benchmark/configs/models.yaml",
+      "sha256": "6d09d187a7519fa768084f57a772993258db9ad61bd902ee05a354b4acdfc22b",
+      "size_bytes": 746
+    },
+    {
+      "path": "benchmark/configs/mpfb_samples.json",
+      "sha256": "3c4dc10c2ce5426e35917e96a552cf328cd158221c4cf430d0ef98bb5b9719e9",
+      "size_bytes": 1055
+    },
+    {
+      "path": "benchmark/configs/multigarment_semantics.json",
+      "sha256": "63f41ba6da8e23bd27a38e044d23bc0be3ed907d69a9b9afd5efd51946cfb1fd",
+      "size_bytes": 806
+    },
+    {
+      "path": "benchmark/configs/multiview_curve_parameters_fpn.json",
+      "sha256": "c0193bcfcd142bd3823e3089c8d0cd6a406be76a3af966d5fa134d086cd95af2",
+      "size_bytes": 1195
+    },
+    {
+      "path": "benchmark/configs/multiview_curve_parameters_resnet50_global.json",
+      "sha256": "6d74c6d85adf09ba02dcbf14afdd562f46868c78227e7453e3258616a75fe837",
+      "size_bytes": 1982
+    },
+    {
+      "path": "benchmark/configs/multiview_element_geometry_resnet50.json",
+      "sha256": "a116ed7eb74664ad68b463844fad0a938790dffaaf60f3b24e0d9e57fc8e351a",
+      "size_bytes": 594
+    },
+    {
+      "path": "benchmark/configs/multiview_pattern_semantics.json",
+      "sha256": "35c53e076f2bbdf8d2e5e2121088144436e67e2b443bd91c2dc67ed41b39729c",
+      "size_bytes": 583
+    },
+    {
+      "path": "benchmark/configs/multiview_pattern_semantics_resnet50.json",
+      "sha256": "be42f88676b1d0010b15e64f83c95c0a2179a3011c48d0db57ba92bbfe36a600",
+      "size_bytes": 626
+    },
+    {
+      "path": "benchmark/configs/pattern_repair_model.json",
+      "sha256": "b52d7c7e7086f634cadd7e51f4602c0118f4e514df4d4de1b471945216dfffb6",
+      "size_bytes": 748
+    },
+    {
+      "path": "benchmark/configs/sources.yaml",
+      "sha256": "97446ae2038de89ad0a03029e44e8b96f2585b648ca10452c76febeaf851725d",
+      "size_bytes": 811
+    },
+    {
+      "path": "benchmark/configs/tshirt_causal_proof_v1.json",
+      "sha256": "614ffe99ad0d44c5fc27ea6a4e8706070ebeca3935a902a6b623346bd4e91b3c",
+      "size_bytes": 13534
+    },
+    {
+      "path": "benchmark/configs/tshirt_creation_trace_training.json",
+      "sha256": "ef3a977ae478449f5eb54bfee71695613ce3306c04097a45c01bc5e3344204fa",
+      "size_bytes": 1271
+    },
+    {
+      "path": "benchmark/configs/tshirt_expert_review_schema.json",
+      "sha256": "6bd3e1a0e828f719b5e94325bb44636e794dc2781f6de3b69fa9e6ecd1d0dc64",
+      "size_bytes": 1506
+    },
+    {
+      "path": "benchmark/drafting_semantics/__init__.py",
+      "sha256": "5da328c44299e40fbdf31c49fbdfa59381c7918313e81fb4de9d1b4d1993f129",
+      "size_bytes": 681
+    },
+    {
+      "path": "benchmark/drafting_semantics/basic_blocks.py",
+      "sha256": "0300165e8b5b23929f12849fe5683b8f1aaccea76ac95d8a518c1be683834819",
+      "size_bytes": 80138
+    },
+    {
+      "path": "benchmark/drafting_semantics/basic_semantic_targets.py",
+      "sha256": "7f408f4bd6ec360b0b5b6816891586e87f6238a66f68a807397730b7332ad205",
+      "size_bytes": 73878
+    },
+    {
+      "path": "benchmark/drafting_semantics/counterfactual_pairs.py",
+      "sha256": "bb7c77b66949d5220db38353665942ba3b3f8d9c34ed4207a516e24c22837a65",
+      "size_bytes": 20314
+    },
+    {
+      "path": "benchmark/drafting_semantics/curve_evaluation.py",
+      "sha256": "b0a8851358fa41d2aec3c9aa905128b4a05129b7e9dc53f72bbee7afe1ed317e",
+      "size_bytes": 18623
+    },
+    {
+      "path": "benchmark/drafting_semantics/dataset.py",
+      "sha256": "0b2b10e2b821d91d09bbdf607d08d06d29aeefcf24618e2be10ea78fd93d5b30",
+      "size_bytes": 7158
+    },
+    {
+      "path": "benchmark/drafting_semantics/decoding.py",
+      "sha256": "ba4071c36ba6b388acff2b0637d534afed8a645853805650225b2a5965de5e77",
+      "size_bytes": 6183
+    },
+    {
+      "path": "benchmark/drafting_semantics/drafting_formula_targets.py",
+      "sha256": "f92d7bd387b80c51f40459316445f8e4258433caf82ee581fbb26406af3adb88",
+      "size_bytes": 24019
+    },
+    {
+      "path": "benchmark/drafting_semantics/freesewing_split.py",
+      "sha256": "7c3d7adb3a51b47dac7417e0a210945185ff8574ebea5fd536672407b195fac4",
+      "size_bytes": 3717
+    },
+    {
+      "path": "benchmark/drafting_semantics/freesewing_teagan.py",
+      "sha256": "27403161bea10fa27f3dd446e7586a70a0ebb44137fc456d42bf2982eb7b5c63",
+      "size_bytes": 17435
+    },
+    {
+      "path": "benchmark/drafting_semantics/garmentcode.py",
+      "sha256": "d0b802b0487fc362a8bbffe578ed624edd95452dd3a4c00383a49f52ba0b9c30",
+      "size_bytes": 27544
+    },
+    {
+      "path": "benchmark/drafting_semantics/gcdv2_surface_correspondence.py",
+      "sha256": "862937f0e1e81b25211d1a175ff5867eaf153be03fc1146718d76467db3c3d1c",
+      "size_bytes": 35224
+    },
+    {
+      "path": "benchmark/drafting_semantics/lower_body_semantics.py",
+      "sha256": "b30de8de80ba482441b6d51f5626e0a5fdadda898dab178b813802e2b7926be0",
+      "size_bytes": 48674
+    },
+    {
+      "path": "benchmark/drafting_semantics/merged_visible_learning.py",
+      "sha256": "93a5621216058a9e9fc15b0ae033729766068821a2d556c76baa6e1c2dd6de2e",
+      "size_bytes": 11827
+    },
+    {
+      "path": "benchmark/drafting_semantics/model.py",
+      "sha256": "6ea99b659e817371f5cdef35dc9e1e3d03a146140a3652ab36dc983e8940751e",
+      "size_bytes": 1734
+    },
+    {
+      "path": "benchmark/drafting_semantics/multigarment_learning.py",
+      "sha256": "1476698c4b7610a6ea54af41e1424135f4760b02836932a3f2451fe2884a4e4b",
+      "size_bytes": 19701
+    },
+    {
+      "path": "benchmark/drafting_semantics/multiview_curve_parameters.py",
+      "sha256": "b3a836e90de07138e0f6fcb863d62e7e15fa72cb20cb97f9359a96859185f1f5",
+      "size_bytes": 40119
+    },
+    {
+      "path": "benchmark/drafting_semantics/multiview_element_geometry.py",
+      "sha256": "014082bc6aebeb5a870a76a6c6dbad8e7a6720b7fccc96ea6851d0ed1bd1b08c",
+      "size_bytes": 17598
+    },
+    {
+      "path": "benchmark/drafting_semantics/multiview_pattern_semantics.py",
+      "sha256": "4054db2aaceb649e54db066c14432c22b75cbca0d9fe5219bfc7afa976c243ea",
+      "size_bytes": 11392
+    },
+    {
+      "path": "benchmark/drafting_semantics/pattern_visual_effects.py",
+      "sha256": "5b2024ba424f93fca124315cf61a5109c0fb1bbb1dc4fc514cf42e20162c7fd9",
+      "size_bytes": 65683
+    },
+    {
+      "path": "benchmark/drafting_semantics/reference_line_learning.py",
+      "sha256": "d874fde9785cad729b7b82592142a078766c404f4cedd1176c6bf7f3250a7fb8",
+      "size_bytes": 4097
+    },
+    {
+      "path": "benchmark/drafting_semantics/runtime_trace.py",
+      "sha256": "2d9f9320f5bb72364f50702b6d1f604d3168ec973b2def9ba23c92c957234e45",
+      "size_bytes": 60008
+    },
+    {
+      "path": "benchmark/drafting_semantics/schema.py",
+      "sha256": "8953d976c7c7548e3c5afe325080415eab0687bc585e29cecd9e5409047cfac4",
+      "size_bytes": 12509
+    },
+    {
+      "path": "benchmark/drafting_semantics/semantic_paths.py",
+      "sha256": "d1108931224d1c5708ac6c23d6fc47f297d0d1a8ef250862f045e1559709879a",
+      "size_bytes": 3491
+    },
+    {
+      "path": "benchmark/drafting_semantics/semantic_teacher_student.py",
+      "sha256": "09c18b95a757b70777071455c11f8d96deb57f85fb27386a028d4af47b48dd70",
+      "size_bytes": 39064
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_corpus.py",
+      "sha256": "17a6285efad7fb414c35ea26b1a6bb9f3324f1cd099b12ffbcce52305fbf627c",
+      "size_bytes": 12678
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_creation_binding.py",
+      "sha256": "b7c074d605877f6d21c16b3b0445095498be4da8ea56c9846eea305f6cfac9a4",
+      "size_bytes": 29202
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_garmentcode.py",
+      "sha256": "6fe2f60cb9af464aaeb21b9bdf9267bd9a6f566461e35ce3d771da69571355b5",
+      "size_bytes": 35633
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_learning.py",
+      "sha256": "ccf5e68429ef035bd88d3284ecffc22d060977c7d49c88b6b2cea89c4e15fb04",
+      "size_bytes": 51973
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_parametric_decoder.py",
+      "sha256": "f45277daf5b3042b988048c7a8a7a7b162997ef2c4a1befc00405668900cfafa",
+      "size_bytes": 47847
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_parametric_projection.py",
+      "sha256": "02737d8f3904ca1bc0b7f7f904a4b8ed1c59cd1d876fdd746a45149460d15912",
+      "size_bytes": 20947
+    },
+    {
+      "path": "benchmark/drafting_semantics/tshirt_schema.py",
+      "sha256": "0c3c114545449bfb99b3ae521e1b8d5e0dc01a7bd2891a8bc9ade863f0d286f6",
+      "size_bytes": 77781
+    },
+    {
+      "path": "benchmark/evaluation/__init__.py",
+      "sha256": "3b5ce82efb7e13955f0619ef5978f12727b757cda372d88f656555a37d0bd710",
+      "size_bytes": 50
+    },
+    {
+      "path": "benchmark/evaluation/binding.py",
+      "sha256": "29d5f63281c0966fe7ec36ee63ee21b95e34fa06efcfbf6f30693558499346ce",
+      "size_bytes": 3840
+    },
+    {
+      "path": "benchmark/evaluation/generative_routing.py",
+      "sha256": "2f57ff8af6061680d558eb36429de67e0e9092af5d88772fe129634813c4f3b4",
+      "size_bytes": 2490
+    },
+    {
+      "path": "benchmark/gcdv2_exact/__init__.py",
+      "sha256": "dd6657b9b281fd154e2a2f5faeb58ec5571c0683f5cd86c461035ea4ff60d3a3",
+      "size_bytes": 784
+    },
+    {
+      "path": "benchmark/gcdv2_exact/fourview_dsl_bridge.py",
+      "sha256": "029158bd501470bff29005367b9a4537ce7b27d15255eed497ca42ac6854fa4a",
+      "size_bytes": 19531
+    },
+    {
+      "path": "benchmark/gcdv2_exact/garment_panel_set_learning.py",
+      "sha256": "f77da4f31dde9188b02a97616d04a40675a9ef08be73ceb92bb7ede36e3f9546",
+      "size_bytes": 18738
+    },
+    {
+      "path": "benchmark/gcdv2_exact/geometry.py",
+      "sha256": "85553c954fcab6a1af7685a4228acf74d0986a26ae096f5a393407e10cd95c83",
+      "size_bytes": 24002
+    },
+    {
+      "path": "benchmark/gcdv2_exact/intrinsic_graph_learning.py",
+      "sha256": "34950c32bdadb98712f1974dd24e7d7139f1cdbd5ab93a039144779282125e8f",
+      "size_bytes": 13202
+    },
+    {
+      "path": "benchmark/gcdv2_exact/neurosymbolic_dataset.py",
+      "sha256": "b65e8e5f514aa95e40c3415c0ddf756a6ffe23ceebe775f4ef9828aa0720fb65",
+      "size_bytes": 10824
+    },
+    {
+      "path": "benchmark/gcdv2_exact/neurosymbolic_learning.py",
+      "sha256": "5a7ecaa04400638de58020b5b8f6498caf04b096607753a4a097fe6df603ffbc",
+      "size_bytes": 6509
+    },
+    {
+      "path": "benchmark/gcdv2_exact/panel_dataset.py",
+      "sha256": "814a2b24aa8de51ef6ba377d2502c7d1a2497d277a2ca726d3c53e1676e8fe5f",
+      "size_bytes": 19556
+    },
+    {
+      "path": "benchmark/gcdv2_exact/pattern_dsl.py",
+      "sha256": "6f1c86f8af35bb2150aa1ca06ab63647173181992a60651ee9dabb1c593cd2c4",
+      "size_bytes": 44122
+    },
+    {
+      "path": "benchmark/gcdv2_exact/pattern_dsl_learning.py",
+      "sha256": "7afc0bddb94c615ced1932df0cce2f91536a8dec7ebbb09fbda7f034fd07a81a",
+      "size_bytes": 25067
+    },
+    {
+      "path": "benchmark/gcdv2_exact/pattern_dsl_solver.py",
+      "sha256": "3091791fd9447345d4d10a1b0f73e1f7370341ec9b3a42bd818a211f9555774e",
+      "size_bytes": 32018
+    },
+    {
+      "path": "benchmark/gcdv2_exact/pattern_dsl_svg.py",
+      "sha256": "4c5f8f799326717014e3ae6eac658232a1ba1a362a5349b3eab27031be9213a7",
+      "size_bytes": 28560
+    },
+    {
+      "path": "benchmark/gcdv2_exact/pattern_learning.py",
+      "sha256": "3767b9303eee92150cf1c7c889d5abec53ae4c7ac85f8d8ad82208c743a82ae9",
+      "size_bytes": 31724
+    },
+    {
+      "path": "benchmark/gcdv2_exact/predicted_contours.py",
+      "sha256": "b3258f61b23f9a224f9177d6808d9229d96cbf896f5016dda2f2ee3555019563",
+      "size_bytes": 1669
+    },
+    {
+      "path": "benchmark/gcdv2_exact/residual_learning.py",
+      "sha256": "ce89712836e55be87e6afc05003df5c78635b5515264657bd947f2766f143bfc",
+      "size_bytes": 43973
+    },
+    {
+      "path": "benchmark/gcdv2_exact/retrieval_learning.py",
+      "sha256": "7082561ba9b8efbc1e404434154c510d3a4b0278f069b38c7a9ae7574bfc291e",
+      "size_bytes": 29222
+    },
+    {
+      "path": "benchmark/gcdv2_exact/symbolic_candidate_beam.py",
+      "sha256": "3807ce04a1d0be5ba27c2230621ebba8136ee8d3737df75b1e1ba7f55d2d655c",
+      "size_bytes": 9116
+    },
+    {
+      "path": "benchmark/gcdv2_exact/visual_dsl_retrieval.py",
+      "sha256": "6ad248ac391883820f059ad0763da5336a7808ad1321167626349d8fe8bfd266",
+      "size_bytes": 18024
+    },
+    {
+      "path": "benchmark/harness/__init__.py",
+      "sha256": "8b051660020dae9d3fb0412f63d72df41cb280aa457b852ad0ec3d5e2ef8dfb7",
+      "size_bytes": 69
+    },
+    {
+      "path": "benchmark/harness/artifact_registry.py",
+      "sha256": "26e63d820b3fb10aa090b90a4ceac72cff50153828b6c988263e6465e3cbe956",
+      "size_bytes": 1001
+    },
+    {
+      "path": "benchmark/harness/executor.py",
+      "sha256": "6900c45409be8a60926b0f397c8d54f843b936ce107b600d60f0e0df1836e900",
+      "size_bytes": 2533
+    },
+    {
+      "path": "benchmark/harness/repair_policy.py",
+      "sha256": "71faba6297787ccf47fe4ad708abba87facc22e06603f9fd5ad8c0027f31d0ca",
+      "size_bytes": 309
+    },
+    {
+      "path": "benchmark/harness/schemas.py",
+      "sha256": "16d82d8988820c4ece0f7a46f4da1b8abd0b09529e24c483e27dc0853a9124e5",
+      "size_bytes": 1750
+    },
+    {
+      "path": "benchmark/harness/state.py",
+      "sha256": "ff3fbe72016a8e347c7bcbe59b550d74831d73e0369acea3655691a986c3930e",
+      "size_bytes": 2080
+    },
+    {
+      "path": "benchmark/harness/validators.py",
+      "sha256": "c06388b687a0adbb708763c4b748e17b458ae40ef8d976c8fa6bc9c7e59da19a",
+      "size_bytes": 1149
+    },
+    {
+      "path": "benchmark/pattern_pipeline/__init__.py",
+      "sha256": "2406de44897c8ed2014b5fda84c0369a0e78b98dfcfc47406e73617c450a52d9",
+      "size_bytes": 240
+    },
+    {
+      "path": "benchmark/pattern_pipeline/evaluation.py",
+      "sha256": "dd914971b02813081f75df014505707a84bb8bb223f0cc6453fe1a7bd9d949b9",
+      "size_bytes": 1132
+    },
+    {
+      "path": "benchmark/pattern_pipeline/export.py",
+      "sha256": "ea4166e453d485f3d6a0f175173e438598afdd1ad8761af8eacd7d133acf7b1b",
+      "size_bytes": 3804
+    },
+    {
+      "path": "benchmark/pattern_pipeline/four_view_semantic_inference.py",
+      "sha256": "0f33b7fa006d58473987daea12a7981f1956209413581ca388d6dd04b1f1edc5",
+      "size_bytes": 56088
+    },
+    {
+      "path": "benchmark/pattern_pipeline/garment_particles_convert.py",
+      "sha256": "6e52059c0595b1be5770dfc087ac7d4b8954492a9d718364b96b75afefcc58ab",
+      "size_bytes": 4629
+    },
+    {
+      "path": "benchmark/pattern_pipeline/geometry.py",
+      "sha256": "17812296e73c7c0c43671b737d2b976c8e924e5056c8137a3aea4cc06de730eb",
+      "size_bytes": 2040
+    },
+    {
+      "path": "benchmark/pattern_pipeline/grading.py",
+      "sha256": "01f267dd35e83898b00670a131751e06725a1ff16098dc6c6a4db7784ba66d3d",
+      "size_bytes": 4085
+    },
+    {
+      "path": "benchmark/pattern_pipeline/parametric_drafting_inference.py",
+      "sha256": "2be087cd96c8495c3c2cc62c857541a4d569c58a0fec1cf14a834303f7080f54",
+      "size_bytes": 8048
+    },
+    {
+      "path": "benchmark/pattern_pipeline/refinement.py",
+      "sha256": "efe60d6f2d316d1c47025285a105bbc3086bd3b18ad449a411c902f0003f4fec",
+      "size_bytes": 4673
+    },
+    {
+      "path": "benchmark/pattern_pipeline/repair.py",
+      "sha256": "1f2b175b063707294cb941198556528c38e901dba7122c915391e12c4a17e87b",
+      "size_bytes": 2374
+    },
+    {
+      "path": "benchmark/pattern_pipeline/reweaver_convert.py",
+      "sha256": "e09dc15f8ead463e74bcb78dd5a4cb170b698d2daa7208e54940aef281a1a67f",
+      "size_bytes": 6543
+    },
+    {
+      "path": "benchmark/pattern_pipeline/runner.py",
+      "sha256": "e2e8eae3f1db6306816ea65fa4c147f6e6f97530c32e8572f82b3565b2a91bf8",
+      "size_bytes": 3195
+    },
+    {
+      "path": "benchmark/pattern_pipeline/schema.py",
+      "sha256": "8a0f6f8dc053668ede6bcdf2330d6b87626cfe8b1a26921ccf43b71da40ccc39",
+      "size_bytes": 3493
+    },
+    {
+      "path": "benchmark/pattern_pipeline/semantic_editing.py",
+      "sha256": "433755ab86c9c7ff7a336d7502c29a951d17926d436f47a2b5773694b53f7e0e",
+      "size_bytes": 29826
+    },
+    {
+      "path": "benchmark/pattern_pipeline/semantic_residual_planning.py",
+      "sha256": "4040a1afb9d0e86070ec1c176c393337b2ea467e027188b6048bb2bd173e48de",
+      "size_bytes": 22186
+    },
+    {
+      "path": "benchmark/pattern_pipeline/sewing_mesh.py",
+      "sha256": "4200069a911b41b7f1203bc246223d3fcbb77c9e1d9fe4962074e552c341e166",
+      "size_bytes": 7819
+    },
+    {
+      "path": "benchmark/pattern_pipeline/simulation.py",
+      "sha256": "899e58d52e7d5cd034a0597e13905a7e591f40b378b0dd76aa0cdcef6f78c85a",
+      "size_bytes": 2071
+    },
+    {
+      "path": "benchmark/pattern_pipeline/validation.py",
+      "sha256": "bcaad0a55f88a6cc425a45667e95821243ec2804542018cde83cc01671150974",
+      "size_bytes": 4602
+    },
+    {
+      "path": "benchmark/pattern_repair/__init__.py",
+      "sha256": "83142d95363e0b71148087167ae20263b8b4c74bc869c65af914007a20ad5e96",
+      "size_bytes": 74
+    },
+    {
+      "path": "benchmark/pattern_repair/application.py",
+      "sha256": "a7fb1689767ef5c0760d89788d79c057ab67a3f90f89e899dc10ce9106d37f11",
+      "size_bytes": 7674
+    },
+    {
+      "path": "benchmark/pattern_repair/checkpoint.py",
+      "sha256": "307052b48bdfa4e48dc0200e8bc7406deb492f0af2a8540e494b6a6850e9f65e",
+      "size_bytes": 490
+    },
+    {
+      "path": "benchmark/pattern_repair/data.py",
+      "sha256": "6981da29f6fd2b7f9c6dd432af50d7eeea9a375acd53b61a7c150a16d7e7f009",
+      "size_bytes": 5607
+    },
+    {
+      "path": "benchmark/pattern_repair/model.py",
+      "sha256": "aa3e5ffe7c81e1abc6d0d27746e44b8c6ba7f9645589f9026314f5d22a79d854",
+      "size_bytes": 1617
+    },
+    {
+      "path": "benchmark/preprocessing/__init__.py",
+      "sha256": "9811b954dcb9ef76998bdf87e0ede1492aa175729ab663bc2ef104e50e580bdd",
+      "size_bytes": 61
+    },
+    {
+      "path": "benchmark/preprocessing/grouping.py",
+      "sha256": "23cd98f1b96b0691f95399854e7a403f3b5a8990f0134f547b8f95610c4ea9ae",
+      "size_bytes": 503
+    },
+    {
+      "path": "benchmark/preprocessing/masking.py",
+      "sha256": "ef2d0128124b354614015d1b6b06e4a346987deb28b3c8156df5c83384296539",
+      "size_bytes": 4288
+    },
+    {
+      "path": "benchmark/preprocessing/normalization.py",
+      "sha256": "840da8ed85fd6522fe12e2df1a4a560308199981a7fbf847380edb1825ab0603",
+      "size_bytes": 1282
+    },
+    {
+      "path": "benchmark/preprocessing/view_selection.py",
+      "sha256": "0b97e5229ec13043fa5607916a859be59a5d628fdc45c3df7559a13c5ec04f40",
+      "size_bytes": 1018
+    },
+    {
+      "path": "benchmark/retrieval/__init__.py",
+      "sha256": "3ffbdf5e4d76f6e0111fa8bfe4b459f6eda9d6fe5382d41ec7545b74ba29f8a8",
+      "size_bytes": 535
+    },
+    {
+      "path": "benchmark/retrieval/anchor_bank.py",
+      "sha256": "08f83911ee9f80b141bfadb6f460c5053596cd3b86df15f55f91e50122b9cb9c",
+      "size_bytes": 4380
+    },
+    {
+      "path": "benchmark/retrieval/corpus.py",
+      "sha256": "e38fc15fb4e515222f1f6ad9457e55ea3fd0093f16fea857096168cc4fceda36",
+      "size_bytes": 4622
+    },
+    {
+      "path": "benchmark/retrieval/features.py",
+      "sha256": "41b6e60ce22a9b23476870e48d2f18484f466131bdc71a64221260db50b49ee9",
+      "size_bytes": 2724
+    },
+    {
+      "path": "benchmark/retrieval/garmentcode.py",
+      "sha256": "5f0fdb8396419ea7fabe3f24013270f729c9d658c708361297397c12e76c014e",
+      "size_bytes": 7165
+    },
+    {
+      "path": "benchmark/retrieval/index.py",
+      "sha256": "d54036ad8e08c0bbee4e8e19a784837fe791df8a45229e154ff5cb9e532a0900",
+      "size_bytes": 7225
+    },
+    {
+      "path": "benchmark/scripts/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "benchmark/scripts/acquire_reweaver_gcd_ts_subset.py",
+      "sha256": "88391eb2ea51dd10f77323816e397e9d9c69d37529b44d51db0d5805d1ff7065",
+      "size_bytes": 5465
+    },
+    {
+      "path": "benchmark/scripts/analyze_garmentcode_simulator_transfer.py",
+      "sha256": "4932e5f4a9b71c58fcb3fc4c9f08d27ca8c154abccd1e77887f2ffb068296965",
+      "size_bytes": 4126
+    },
+    {
+      "path": "benchmark/scripts/analyze_gcdv2_garment_panel_set_shapes.py",
+      "sha256": "9bb30ffb751251e049bdafcb7a32b22198dce49f4021c1b6dbecfff06dafa3ce",
+      "size_bytes": 5344
+    },
+    {
+      "path": "benchmark/scripts/analyze_multiview_element_geometry_attention.py",
+      "sha256": "65e5213063a27b4e7ec1a94c1b753de886c9f6175db3ca7b3ba96a4f8999ee2f",
+      "size_bytes": 35066
+    },
+    {
+      "path": "benchmark/scripts/analyze_transformer_attention.py",
+      "sha256": "381b16fa5c73c155d7a33ffa1385e20a54c2e89dd80e78444d1d895d5b355383",
+      "size_bytes": 14742
+    },
+    {
+      "path": "benchmark/scripts/apply_pattern_repair_model.py",
+      "sha256": "ce737c789d6e6968d03640a7af96045862667f8e77cf4a9b44e21a4524be7761",
+      "size_bytes": 1952
+    },
+    {
+      "path": "benchmark/scripts/audit_drafting_counterfactual_training_corpus.py",
+      "sha256": "8d60129930a50d6e79fa8005a69da707b97c583138344364cf4af3062ca89269",
+      "size_bytes": 7543
+    },
+    {
+      "path": "benchmark/scripts/audit_gcdv2_exact_pairs.py",
+      "sha256": "744accd6f214ad2db7b5ba2e4ff2fabb0d21544fceeaef14403303f8f101086e",
+      "size_bytes": 6352
+    },
+    {
+      "path": "benchmark/scripts/audit_gcdv2_neurosymbolic_dataset.py",
+      "sha256": "13a0e2b3a7681207449e492a8c30c795f607d2b58044fa23b15f9beb5cbc8a4f",
+      "size_bytes": 4668
+    },
+    {
+      "path": "benchmark/scripts/audit_gcdv2_panel_dataset.py",
+      "sha256": "590b3353f59ea57f2510612bab71b2eab0bcc35d6cd70604eded8431761d27f2",
+      "size_bytes": 4165
+    },
+    {
+      "path": "benchmark/scripts/audit_gcdv2_semantic_landmarks.py",
+      "sha256": "47b11630e83d9fefab7777a460f2fa951db6c1f0f839bcc6c64b14ae8b5c48db",
+      "size_bytes": 2875
+    },
+    {
+      "path": "benchmark/scripts/audit_multiview_pattern_exactness.py",
+      "sha256": "44eaeb449b30c0860b03fc388671a78c0fb2970f7bff22d6a084c78f804ccc5c",
+      "size_bytes": 8509
+    },
+    {
+      "path": "benchmark/scripts/augment_tshirt_formula_targets.py",
+      "sha256": "c0dd44c4441cff10b1648492b9c1879cfab784e13c1a4162402592c3d59bf414",
+      "size_bytes": 17004
+    },
+    {
+      "path": "benchmark/scripts/build_drafting_counterfactual_pairs.py",
+      "sha256": "8528a4b89a06d7725b8f13a229466747963b58d3f492b84c8ddb05eb4f5501cd",
+      "size_bytes": 29109
+    },
+    {
+      "path": "benchmark/scripts/build_final_review_boards.py",
+      "sha256": "6a183b050b5e125b0f553318d512d1694a53dc243328cfc948ae3d304937e444",
+      "size_bytes": 3679
+    },
+    {
+      "path": "benchmark/scripts/build_freesewing_teagan_diverse_corpus.py",
+      "sha256": "db1a06294d3a6fd06a3396beaf6b2900c982ff20891c35e0acbcea78dd19f889",
+      "size_bytes": 8100
+    },
+    {
+      "path": "benchmark/scripts/build_freesewing_teagan_holdout.py",
+      "sha256": "c997999c9c6a0133d2b4ff02a1d35cacf66f7cff7bb7a9f7ec8c6b4b37005854",
+      "size_bytes": 3909
+    },
+    {
+      "path": "benchmark/scripts/build_freesewing_teagan_training_corpus.py",
+      "sha256": "17bdf214a1cff13b41eb6ba4c5d9c54f34bf9670ee781cebba42d4c103e38438",
+      "size_bytes": 2856
+    },
+    {
+      "path": "benchmark/scripts/build_garment_particles_perturbation.py",
+      "sha256": "eb13815391602fa30a475e8852c15e1c90a0efc9f614240c67ffc48c5d7cdba7",
+      "size_bytes": 594
+    },
+    {
+      "path": "benchmark/scripts/build_garmentcode_v2_canonical_subset.py",
+      "sha256": "d3e93508845dd97ea5a08b861e5595d7a598c8f3d37f298ce4303feeef21bb35",
+      "size_bytes": 4080
+    },
+    {
+      "path": "benchmark/scripts/build_garmentcode_v2_multiview_board.py",
+      "sha256": "1418536ec6ccfc0a1f244e366b13e96f67e30ed786240a714bc50b6845f8ac2d",
+      "size_bytes": 1544
+    },
+    {
+      "path": "benchmark/scripts/build_garmentcode_v2_multiview_index.py",
+      "sha256": "b4b7a1f52fb5d065c87db6cd4317daee7d6026a1f8cce5dd0a544a8bc5c04b3a",
+      "size_bytes": 4033
+    },
+    {
+      "path": "benchmark/scripts/build_garmentcode_v2_review_board.py",
+      "sha256": "2a7365ff4ebc341945cfb4ca66fcc800752164b1a5da7e3b7928f1cde1844ccf",
+      "size_bytes": 1239
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_drafting_semantics.py",
+      "sha256": "cf8df55d2facd28ccaaec0f37a75c6adb65bd17a823692a8a798ad238d30a0d3",
+      "size_bytes": 8705
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_exact_pairs.py",
+      "sha256": "d91c8ef8a7e5f51b1a9775e3dc7c43a099cc5dfc002d91b34d330dd30237d71b",
+      "size_bytes": 6997
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_intrinsic_graph_dataset.py",
+      "sha256": "03400f1c165da9b5dfb43a261ce13e9f91a82a804962a920869b62e367073aba",
+      "size_bytes": 3019
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_merged_visible_semantics.py",
+      "sha256": "2c63e31a9137981277da5a2af552ecd9d4ec3cc3e4748b2e3ee7e629513975b6",
+      "size_bytes": 2881
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_neurosymbolic_dataset.py",
+      "sha256": "217acc0ed6dafbadc82ab8f6d4f9852ae7ea283300a9448abbefa5c82487f956",
+      "size_bytes": 8869
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_panel_dataset.py",
+      "sha256": "de263d393baa830336781d758cc72a86020ef88be6cb7f264abf8aac6a110271",
+      "size_bytes": 9189
+    },
+    {
+      "path": "benchmark/scripts/build_gcdv2_pattern_dsl_dataset.py",
+      "sha256": "75da60956ebfa6a4442f0d0bc5a08dd80c240845f9ca79ccfeb3a6605b38276e",
+      "size_bytes": 4242
+    },
+    {
+      "path": "benchmark/scripts/build_github_release_zip.py",
+      "sha256": "2fba3ca5a76c14a72fbf540ec2559928a1907bee98a0ee9d15d36bf5a24e772e",
+      "size_bytes": 21589
+    },
+    {
+      "path": "benchmark/scripts/build_layered_review_board.py",
+      "sha256": "8bc78fcc597a1c6cec676e55c084937380749aae5f48311c6783b592b289c2c7",
+      "size_bytes": 2114
+    },
+    {
+      "path": "benchmark/scripts/build_mpfb_layer_bundles.py",
+      "sha256": "d9545623112a92d767ec9f6d88d0824e3856d8104a8efddc9057e1f31e6a5513",
+      "size_bytes": 1190
+    },
+    {
+      "path": "benchmark/scripts/build_portfolio_technical_report_docx.py",
+      "sha256": "94215bc17b4b7b3e51ff37ac8bc5a679636c50d88b5ba8f9cdefdcdce15a22bc",
+      "size_bytes": 84113
+    },
+    {
+      "path": "benchmark/scripts/build_retrieval_corpus.py",
+      "sha256": "38d769abd03eaee447457e069b17005475cec230ab22a07d631fc74a5b6f48f4",
+      "size_bytes": 1912
+    },
+    {
+      "path": "benchmark/scripts/build_retrieval_review_boards.py",
+      "sha256": "216a322fda6bf9d13fdb7f48f69fb587c7d52c0de2aa4acf3f86a2dff9fd9bc0",
+      "size_bytes": 1166
+    },
+    {
+      "path": "benchmark/scripts/build_retrieval_simulation_board.py",
+      "sha256": "8003090fc0a7ea73c305f6cbeca195ee29b78512b2f2f82c699afd4abe9620a6",
+      "size_bytes": 1436
+    },
+    {
+      "path": "benchmark/scripts/build_reweaver_perturbation.py",
+      "sha256": "65c4c12aad17ac680f77f190a81d0cd6b552d2750d51a23639d677df0e8fa165",
+      "size_bytes": 1200
+    },
+    {
+      "path": "benchmark/scripts/build_tshirt_construction_corpus.py",
+      "sha256": "6fa8d839d671fb8a05aaf0e8d0b39505b2ebea76715ff84f8828cd443287fab5",
+      "size_bytes": 6692
+    },
+    {
+      "path": "benchmark/scripts/build_tshirt_expert_review.py",
+      "sha256": "5ac22ac5623d1351c708a625fef877f4cf210b42ffbb8073c43fc5aca58cdb17",
+      "size_bytes": 10074
+    },
+    {
+      "path": "benchmark/scripts/build_tshirt_surface_correspondence.py",
+      "sha256": "5c5287bb50778b208b767391420aee5de022b1e35e7e2fdff978abab5a4f8850",
+      "size_bytes": 8502
+    },
+    {
+      "path": "benchmark/scripts/calibrate_blender_simulator_transfer.py",
+      "sha256": "bccb0bdf24219a1ee3cdf4493f994e4dabe47541952a77db62aa43e18414ff2e",
+      "size_bytes": 3582
+    },
+    {
+      "path": "benchmark/scripts/calibrate_gcdv2_constraint_projection.py",
+      "sha256": "3bd7fe40fc170f7b57a48c34b908a5fd8d17f666b6309b47938f2acd9e984fae",
+      "size_bytes": 7126
+    },
+    {
+      "path": "benchmark/scripts/calibrate_gcdv2_residual_damping.py",
+      "sha256": "31e63a2d670a637e81ed47e2d961f860f01e93cff97dff96242920b1f1f35ffd",
+      "size_bytes": 8301
+    },
+    {
+      "path": "benchmark/scripts/combine_tshirt_semantic_records.py",
+      "sha256": "3ce10ff069b2506c01a8bbba9fcfda0a6cfa58d917451bbec126a0aa0760fce0",
+      "size_bytes": 6489
+    },
+    {
+      "path": "benchmark/scripts/compare_garment_particles_binding.py",
+      "sha256": "3f45125fac43c1c9fe34b92153dd76363ebe72b3ff11e7f3bca383258da8e416",
+      "size_bytes": 821
+    },
+    {
+      "path": "benchmark/scripts/compare_reweaver_binding.py",
+      "sha256": "fe0e88faa7ca556e1790707c63d1f051c120089c28539765beae740fb6b9ec45",
+      "size_bytes": 746
+    },
+    {
+      "path": "benchmark/scripts/convert_garmentcode_anchor.py",
+      "sha256": "05cf40cb8858745a029fa272404a3c335e45c85bf5876c7e2cf74db9460033ec",
+      "size_bytes": 1652
+    },
+    {
+      "path": "benchmark/scripts/convert_resnet50_global_curve_features.py",
+      "sha256": "8f32c2564b46a991d7521280a54d552cc713c11b279413fc2c5f1a3affc6ca84",
+      "size_bytes": 4908
+    },
+    {
+      "path": "benchmark/scripts/evaluate_blender_character_sources.py",
+      "sha256": "aa2cda60cf5d97b773a484f6bcfc224b9c4b1f5441d20c5c726d0aad8f8ffa88",
+      "size_bytes": 5498
+    },
+    {
+      "path": "benchmark/scripts/evaluate_four_view_semantic_editing.py",
+      "sha256": "44225694ce6c566f6ff78960a1514f50804da651bc7faa404d4e442cb128893f",
+      "size_bytes": 10999
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_fourview_pattern_dsl_bridge.py",
+      "sha256": "9ddf884b169be8d7c3b9e08f9cf441140919f0167750bb9d983dfb41153fbaa3",
+      "size_bytes": 7237
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_full_predicted_pipeline.py",
+      "sha256": "47f1da24c6215019a0fb331beb97dbc97a6f2a8f3ec282610d904c9dcf1c27d8",
+      "size_bytes": 10839
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_garment_panel_set.py",
+      "sha256": "4d87c73530d4334214c7fcba15086b60eb30eaf1d6f9ed21979cb6140cef061f",
+      "size_bytes": 2661
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_intrinsic_graph.py",
+      "sha256": "21be258e800bb3609e6616247344dd1f095d0509b7f651758ffa04dc6ac557ee",
+      "size_bytes": 2627
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_pattern_dsl_symbolic.py",
+      "sha256": "3914508ac82ad2ea840d68f6c89897a87a04a97413d11270754cf18f98740aad",
+      "size_bytes": 8679
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_raw_fpn_vs_dsl_retrieval.py",
+      "sha256": "b5dc364289c65c7b51f79d8cd24d3dcd5c859b38dcd2a8744b6ead6e5c411f1b",
+      "size_bytes": 15955
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_symbolic_candidate_beam.py",
+      "sha256": "402bfd5c1d258698dbfe198a89ba8ca2d97e11904dfb7c369b14601013932dc2",
+      "size_bytes": 20191
+    },
+    {
+      "path": "benchmark/scripts/evaluate_gcdv2_visual_dsl_symbolic_anchors.py",
+      "sha256": "669635e409395d4cd2fa5ac4d8a3d91cad19682c72c8c585d5135540de350153",
+      "size_bytes": 9619
+    },
+    {
+      "path": "benchmark/scripts/evaluate_multiview_curve_parameters.py",
+      "sha256": "34974e7486547055c4a6742e9936872b59e4a958ca0435572c023b269af96def",
+      "size_bytes": 29846
+    },
+    {
+      "path": "benchmark/scripts/evaluate_pattern_repair_on_canonical_pool.py",
+      "sha256": "06ea96f10e19eaf149eff55394a0066c7c2ef383a8d2d489d32290d4d1e7a66b",
+      "size_bytes": 4014
+    },
+    {
+      "path": "benchmark/scripts/evaluate_retrieval_baseline.py",
+      "sha256": "ef7a352b78b1fd93a9c6d4a4cef13121a438ada36e3c404087f488b98469120c",
+      "size_bytes": 2746
+    },
+    {
+      "path": "benchmark/scripts/evaluate_reweaver_official.py",
+      "sha256": "300a533c69d365f602e6d6dda53b9b06a11aee92e772c7444894b3089d77f02f",
+      "size_bytes": 2077
+    },
+    {
+      "path": "benchmark/scripts/evaluate_tshirt_parametric_decoder.py",
+      "sha256": "3029374bd6353e312e5df20ed6bd3f98c349495bc50d5f721c4ce9db56722a49",
+      "size_bytes": 24784
+    },
+    {
+      "path": "benchmark/scripts/export_pattern_dsl_svg.py",
+      "sha256": "0211817d5133d7e45db51745e2b0f2566edca487eacaa4f9e3bbbca975e1761a",
+      "size_bytes": 3263
+    },
+    {
+      "path": "benchmark/scripts/extract_freesewing_teagan.mjs",
+      "sha256": "9a743ed671ffac254dd9c6fd0abfe5ac92e2c2814030cbb9448c33385b9fa24e",
+      "size_bytes": 17511
+    },
+    {
+      "path": "benchmark/scripts/extract_gcdv2_exact_multiview_fpn_features.py",
+      "sha256": "21f60b8f7ac04dfbb72308da53e12510329572426259518957927200b52ec2e9",
+      "size_bytes": 5560
+    },
+    {
+      "path": "benchmark/scripts/extract_gcdv2_pattern_fpn_features.py",
+      "sha256": "85133e52782ccfa9a3201c83453670660d0354e8891688ae3312727bf011c6c4",
+      "size_bytes": 5545
+    },
+    {
+      "path": "benchmark/scripts/extract_gcdv2_predicted_contours.py",
+      "sha256": "3639382bec9b9daef8d997a1ee49d89942317b63a627ac636b3832899dfb0f75",
+      "size_bytes": 4383
+    },
+    {
+      "path": "benchmark/scripts/extract_multiview_resnet50_features.py",
+      "sha256": "6c9c238cc303118ae0b964acb521641cfb9eab0e6f87a21d77476a29c4ee3c50",
+      "size_bytes": 4579
+    },
+    {
+      "path": "benchmark/scripts/extract_multiview_resnet50_fpn_features.py",
+      "sha256": "4ac03a60ce2d80faf42311f236b1ba18edb401b7fde4706ac621998927b4597e",
+      "size_bytes": 5345
+    },
+    {
+      "path": "benchmark/scripts/generate_basic_block_corpus.py",
+      "sha256": "2aeb429a631a922c597bded2bda07edcc8acf154448ec995bbdc83aa468b78f9",
+      "size_bytes": 5715
+    },
+    {
+      "path": "benchmark/scripts/generate_blender_studio_sample.py",
+      "sha256": "de70496e33848053b976e1fce6c8d587b14b190f5697b00263d6024c0c25187e",
+      "size_bytes": 2525
+    },
+    {
+      "path": "benchmark/scripts/generate_garmentcode_anchor_bank.py",
+      "sha256": "66a1fc5fecdbced69e9f291182f8ca8dc555d9d0e3c7db6ad07671d9f572b3b9",
+      "size_bytes": 4871
+    },
+    {
+      "path": "benchmark/scripts/generate_mpfb_samples.py",
+      "sha256": "daed22fe308075d890aea4f826751c8ef2a12a056cfc7b255a2a2f5ed29f9604",
+      "size_bytes": 2407
+    },
+    {
+      "path": "benchmark/scripts/grade_pattern_to_body.py",
+      "sha256": "b82f89570834da8c88d335ff3fb63503d773b6c282712c27a03069299d41c24a",
+      "size_bytes": 1858
+    },
+    {
+      "path": "benchmark/scripts/infer_basic_pattern_from_four_view_features.py",
+      "sha256": "3555e2d5b2be33fac0de24532c48d4ffb7c05488f73d8608075dc39b4e63cb81",
+      "size_bytes": 4546
+    },
+    {
+      "path": "benchmark/scripts/inspect_garmentcode_v2_batch.py",
+      "sha256": "69d790a11da1cc34c385480ac212bffe7a9fb1abb1523ec38ff2bf393527a60e",
+      "size_bytes": 13396
+    },
+    {
+      "path": "benchmark/scripts/inspect_synbody.py",
+      "sha256": "f6254a0eef6bdd72f3ad60fa411e17f302b1539220e6c5571f351527879e737c",
+      "size_bytes": 1720
+    },
+    {
+      "path": "benchmark/scripts/measure_blender_body.py",
+      "sha256": "f6eebdea8d0597a7ada8a1ea9433b222d4f787e33f9e374e103c3cfcc0b4400b",
+      "size_bytes": 1043
+    },
+    {
+      "path": "benchmark/scripts/predict_drafting_semantics.py",
+      "sha256": "1df962b71888d78d0c533f222bea24058733f82f76e809366f04849fbdcc0685",
+      "size_bytes": 5225
+    },
+    {
+      "path": "benchmark/scripts/preprocess_synbody.py",
+      "sha256": "f9c289bbc3487ca83e2bd1a06d47010941202695e678e4965149731e812b5424",
+      "size_bytes": 5623
+    },
+    {
+      "path": "benchmark/scripts/refine_garment_particles.py",
+      "sha256": "11ef5d34f65b8ed362c5740f2b12a0fe92d0ce2f4d65eaec57b9c5438ad74316",
+      "size_bytes": 3781
+    },
+    {
+      "path": "benchmark/scripts/register_garment_particles_run.py",
+      "sha256": "900ebbc7457b711c4c1955ef5f94eb53ad64ed6612d365647e9ca0d41bc30ac7",
+      "size_bytes": 6351
+    },
+    {
+      "path": "benchmark/scripts/register_reweaver_run.py",
+      "sha256": "3ef410b1548e8a69beb9d73a9219247dc84907497a38676fcf5763e9b9e15436",
+      "size_bytes": 5861
+    },
+    {
+      "path": "benchmark/scripts/render_basic_block_review_board.py",
+      "sha256": "29842fe0160b56fca1723de69692a56e03403181d33b7901cab33b79a9689809",
+      "size_bytes": 4496
+    },
+    {
+      "path": "benchmark/scripts/render_freesewing_teagan_prediction_board.py",
+      "sha256": "3dbfa1e07fb644253e8b7d35d2ae209456cca2627878657e0487561b48c1bdf0",
+      "size_bytes": 6417
+    },
+    {
+      "path": "benchmark/scripts/render_garmentcode_multiview.py",
+      "sha256": "66ab29c906e08abed886459ebc26b3f83d8cd2046c6216691b1c32c89356aa34",
+      "size_bytes": 3180
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_crossmodal_retrieval_review.py",
+      "sha256": "63e601d51e4d051c6ddd0b6309b64e1ae6995ab1cb7af4254630986477b5db83",
+      "size_bytes": 18020
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_end_to_end_semantics.py",
+      "sha256": "1172dc03f095814552ceef84e459c373cbac6064dd23d9bd16899220cc9240e0",
+      "size_bytes": 5213
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_exact_review.py",
+      "sha256": "71c5fb9ce4051b1bdb4af7f82487e623d01d275ce868faae96a37f9dec88e960",
+      "size_bytes": 6594
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_garment_panel_set_review.py",
+      "sha256": "eea5ee4bcfee90d61b91599f3707a6e32d7ee12ad9f2214774542f0e32f0048f",
+      "size_bytes": 7308
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_intrinsic_graph_predictions.py",
+      "sha256": "c4a8cf69c2aeb0fb3619e709df68bb9bb22b68d4618aed9f5ac5c6bdf5b17373",
+      "size_bytes": 5266
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_model_review.py",
+      "sha256": "001fd2f78a39b39aaf362208d899cf1363456f53c4dfadee22826c396b1bf5c1",
+      "size_bytes": 24306
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_neurosymbolic_review.py",
+      "sha256": "c2f9605b4e0f841b66404cca75ef60fb4d01d009a0b1c55d7bb90003205271ce",
+      "size_bytes": 6375
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_panel_review.py",
+      "sha256": "7f9037acf1742c2a3ded707ab199fe75fe7717976d93b6561e500a612a06daba",
+      "size_bytes": 6657
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_pattern_dsl_review.py",
+      "sha256": "1c9b69f756f86b3792b2864ea2c66ea233292e56a7bddbd3e0555f1e97da0879",
+      "size_bytes": 37790
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_pattern_parser_review.py",
+      "sha256": "3b65ca83365459732837a482a02464fcaa6dc0ce417597fddd6ab0ae89879421",
+      "size_bytes": 37236
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_semantic_landmark_predictions.py",
+      "sha256": "e9fd181afa82657318017ed9cf46fb84da9e2d88aab71b2f592f9c5141433e21",
+      "size_bytes": 4072
+    },
+    {
+      "path": "benchmark/scripts/render_gcdv2_visual_geometry_predictions.py",
+      "sha256": "92259ba98279f723c8f1bb937ed739422ffeab4c5faaf3833d2b8185c1413392",
+      "size_bytes": 2890
+    },
+    {
+      "path": "benchmark/scripts/render_multigarment_prediction_board.py",
+      "sha256": "05d6f15c11a3a856401fdee66bb55c11d8e5453c276cf2c221552576a51dea9f",
+      "size_bytes": 8338
+    },
+    {
+      "path": "benchmark/scripts/render_multiview_element_geometry_board.py",
+      "sha256": "3d5b25a4be4e832f5791f31c617f986b5c01642b2a314df7bbed743a43718537",
+      "size_bytes": 15512
+    },
+    {
+      "path": "benchmark/scripts/render_multiview_pattern_prediction_board.py",
+      "sha256": "54fbdceb26ee209a7a17e7addc102d14f4d5efad6613767aa27455c448cd38cd",
+      "size_bytes": 7104
+    },
+    {
+      "path": "benchmark/scripts/render_tshirt_parametric_decoder_board.py",
+      "sha256": "29b9c169c6fb3ac4000f7be37259b2cac6d50bdce23d72a045f7c4d496939365",
+      "size_bytes": 11571
+    },
+    {
+      "path": "benchmark/scripts/render_tshirt_surface_correspondence_qa.py",
+      "sha256": "932bfc3cf030a1cfbb55570a468e44a0c5678ad6e97afc966b2e4870cceb1078",
+      "size_bytes": 31605
+    },
+    {
+      "path": "benchmark/scripts/retrieve_pattern_anchor.py",
+      "sha256": "5af8abf599b2e12abe38c4bf6ce37840a0b8709c796e817228cd38f9ae4629ab",
+      "size_bytes": 7462
+    },
+    {
+      "path": "benchmark/scripts/run_blender_sewing_simulation.py",
+      "sha256": "1c0d5afaf5609dfcf7cef59b57a415c6f8870bd17cecfc740dfd63b89593756f",
+      "size_bytes": 5038
+    },
+    {
+      "path": "benchmark/scripts/run_garment_particles.py",
+      "sha256": "fa8b9c57398965663fa9650dee67348473576f953866a5d53a2e8ded90506cd8",
+      "size_bytes": 13762
+    },
+    {
+      "path": "benchmark/scripts/run_garment_particles_pattern_pipeline.py",
+      "sha256": "a2eab3d7b19538a11c10e68762158053842b264798f4b245b910f48f5c529981",
+      "size_bytes": 821
+    },
+    {
+      "path": "benchmark/scripts/run_layered_generative_pipeline.py",
+      "sha256": "df63a243bb709b5aeacb81de7d20c82ec9d02fe9554313e75cbf1018782fd668",
+      "size_bytes": 6405
+    },
+    {
+      "path": "benchmark/scripts/run_pattern_pipeline.py",
+      "sha256": "7cf03f2a9032a7e6e1625ae1a7687ced0ba7b1f9678eaa8e1e5bb60a5d9c5fc8",
+      "size_bytes": 785
+    },
+    {
+      "path": "benchmark/scripts/run_reweaver.py",
+      "sha256": "da1648afda9a0cccf7db9d8cfbf9f8ef23ec506ab9aa2c846f49ed2147bc020d",
+      "size_bytes": 7855
+    },
+    {
+      "path": "benchmark/scripts/summarize_simulation_rerank.py",
+      "sha256": "940983c562caa304092c3be9550ccbc61d3d7ecde3354ff8f51e8d08e1727f7e",
+      "size_bytes": 1963
+    },
+    {
+      "path": "benchmark/scripts/train_basic_semantic_teacher_student.py",
+      "sha256": "c891221f7d9a7ad8393313f96efbc1637abc2188f6ec21d24ebaf61d817d9b6c",
+      "size_bytes": 86988
+    },
+    {
+      "path": "benchmark/scripts/train_drafting_semantic_model.py",
+      "sha256": "fedada32dccd2e4155a0e839fba861b964822c2b858095b328f7da53cec7e73e",
+      "size_bytes": 10837
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_crossmodal_retrieval.py",
+      "sha256": "0007fb8b6a6c76b6f65ef9df16dac1caa63efa57930c564209fa8ee309a9d20d",
+      "size_bytes": 15496
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_garment_panel_set.py",
+      "sha256": "f42a731a8ce42ced0caf5f8d67f02ae0dfab94adf4a858da7b6eaf721baa56cb",
+      "size_bytes": 18159
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_intrinsic_graph.py",
+      "sha256": "89edc183f4d5b4cf623cde3958ce269edfda2f3d117d34a403accf7df12e3b75",
+      "size_bytes": 16008
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_merged_visible_semantics.py",
+      "sha256": "ef6a4cdd4c45f59d543521c9edde4402ec747f15bbd5b6ca67fef69ea1c12d87",
+      "size_bytes": 8547
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_pattern_dsl_transformer.py",
+      "sha256": "bd58b3c84030c6324812bb17ad7bfa409036d7293a8bcc0993a153078e1d91a3",
+      "size_bytes": 20037
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_pattern_parser.py",
+      "sha256": "41f4b387177a82c1337cb94db5801861711b114edf00bfb314ae4b47e583bb54",
+      "size_bytes": 23851
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_reference_lines.py",
+      "sha256": "472dafd5050d608f3da6a7365ee6f9949edfa1e208cabbccddde9cde1b03d458",
+      "size_bytes": 4760
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_retrieved_residual.py",
+      "sha256": "1bc3b2ac98664f0e9f3af276a4ffe27eefe38419c37b9a5f4762fa3cedceb201",
+      "size_bytes": 24071
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_visual_dsl_retrieval.py",
+      "sha256": "662f412ad64446dec0737563987f711d841f5b4014610191d837b6cd4aa51823",
+      "size_bytes": 16010
+    },
+    {
+      "path": "benchmark/scripts/train_gcdv2_visual_geometry.py",
+      "sha256": "276423138209bbfeb2da7329de480c0c18490043e9046190967fa012b99454ad",
+      "size_bytes": 5895
+    },
+    {
+      "path": "benchmark/scripts/train_multigarment_semantics.py",
+      "sha256": "b3134fb0a5ebdd556341948bd8c568ab98b5279527bfd5de0b54be5f865a9e4b",
+      "size_bytes": 17593
+    },
+    {
+      "path": "benchmark/scripts/train_multiview_curve_parameters.py",
+      "sha256": "7d79d6a15478b357e9538952e52783076dc25e7717826e82262fbe54fefdf08d",
+      "size_bytes": 17892
+    },
+    {
+      "path": "benchmark/scripts/train_multiview_element_geometry.py",
+      "sha256": "d78d7e9a91aeb14660207e9ed3ac266012cfaba402e49e18f1f29cfcbd8ef10e",
+      "size_bytes": 18511
+    },
+    {
+      "path": "benchmark/scripts/train_multiview_pattern_semantics.py",
+      "sha256": "063e1b7d9708b2298d72fe6bc1be06e4282bef4c2a0538d744ade62757515591",
+      "size_bytes": 12973
+    },
+    {
+      "path": "benchmark/scripts/train_pattern_repair_model.py",
+      "sha256": "2d58ab5fb9761bf124e265fe9b4c091efff88ea98628e5e096021777d31ed13f",
+      "size_bytes": 8730
+    },
+    {
+      "path": "benchmark/scripts/train_tshirt_semantics.py",
+      "sha256": "85102f7917be92955417ff33a3b4b7f18d7d9e894dcc90f568a796281a71dfb3",
+      "size_bytes": 24046
+    },
+    {
+      "path": "benchmark/scripts/train_tshirt_visual_correspondence.py",
+      "sha256": "c1aded1eae7b3451b8e13200905f4cc9ee94bf9c88442db17f8a5be55275d05a",
+      "size_bytes": 22684
+    },
+    {
+      "path": "benchmark/scripts/validate_drafting_counterfactual_renders.py",
+      "sha256": "10220ef9d840daa6c52ae40054f95ca396b882c87903d3e61ca78b7504cd910b",
+      "size_bytes": 2900
+    },
+    {
+      "path": "benchmark/scripts/validate_final_acceptance.py",
+      "sha256": "c0b9bdc3222fec4ba4c6f6cde5e83e622aefe5107b35b0052909fcbc9f626825",
+      "size_bytes": 3619
+    },
+    {
+      "path": "benchmark/scripts/visualize_garment_particles.py",
+      "sha256": "0114d1cfabcad9f3201f631b4500d0a81ee4eff5fe67e9ee418bea4aa8b8983c",
+      "size_bytes": 1461
+    },
+    {
+      "path": "benchmark/scripts/visualize_pattern_repair.py",
+      "sha256": "bae4e4ce51d1aa8acc513dd4860457558d932976fe4966ffc99a15b8faa3e545",
+      "size_bytes": 3387
+    },
+    {
+      "path": "benchmark/scripts/visualize_reweaver.py",
+      "sha256": "4aa37cd5d8ff96b727bdb1a41ccb3b4ebf738083d56defdeb71424abf3e397f8",
+      "size_bytes": 1972
+    },
+    {
+      "path": "benchmark/scripts/visualize_reweaver_official_comparison.py",
+      "sha256": "67b7cfee0be33abb5ccf7595d0bafe6a64f887e5c20eae6de7b6493c24226bab",
+      "size_bytes": 7273
+    },
+    {
+      "path": "benchmark/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "benchmark/tests/test_basic_blocks.py",
+      "sha256": "fe8676627bf2a55e3f745fb032d092395c5fecd71870ea85fa1f9eb351114e19",
+      "size_bytes": 12165
+    },
+    {
+      "path": "benchmark/tests/test_basic_semantic_targets.py",
+      "sha256": "e026c13fcf62c703398b4d5db76f34fba79617ebe448d4ed1fcab15498e85384",
+      "size_bytes": 15879
+    },
+    {
+      "path": "benchmark/tests/test_basic_semantic_training.py",
+      "sha256": "f40da4d72de215cbee63f0e9db14619b63d517ee396dd84f0d86f07c906d1b93",
+      "size_bytes": 20111
+    },
+    {
+      "path": "benchmark/tests/test_blender_character_pipeline.py",
+      "sha256": "52d5d439a3f7ff16d0dabed978d54b1d685f0154a2fd20487efcb322179eff43",
+      "size_bytes": 3506
+    },
+    {
+      "path": "benchmark/tests/test_counterfactual_pairs.py",
+      "sha256": "dbca70e59b21d6ace1a0811f057b72514ce031b6b0cb611cc428bd89dfbd3c83",
+      "size_bytes": 11116
+    },
+    {
+      "path": "benchmark/tests/test_drafting_formula_targets.py",
+      "sha256": "2dc5c794d16db5394ea9aab55e9febec1811f6ba1cdf266a8385af2ee6a47f81",
+      "size_bytes": 8014
+    },
+    {
+      "path": "benchmark/tests/test_drafting_semantics.py",
+      "sha256": "112479f1a94bfcba8a1bcdad391375877bd7ffafcfeadda602fffa8ed7a3428b",
+      "size_bytes": 16560
+    },
+    {
+      "path": "benchmark/tests/test_formula_target_migration.py",
+      "sha256": "ece5c03b31273210cddc20cae056a52ee02d4fd0996823169c56976099e00c48",
+      "size_bytes": 6767
+    },
+    {
+      "path": "benchmark/tests/test_four_view_semantic_inference.py",
+      "sha256": "32e1ad8937cf803ac92648a572b6307182250f820284d187af1f624e21ebe36c",
+      "size_bytes": 22116
+    },
+    {
+      "path": "benchmark/tests/test_fourview_dsl_bridge.py",
+      "sha256": "30c8167ebbf56d8fda8b6bc21856ea9e23d769120133eca6c49b37223f9758ec",
+      "size_bytes": 5866
+    },
+    {
+      "path": "benchmark/tests/test_freesewing_split.py",
+      "sha256": "ce2b38b6ca02c368c1113f0e8be8a4454ffdee36de1edd38bf7e76d92dc6faf9",
+      "size_bytes": 3143
+    },
+    {
+      "path": "benchmark/tests/test_garment_particles_adapter.py",
+      "sha256": "acf7d076badc8427e3931e7e03de128881f0a6625b36eff2dd099550a70d26bf",
+      "size_bytes": 4243
+    },
+    {
+      "path": "benchmark/tests/test_garmentcode_v2_inspection.py",
+      "sha256": "0d06a3ebb66f88a0b0e9f3127fd2af3ec5d4168606de892cee5cadad713a4ee9",
+      "size_bytes": 4267
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_exact_geometry.py",
+      "sha256": "629e8b56ac95c1396732eab54e8585173391b6de096e35f962d5f7928a9fb611",
+      "size_bytes": 1441
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_exact_panel_dataset.py",
+      "sha256": "40a1792a0531ecbe0bf5bdce4299b160f250b9ed1f2cd8dcaa02f97bc6cbab16",
+      "size_bytes": 3380
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_exact_pattern_learning.py",
+      "sha256": "ce58fe3bce708aaa22457dc627299487039b41a44fc5697b493c3f50c06b4de9",
+      "size_bytes": 5724
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_exact_retrieval.py",
+      "sha256": "6afdafd73d6bb538d8f455abb43975f4858f57b141a4a5f2730086b7389a830b",
+      "size_bytes": 7083
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_exact_retrieval_review.py",
+      "sha256": "f87d7af3612994005213081d856dc0e36cb722ab2ef83f807140d305a0b44092",
+      "size_bytes": 2345
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_garment_panel_set_learning.py",
+      "sha256": "e66b3c60fa9de6ed42ac8e2e9cbb84ce2ac734ddf66670bc605a39c2599ddf89",
+      "size_bytes": 3152
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_neurosymbolic_dataset.py",
+      "sha256": "56d3e87020a8fc804cc11177c5b339e24deddd6f86af6e5d8feea6dbfe0af712",
+      "size_bytes": 2092
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_neurosymbolic_learning.py",
+      "sha256": "988832e3ed95f9ec805f10cd83b641b6bdbb13f2ce5f67586ce4f42b232f4132",
+      "size_bytes": 935
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_retrieved_residual.py",
+      "sha256": "a7eab9f75a1f9a61b72007c8db510ada8d2f2bc184c59c9320832393347bad1b",
+      "size_bytes": 7872
+    },
+    {
+      "path": "benchmark/tests/test_gcdv2_surface_correspondence.py",
+      "sha256": "4e32ba19c6fbd63a221c460edfffd2aa1326c8b94f4f3a151afd67c3b8d372f6",
+      "size_bytes": 8582
+    },
+    {
+      "path": "benchmark/tests/test_generation_contract.py",
+      "sha256": "93e6e08ff849c01cbd77ed039b404b7b7fb950559ea306f6fb8c897bea5fa5c6",
+      "size_bytes": 1435
+    },
+    {
+      "path": "benchmark/tests/test_global_curve_feature_ablation.py",
+      "sha256": "c02d79f642a74df0e430ff311ded372c24709b353abdd49007f29f9ab4359450",
+      "size_bytes": 4521
+    },
+    {
+      "path": "benchmark/tests/test_harness.py",
+      "sha256": "e738c48b3b87010d1ce3ef549ecd72a5d6a4f7548c628f26d4fc23f89e755ea2",
+      "size_bytes": 4476
+    },
+    {
+      "path": "benchmark/tests/test_intrinsic_graph_learning.py",
+      "sha256": "2d170ad5023265843da4dde286ec91cca992b5ab59d409aaaa622d399146dc4c",
+      "size_bytes": 1489
+    },
+    {
+      "path": "benchmark/tests/test_lower_body_semantics.py",
+      "sha256": "d3eb7cd3f3e23fd59b79aa47c081a1ffc332b4e1b59707428fe4bf8a16d12e59",
+      "size_bytes": 14563
+    },
+    {
+      "path": "benchmark/tests/test_merged_visible_learning.py",
+      "sha256": "d0d2d0b5a41b05d7be4bb46a9218fc5e4af600986329768e86734c25c4fb7047",
+      "size_bytes": 1052
+    },
+    {
+      "path": "benchmark/tests/test_multigarment_learning.py",
+      "sha256": "dae93cf3683895a292a077c69e579d7ef0e9ed1eb254eb247c471e31c42e21b5",
+      "size_bytes": 3254
+    },
+    {
+      "path": "benchmark/tests/test_multiview_curve_evaluation.py",
+      "sha256": "dd4f5945d1089f1cab81569d330d95ea202a3c2a8b6c9cefade8fa38a44fa281",
+      "size_bytes": 5754
+    },
+    {
+      "path": "benchmark/tests/test_multiview_curve_parameters.py",
+      "sha256": "a6a29b4a13b41a68e865675ece8e1a3e35dfbd21693c9a8ea2ebeb25e82a35db",
+      "size_bytes": 8974
+    },
+    {
+      "path": "benchmark/tests/test_multiview_element_geometry.py",
+      "sha256": "f6cbb8f67a28fdd2c83075c264a527fa465a96af213fcc1c123b12d5313f73c2",
+      "size_bytes": 4877
+    },
+    {
+      "path": "benchmark/tests/test_multiview_pattern_semantics.py",
+      "sha256": "cc1137f2ad467b879e3718363bce3613adf7d691aa0cc2512b5b13571a77d872",
+      "size_bytes": 2283
+    },
+    {
+      "path": "benchmark/tests/test_pattern_dsl.py",
+      "sha256": "30bae4a01ec945ccabd979fa1c10da8bc1f60fb076f7c5d8a36cad37d937b3f9",
+      "size_bytes": 10488
+    },
+    {
+      "path": "benchmark/tests/test_pattern_dsl_learning.py",
+      "sha256": "6b0d00a8461fceedfc2232994f7c3e295336e96cbd55ab22f466d001861dff08",
+      "size_bytes": 10163
+    },
+    {
+      "path": "benchmark/tests/test_pattern_dsl_review.py",
+      "sha256": "0bb31d746f06ae9e87aeecdc80ee021e120b9113bfc98dfc6cf764e5f35adfbc",
+      "size_bytes": 11622
+    },
+    {
+      "path": "benchmark/tests/test_pattern_dsl_solver.py",
+      "sha256": "22a1ebe1e4829bc5651bbef243bc1e71fd295f4a2c3a80e60004ce9e3ca0e781",
+      "size_bytes": 6937
+    },
+    {
+      "path": "benchmark/tests/test_pattern_dsl_svg.py",
+      "sha256": "601c6966f2ed369cb9d3db3dd31968438b0750738392cd6f1c0420f63ee986be",
+      "size_bytes": 8779
+    },
+    {
+      "path": "benchmark/tests/test_pattern_dsl_training.py",
+      "sha256": "4fd543b9ceeed18181e11a405e8b9a6a1fd5757b4c6739b24bc533d4154c92df",
+      "size_bytes": 7234
+    },
+    {
+      "path": "benchmark/tests/test_pattern_grading.py",
+      "sha256": "8c7f702b8e012dfd7c93ca63f3efc739ad9e2509b69d6e8fa194cfaf6a8b36fe",
+      "size_bytes": 1647
+    },
+    {
+      "path": "benchmark/tests/test_pattern_pipeline.py",
+      "sha256": "209284a408523c20f7f7a6c31944ccd030ef4063487ca6599bb67b1505fd91d6",
+      "size_bytes": 8531
+    },
+    {
+      "path": "benchmark/tests/test_pattern_repair_model.py",
+      "sha256": "c4322135f686c01d799872b040fd3a61c4c236b0b6f531e4336c5abe69364750",
+      "size_bytes": 3653
+    },
+    {
+      "path": "benchmark/tests/test_pattern_visual_effects.py",
+      "sha256": "aff7c2e0db1a9cececd793d78eb0b5f5bf9a4fd279f6ab3a535151cba4a10d1c",
+      "size_bytes": 21689
+    },
+    {
+      "path": "benchmark/tests/test_predicted_contours.py",
+      "sha256": "0e78238a2f658e0943dc2a9bb2437222c5b35f3e22561c53cc9a71d7cad99a5e",
+      "size_bytes": 642
+    },
+    {
+      "path": "benchmark/tests/test_preprocessing.py",
+      "sha256": "dcb7922b20d08a894d9b3f2230ce99e526fbc7ff5e9ce3d581228e4a4401b527",
+      "size_bytes": 975
+    },
+    {
+      "path": "benchmark/tests/test_raw_fpn_vs_dsl_retrieval.py",
+      "sha256": "6194c21b5e9f67a7876e7b72f8a3c3d86e21c4a95dd418af0104f2bd681f1b32",
+      "size_bytes": 3723
+    },
+    {
+      "path": "benchmark/tests/test_reference_line_learning.py",
+      "sha256": "2c1886fa867a67f8150b9088d3b1dd8fadd0e8c74a4358f05a866e7dd9083aac",
+      "size_bytes": 486
+    },
+    {
+      "path": "benchmark/tests/test_retrieval.py",
+      "sha256": "0dfaab19691add68d92eb55bc4da1dc363b4a275a894a1994a755844fbb1b4b3",
+      "size_bytes": 9402
+    },
+    {
+      "path": "benchmark/tests/test_reweaver_adapter.py",
+      "sha256": "f9d187619bcdb778eeda8d9505e8b84401bbd222bd2ab8bd7e46adb4903f1868",
+      "size_bytes": 3686
+    },
+    {
+      "path": "benchmark/tests/test_semantic_editing.py",
+      "sha256": "af2fb7d91e5da7043ff7e90ca9d09b32a043ef9cf072b717f2ece728694e65fb",
+      "size_bytes": 8616
+    },
+    {
+      "path": "benchmark/tests/test_semantic_paths.py",
+      "sha256": "133a177983519c5d9e472519d0eea317062ec6bb0204f068d57785d62a105989",
+      "size_bytes": 2589
+    },
+    {
+      "path": "benchmark/tests/test_semantic_residual_planning.py",
+      "sha256": "9a0fff26577f46be3bacfc9897133b62996a2650f9f6335cc816b572cfd0650b",
+      "size_bytes": 15559
+    },
+    {
+      "path": "benchmark/tests/test_semantic_teacher_student.py",
+      "sha256": "4770b636b135eb60d1139f2d28a9c79367aff93242109d0067d635ebfc0e755d",
+      "size_bytes": 9943
+    },
+    {
+      "path": "benchmark/tests/test_symbolic_candidate_beam.py",
+      "sha256": "1cdf8ca5a05e8de50287cdb3b2db3486b0669d7c1496c6f1b90b7be0bf1d419c",
+      "size_bytes": 4168
+    },
+    {
+      "path": "benchmark/tests/test_synbody_adapter.py",
+      "sha256": "500f80a2220776df61926d92f585460aecae341e2d359903419fa7a1399f51d3",
+      "size_bytes": 1000
+    },
+    {
+      "path": "benchmark/tests/test_tshirt_causal_proof_config.py",
+      "sha256": "af3c6f3588be1c47e371ce57a805f6f13dd5785a8261c83e6ca97abf8206c67f",
+      "size_bytes": 4274
+    },
+    {
+      "path": "benchmark/tests/test_tshirt_learning.py",
+      "sha256": "884279999d7ec212df3bb3a452852d7f1b1c6ecadcef1dc3042ab0f811e206e6",
+      "size_bytes": 20101
+    },
+    {
+      "path": "benchmark/tests/test_tshirt_parametric_decoder.py",
+      "sha256": "98c55437d4a652fd67358aa68f8858b92c4dccbad4b6b2139808d64035f4c9c7",
+      "size_bytes": 7230
+    },
+    {
+      "path": "benchmark/tests/test_tshirt_parametric_projection.py",
+      "sha256": "1163c4d744f882c40d4eea18943688be3d74e5206024f08dd42061874c9c3ef9",
+      "size_bytes": 6526
+    },
+    {
+      "path": "benchmark/tests/test_tshirt_trace_pipeline.py",
+      "sha256": "89fad7c957b58d04263e2d85a21e5b4f17b7a963f8e46d31aa06723f3b26fffa",
+      "size_bytes": 33971
+    },
+    {
+      "path": "benchmark/tests/test_visual_dsl_retrieval.py",
+      "sha256": "7345ad0a9fca5a4a7b420623f382046bcf55b5280da0a2e1d539bdfc6a6ca3d0",
+      "size_bytes": 3479
+    },
+    {
+      "path": "benchmark/visualization/__init__.py",
+      "sha256": "d8abe92f008a357de5c40cf81b48c9417e0c04219164307f8aa3e6329c905d49",
+      "size_bytes": 41
+    },
+    {
+      "path": "benchmark/visualization/contact_sheet.py",
+      "sha256": "629896ec3b3ad1584db27b4af05f17b83c3e6487772ba07da92772684aeba791",
+      "size_bytes": 1127
+    },
+    {
+      "path": "benchmark/visualization/garment_particles_render.py",
+      "sha256": "82c6f5f2e4b07cb0868b3a3f0681cd41570ccf767fc58b2ad191252f852f21b0",
+      "size_bytes": 4258
+    },
+    {
+      "path": "benchmark/visualization/geometry_render.py",
+      "sha256": "48a87a18b5a36812766e1c3ff5f28e1f600919790005605aad36fde9880e9d46",
+      "size_bytes": 2226
+    },
+    {
+      "path": "benchmark/visualization/pattern_render.py",
+      "sha256": "cdf4ad9b7f7ceea643d4800a86aef4498b4e894a6db0d8231e8f28ae193231cb",
+      "size_bytes": 1963
+    },
+    {
+      "path": "data/manifests/basic_common_pattern_blocks.json",
+      "sha256": "44216dc47aa76ddf9d17f391a1a4c49dc1a4bd3a3592f58af6961c7818d2b5ca",
+      "size_bytes": 2121
+    },
+    {
+      "path": "data/manifests/basic_common_pattern_blocks_v3.json",
+      "sha256": "d9ae4b6de6e442ba231eb03a64877d94d371ca13c5c70d15d6d51886042b673e",
+      "size_bytes": 2272
+    },
+    {
+      "path": "data/manifests/basic_semantic_teacher_student_v2.json",
+      "sha256": "dd0718e91a69b660ed1119e1f34007c8b9d83d6081f04826f066abac54d85622",
+      "size_bytes": 17283
+    },
+    {
+      "path": "data/manifests/basic_semantic_teacher_student_v3.json",
+      "sha256": "c32b7aecea7815d59300025ceff52a607b010270a5f0ba83d9147134062ec3f9",
+      "size_bytes": 17673
+    },
+    {
+      "path": "data/manifests/garmentcode_anchor_bank.json",
+      "sha256": "a72b06f84722de4c118c536ec6224a2ce51cc3ba59a0a1f1a74ffc1311f826ef",
+      "size_bytes": 2196
+    },
+    {
+      "path": "data/manifests/garmentcode_v2_batch_0.json",
+      "sha256": "987517aba46b4f09d45608d05730ff7bdec2bd2ae313e0b1680460e09f071047",
+      "size_bytes": 1517
+    },
+    {
+      "path": "data/manifests/garmentcode_v2_batch_0_canonical_subset.json",
+      "sha256": "9d24f01d841f5b803c77c3a838f7e3bd0e864a24e54b17969b20b24d709ade50",
+      "size_bytes": 33219
+    },
+    {
+      "path": "data/manifests/garmentcode_v2_batch_0_full_canonical.json",
+      "sha256": "100bbf6ea22700435b94d8ad7134b485d8c866c5b613777b9bac4fbe71459f94",
+      "size_bytes": 889655
+    },
+    {
+      "path": "data/manifests/garmentcode_v2_batch_0_multiview_index.json",
+      "sha256": "21962a7006015228e03dd8e8c01cfc546f42fa6171a47141e8ac84f7cd84047e",
+      "size_bytes": 608
+    },
+    {
+      "path": "data/manifests/gcdv2_drafting_semantics.json",
+      "sha256": "5ef651a2a13799c47abd5f7212d45cf7bfaf42c941e4b444c26578cd38b57545",
+      "size_bytes": 2085
+    },
+    {
+      "path": "data/manifests/gcdv2_exact_pairs_smoke.json",
+      "sha256": "135021b99a3767643c838f727c70b74c1dee585b53e502fa8fabbb5363585a9f",
+      "size_bytes": 1004
+    },
+    {
+      "path": "data/manifests/gcdv2_exact_pairs_v1.json",
+      "sha256": "6085eadbd78c4ec801178404117a3bfba1168ba90d53ae143786d72c03998de6",
+      "size_bytes": 1033
+    },
+    {
+      "path": "data/manifests/gcdv2_exact_pairs_v1_quarantine.json",
+      "sha256": "44727bfce2516f949f12ab62374a8a13c6560b0bb82a7ee008dd96c546c3a775",
+      "size_bytes": 1053
+    },
+    {
+      "path": "data/manifests/gcdv2_exact_panels_v1.json",
+      "sha256": "ecf0d14d2c0942e6374a486e536c4ab042b4e23f970a4999708af3a511c300c8",
+      "size_bytes": 2196
+    },
+    {
+      "path": "data/manifests/gcdv2_exact_retrieval_refinement.json",
+      "sha256": "3a8bc83f83530fd9c0dffd6b4f3db19d4074cedc396f6ae2b7520a85ca5f8c51",
+      "size_bytes": 4428
+    },
+    {
+      "path": "data/manifests/gcdv2_garment_panel_set_unseen.json",
+      "sha256": "b33f8c23282a83300061b8f1b5893d93f12113b081c31626e82363c4742f89fe",
+      "size_bytes": 2567
+    },
+    {
+      "path": "data/manifests/gcdv2_intrinsic_graph_predicted_v1.json",
+      "sha256": "fe4fb2f466ccb78a7caef94ad83959916cf9dad74613b76c1d98d0bb418017bc",
+      "size_bytes": 933
+    },
+    {
+      "path": "data/manifests/gcdv2_intrinsic_graph_v1.json",
+      "sha256": "fb9d28a6918cb599eb07a95ce25edb3bebb307fde8593bc7b432f55ee8114fe6",
+      "size_bytes": 779
+    },
+    {
+      "path": "data/manifests/gcdv2_merged_visible_semantics_v1.json",
+      "sha256": "8db26f581fa5be208a4d679b35b51437f38d4cc57c8cccdd2999537278bf850b",
+      "size_bytes": 858
+    },
+    {
+      "path": "data/manifests/gcdv2_multigarment_semantics.json",
+      "sha256": "a42a2861cc8d1f684c37f8b126edd9eca4827b83079050d00754b3e77bf727cb",
+      "size_bytes": 2503
+    },
+    {
+      "path": "data/manifests/gcdv2_neurosymbolic_v1.json",
+      "sha256": "d6baee5fbb43abf576f048730764f30f1e2ca828561a295f4b9bbfeabb3838cf",
+      "size_bytes": 2102
+    },
+    {
+      "path": "data/manifests/gcdv2_neurosymbolic_v1_audit.json",
+      "sha256": "2e82289b0a6e0dd4b608fa16f4f54cb727c459b830f5b717627be88ba21d7829",
+      "size_bytes": 734
+    },
+    {
+      "path": "data/manifests/gcdv2_pattern_dsl_training_result.json",
+      "sha256": "fa15bf2221bc9663cf474cc5defa85234fdada91103afb92ce841e04a833367b",
+      "size_bytes": 2106
+    },
+    {
+      "path": "data/manifests/gcdv2_pattern_dsl_v1.json",
+      "sha256": "16ffc8643decff01f4ff83fc84894ba624e8113da0f95442e3bea0f7dd5b88ee",
+      "size_bytes": 2031
+    },
+    {
+      "path": "data/manifests/gcdv2_pattern_dsl_v2.json",
+      "sha256": "c462aac6aac54408a5a5fc8adf9e5a20b918efaefa1a5e552507c17e75f00bda",
+      "size_bytes": 2117
+    },
+    {
+      "path": "data/manifests/gcdv2_pattern_dsl_v2_training_result.json",
+      "sha256": "1e8b10b0147f04a159a6b656f6d304725682bff8829a50366cb1ffe73a612ae4",
+      "size_bytes": 2075
+    },
+    {
+      "path": "data/manifests/gcdv2_predicted_contours_v1.json",
+      "sha256": "0a3fa95b9f1e9d03a2fa3063e6a61a417a89f98a01b322a883d35c5ff4cc549d",
+      "size_bytes": 734
+    },
+    {
+      "path": "data/manifests/gcdv2_semantic_landmark_audit.json",
+      "sha256": "b75478bdf2825db528d00b229595061598a2b9fa18427269fa8c2149d75b8d3a",
+      "size_bytes": 566
+    },
+    {
+      "path": "data/manifests/gcdv2_symbolic_candidate_beam.json",
+      "sha256": "5275d14887783ada6d02214eebf838301a028ec1609b250b46ffa7b526cbe457",
+      "size_bytes": 1546
+    },
+    {
+      "path": "data/manifests/gcdv2_symbolic_candidate_beam_v2.json",
+      "sha256": "5aff0928a2f7b406ea7beda51ca85ef9b19ee7fa8bb16540c87fbab8228ab5b4",
+      "size_bytes": 1558
+    },
+    {
+      "path": "data/manifests/gcdv2_visual_pattern_dsl_retrieval.json",
+      "sha256": "06f395954ea3ed1b32b0641ce7a0e5946c0b92bc5f681c801c807d3b5b8ab8b0",
+      "size_bytes": 2410
+    },
+    {
+      "path": "data/manifests/gcdv2_visual_pattern_dsl_retrieval_v2.json",
+      "sha256": "2970315ac1b7a5442bfa333092fa512466f48aab8b4a394f5f38d5343bfc7a20",
+      "size_bytes": 2042
+    },
+    {
+      "path": "data/manifests/lower_body_semantic_targets.json",
+      "sha256": "a0d77f61b2d8953c60296c9c6cd3122eb46ec7217be11570bc1887f6e3979842",
+      "size_bytes": 2735
+    },
+    {
+      "path": "data/manifests/multiview_curve_parameters_fpn.json",
+      "sha256": "fc9978e74103b74d240fde6fbc394c182605163c239ddcd97d0cdc53c7aea46e",
+      "size_bytes": 11045
+    },
+    {
+      "path": "data/manifests/multiview_element_geometry_resnet50.json",
+      "sha256": "8f6a9a75146d241c23cb0446b03a1f2df39c5407c708530da1c7233aa27d124b",
+      "size_bytes": 3783
+    },
+    {
+      "path": "data/manifests/semantic_pattern_bridge_portfolio_proof.json",
+      "sha256": "2b205a0d00e249eaf3d3820199a86f8c0279f8830a1394a79fb391d966bc0ccf",
+      "size_bytes": 10441
+    },
+    {
+      "path": "data/manifests/tshirt_construction_formula_augmented.json",
+      "sha256": "1a1dbc66520389c0df5a2fff63d90dda7e45fb8c7512235e4961ebc1832f23f0",
+      "size_bytes": 5377
+    },
+    {
+      "path": "data/manifests/tshirt_construction_truth.json",
+      "sha256": "0549045bf0745b7335fdc26f674e1fc3f706deb5f4719fd9633360a5433bb54e",
+      "size_bytes": 2762
+    },
+    {
+      "path": "data/manifests/tshirt_semantics_combined.json",
+      "sha256": "5bf54a1affb8fd5824c8e8bb617e2a17d51026d7b5ea9f9d383ec2657728c514",
+      "size_bytes": 436
+    },
+    {
+      "path": "data/manifests/tshirt_semantics_training_results.json",
+      "sha256": "b93845564e75f884619cd92ffbd45aa24eec4ff95ee7cf9cab9ce1568b6accb8",
+      "size_bytes": 8056
+    },
+    {
+      "path": "GITHUB_UPLOAD_GUIDE.md",
+      "sha256": "84c62b55f6e93d15e4b7616d6e3001110f9bfbdf1b12e5f2f96cf12cb2ac329f",
+      "size_bytes": 3740
+    },
+    {
+      "path": "LICENSE_NOTICE.md",
+      "sha256": "6cd83eb6b48f0338ab4e9d7d6b6f9ecac89fe83b505cc1f16eebb9752b65b2b3",
+      "size_bytes": 2385
+    },
+    {
+      "path": "output/docx/semantic_pattern_bridge_portfolio_en.docx",
+      "sha256": "8a8bf029ea0403b671f0999c9e6fceb2556f861eb886f18bc468449feb8670cb",
+      "size_bytes": 446178
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "8edca1e1571bc28ce5713f92573d096a25d64c5bd1c3ee49b8c294b193bb08c2",
+      "size_bytes": 410
+    },
+    {
+      "path": "README.md",
+      "sha256": "75e0718721dc8a7565b241f03a08742d0f9f289aaa11cfc9aab6baff76711cd8",
+      "size_bytes": 6877
+    },
+    {
+      "path": "reports/figures/pattern_dsl_semantic_example_en.png",
+      "sha256": "ab73ad11dc2a2db0b52547009aeec3f35382a8d4f314d0e6fb7f2c69694567fa",
+      "size_bytes": 70621
+    },
+    {
+      "path": "reports/figures/pattern_semantic_parser_schematic_en.png",
+      "sha256": "2e732fef4d44ecfd19027ad333e13e798171151ea93d00f76d5f090892a9f1f6",
+      "size_bytes": 124748
+    },
+    {
+      "path": "THIRD_PARTY_LICENSES/GarmentParticles-MIT.txt",
+      "sha256": "5f15e675e793c4b56ff4faf5bed589c09764eae101f1610aae7321a6dea88b12",
+      "size_bytes": 1074
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "4f64e295bfeecbd8d64fee5bc7b881c3a5dfb5e07fb78de4877f02517bd79df3",
+      "size_bytes": 4878
+    }
+  ],
+  "manifest_note": "The manifest does not recursively hash itself.",
+  "policy": {
+    "excluded": [
+      "Git history and local environments",
+      "runtime data, artifacts, caches, checkpoints, external sources, logs, and temporary files",
+      "raw, processed, restricted, and private-evaluation data payloads",
+      "restricted NOVA-Human acquisition payloads and live storage links",
+      "granular ReWeaver GCD-TS and SynBody configuration, manifests, and reports",
+      "exact FreeSewing and GarmentCode generated-geometry manifests",
+      "obsolete structure_prior_pattern_bridge schematic",
+      "secrets, personal absolute paths, sensitive metadata, and symbolic links"
+    ],
+    "maximum_file_bytes": 10485760
+  },
+  "schema_version": 1,
+  "total_bytes": 5186037
+}

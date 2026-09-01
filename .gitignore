@@ -1,0 +1,46 @@
+# Large, reproducible-but-untracked benchmark material
+/data/raw/*
+/data/processed/*
+/data/restricted/
+/data/manifests/*.download
+/artifacts/*
+/external/*
+/checkpoints/*
+/cache/*
+/logs/*
+!/data/raw/.gitkeep
+!/data/processed/.gitkeep
+!/artifacts/.gitkeep
+!/external/.gitkeep
+!/checkpoints/.gitkeep
+
+# Local Python tooling
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# State is runtime evidence, except the empty layout marker
+/state/run_state.json
+/state/events.jsonl
+
+# Local document QA and generated public-release archives
+/tmp/
+/output/releases/
+/output/docx/~$*.docx
+
+# Credentials and machine-specific secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Desktop filesystem metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,21 @@
+{
+  "counts": {
+    "landmark:BNP": 3526,
+    "landmark:FNP": 3526,
+    "landmark:SNP": 5782,
+    "landmark:SP": 5782,
+    "panel:back_bodice": 3968,
+    "panel:front_bodice": 3968
+  },
+  "evidence_boundary": "Names are derived from source edge labels plus topology; they are not independent expert annotations.",
+  "failure_count": 0,
+  "junction_rule_failures": [],
+  "official_split_overlap": [],
+  "official_split_sample_counts": {
+    "test": 98,
+    "training": 1448,
+    "validation": 87
+  },
+  "record_count": 1984,
+  "status": "PASS"
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "basic-semantic-teacher-student/v1",
+  "seed": 20260901,
+  "categories": ["tshirt", "pants", "skirt"],
+  "basic_block_variations_per_category": 512,
+  "split_fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "visual_feature_mode": "spatial",
+  "model": {
+    "edge_feature_dim": 19,
+    "global_feature_dim": 2048,
+    "spatial_feature_dim": 256,
+    "width": 192,
+    "token_dim": 96,
+    "heads": 6,
+    "encoder_layers": 3,
+    "decoder_layers": 3,
+    "feedforward_multiplier": 4,
+    "dropout": 0.12,
+    "max_views": 4,
+    "panel_role_count": 11,
+    "edge_role_count": 18
+  },
+  "padding": {
+    "maximum_panels": 10,
+    "maximum_edges": 32
+  },
+  "teacher": {
+    "batch_size": 64,
+    "epochs": 140,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.002,
+    "early_stopping_patience": 20,
+    "loss_weights": {
+      "presence": 0.5,
+      "coordinate": 1.0,
+      "panel_role": 0.4,
+      "edge_role": 0.6
+    }
+  },
+  "student": {
+    "batch_size": 64,
+    "epochs": 180,
+    "learning_rate": 0.00025,
+    "weight_decay": 0.002,
+    "early_stopping_patience": 24,
+    "view_dropout_probability": 0.25,
+    "loss_weights": {
+      "distillation": 0.7,
+      "presence": 0.6,
+      "coordinate": 1.2
+    }
+  },
+  "coordinate_calibration": {
+    "method": "train_only_query_isotropic_residual_distribution_alignment",
+    "minimum_support": 8,
+    "minimum_scale": 0.001,
+    "clamp_standard_deviations": 4.0,
+    "status": "PROVISIONAL_TRAIN_ONLY_DISTRIBUTION_ALIGNMENT"
+  },
+  "claim_boundary": [
+    "Basic-block formula targets are PROVISIONAL_EXPERT_REVIEW, not industrial pattern truth.",
+    "GarmentCode coordinate calibration is fitted on training IDs only and transfers residual distributions with one isotropic scale per query; path and construction-line endpoints remain exact and it does not repair source geometry sample by sample.",
+    "Only the training partition is deterministically category-oversampled; validation and test retain the natural 37/138/342 source imbalance.",
+    "The visual test is same-generator, same-render-style, same-neutral-body sample-ID unseen; it is not family-disjoint or cross-domain.",
+    "The student receives four-view features only at inference; vector patterns are used only by the frozen training teacher.",
+    "No original source image is written to metrics, predictions, or checkpoints."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "input": "four real orthographic RGBA renders summarized as four 21D silhouette/view tokens",
+  "target": "paired canonical 2D pattern category and structural inventory",
+  "width": 160,
+  "heads": 5,
+  "layers": 4,
+  "feedforward_multiplier": 4,
+  "dropout": 0.1,
+  "contrastive_dimension": 96,
+  "batch_size": 128,
+  "epochs": 160,
+  "learning_rate": 0.0004,
+  "weight_decay": 0.001,
+  "temperature": 0.12,
+  "early_stopping_patience": 18,
+  "seed": 20260828,
+  "loss_weights": {
+    "category": 1.0,
+    "pattern": 1.5,
+    "contrastive": 0.2
+  }
+}

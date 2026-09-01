@@ -1,0 +1,115 @@
+{
+  "schema_version": "gcdv2-pattern-dsl-alpha-geometry-1.0",
+  "status": "ACTIVE_SUPERSEDING_EXPERIMENT",
+  "purpose": "Replace packed-pattern raster parsing with an AlphaGeometry-inspired neural proposer plus deterministic sewing-pattern verifier.",
+  "canonical_edge_feature_schema": "gcd-pattern-dsl-chord-turn/v2",
+  "legacy_edge_feature_schema": "gcdv2-intrinsic-tangent-gap/v1",
+  "problem_representation": {
+    "geometry_commands": ["PANEL", "M", "L", "Q", "C", "A", "Z"],
+    "relations": ["MEMBER", "NEXT", "SHARED_ENDPOINT", "SEWN_TO", "LANDMARK"],
+    "curve_payload": [
+      "length/panel-perimeter",
+      "chord/panel-perimeter",
+      "turn relative to previous chord",
+      "start/end tangent relative to chord",
+      "Bezier controls in unit-chord frame",
+      "arc radius/chord and sweep flags"
+    ],
+    "dimensional_scale": "one translation/rotation-invariant panel_scale_cm value",
+    "forbidden_neural_inputs": [
+      "packed pattern image",
+      "absolute x/y",
+      "source panel id",
+      "source edge id",
+      "ground-truth semantic role",
+      "ground-truth stitch mate"
+    ]
+  },
+  "neural_proposer": {
+    "architecture": "cyclic edge Transformer inside a garment-level panel Transformer",
+    "inputs": ["curve command or MASK", "invariant curve parameters", "cyclic adjacency", "panel membership"],
+    "proposals": [
+      "garment category",
+      "panel role",
+      "edge semantic role",
+      "masked curve command",
+      "symmetric seam-pair score"
+    ],
+    "losses": [
+      "category cross entropy",
+      "panel-role cross entropy",
+      "edge-role cross entropy",
+      "masked-command cross entropy",
+      "sampled symmetric seam BCE",
+      "shared-vertex semantic-junction loss",
+      "soft cyclic grammar loss"
+    ]
+  },
+  "symbolic_verifier": {
+    "hard_geometry_facts": [
+      "each panel is one closed boundary cycle",
+      "every boundary point has degree two",
+      "NEXT and SHARED_ENDPOINT agree with edge incidence",
+      "all command references resolve",
+      "every selected seam edge has degree at most one"
+    ],
+    "derived_facts": {
+      "FNP": ["center_front", "neckline"],
+      "BNP": ["center_back", "neckline"],
+      "SNP": ["neckline", "shoulder"],
+      "SP": ["shoulder", "armhole"]
+    },
+    "projection": [
+      "cyclic role-sequence dynamic programming",
+      "general-graph symmetric seam matching",
+      "landmark derivation only at a shared source vertex"
+    ],
+    "soft_not_hard": [
+      "sewn edge lengths must be identical",
+      "every GCDv2 panel must follow one canonical expert drafting order"
+    ]
+  },
+  "evaluation": {
+    "split": "garment-ID-disjoint 80/10/10 using the GCDv2 neurosymbolic split authority",
+    "metrics": [
+      "category accuracy",
+      "panel-role macro-F1",
+      "edge-role macro-F1",
+      "masked command accuracy",
+      "seam pair precision/recall/F1 and mate recall@1",
+      "raw/projected grammar violation rate",
+      "derived landmark exact source-vertex accuracy",
+      "symbolic verification pass rate"
+    ]
+  },
+  "four_view_alignment": {
+    "status": "IMPLEMENTED_RETRIEVAL_NOT_TARGET_GENERATION",
+    "visual_input": "frozen front/back/left/right ResNet50-FPN spatial tokens",
+    "pattern_input": "frozen coordinate-free Pattern DSL panel tokens",
+    "training": "bidirectional InfoNCE plus low-weight category auxiliary loss",
+    "output": "ranked train-bank DSL anchors followed by the same symbolic verifier",
+    "forbidden_interpretation": "symbolic validity of a retrieved anchor is not proof that it equals the held-out target pattern"
+  },
+  "symbolic_candidate_beam": {
+    "status": "IMPLEMENTED_NO_FROZEN_TEST_TOP1_GAIN",
+    "hypotheses": "top-10 complete train-bank PANEL/M/L/Q/C/A/Z programs",
+    "proposal_facts": "neural edge roles and seam scores",
+    "hard_checks": "cyclic role grammar, symmetric one-mate seam matching, shared-vertex landmark deduction",
+    "held_out_target_used_for_ranking": false,
+    "result": "exact primitive topology top-1 remained 17.68%; top-10 coverage was 50.00%"
+  },
+  "svg_compiler": {
+    "status": "IMPLEMENTED",
+    "input": "symbolically valid Pattern DSL",
+    "output": "native analytic SVG M/L/Q/C/A/Z with non-overlapping panel layout",
+    "default_metadata": "leakage-safe geometry and verification summary only",
+    "debug_overlays": "semantic roles, derived landmarks, predicted seam proofs, and provenance are explicit opt-ins"
+  },
+  "claim_boundary": [
+    "This stage starts from exact GCDv2 vector geometry, not photographs or panel raster images.",
+    "Semantic labels are generator/topology-derived and are not yet expert cross-source truth.",
+    "The design is AlphaGeometry-inspired; it is not a reproduction of AlphaGeometry or a general theorem prover.",
+    "The implemented 4-view bridge retrieves existing DSL anchors; direct target command/edit generation remains a separate stage.",
+    "Any later target-specific 4-view generator must emit the same DSL and pass this verifier before pattern materialization."
+  ]
+}

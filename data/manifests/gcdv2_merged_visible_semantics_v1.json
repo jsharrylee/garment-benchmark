@@ -1,0 +1,31 @@
+{
+  "schema_version": "gcdv2-merged-visible-semantics-1.0",
+  "status": "PASS",
+  "panel_count": 2464,
+  "split_counts": {
+    "train": 2196,
+    "validation": 120,
+    "test": 148
+  },
+  "edge_count": 22251,
+  "role_counts": {
+    "other": 901,
+    "neckline": 2355,
+    "shoulder": 1747,
+    "armhole": 1945,
+    "center_front": 1208,
+    "center_back": 1222,
+    "side_seam": 3444,
+    "waistline": 4338,
+    "dart_leg": 5091
+  },
+  "landmark_counts": {
+    "FNP": 1060,
+    "BNP": 1074,
+    "SNP": 1748,
+    "SP": 1754
+  },
+  "input_contract": "learned-mask predicted contour -> merged visible segments -> unit-chord intrinsic features",
+  "panel_role_conditioning": "source front/back bodice role is supplied; not inferred in this phase",
+  "artifact": "artifacts/gcdv2_merged_visible_semantics_v1/merged_semantics.npz"
+}

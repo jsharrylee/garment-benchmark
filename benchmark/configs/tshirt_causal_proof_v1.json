@@ -1,0 +1,343 @@
+{
+  "schema_version": "tshirt-causal-proof-config/v1",
+  "purpose": "First controlled T-shirt proof for learning where a semantic 2D drafting element appears in four views, how a one-axis intervention changes those views, and which residual should be inferred from a target four-view observation.",
+  "claim_boundary": "Pattern-only pairs are controlled 2D causal evidence. No axis has visual causal evidence until both pair members pass the official GarmentCode reference-simulator receipt contract under identical body, pose, material, random seed, cameras, and crop.",
+  "scope": {
+    "garment": "basic_symmetric_tshirt",
+    "generator": "GarmentCode Shirt(fitted=False)",
+    "initial_3d_source": "GarmentCode_only",
+    "freesewing_role": "2D_cross_source_holdout_only",
+    "target_base_state_count": 32,
+    "minimum_balanced_base_state_count": 24,
+    "target_pairs_per_axis": 32,
+    "axis_count": 8,
+    "target_pair_count": 256,
+    "current_true_four_view_pair_count": 0
+  },
+  "axis_order": [
+    "neck_width",
+    "neck_depth",
+    "shoulder_slope",
+    "armhole_depth",
+    "bodice_length",
+    "sleeve_cap",
+    "sleeve_length",
+    "sleeve_width"
+  ],
+  "axes": [
+    {
+      "axis_id": "neck_width",
+      "display_name_en": "Neck width",
+      "intervention_kind": "DIRECT_INTERVENTION",
+      "source_field": "collar.width",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "neckline_width_cm"
+      ],
+      "semantic_definition": "Horizontal panel-space separation from FNP/BNP to SNP, retained separately for front and back before symmetry aggregation.",
+      "provisional_conservative_range": {
+        "unit": "GarmentCode_normalized_input",
+        "lower": 0.1,
+        "upper": 0.45,
+        "source_safe_range": [
+          0.0,
+          0.55
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "Interior subset of the generated safe range; excludes the widest and narrowest endpoints pending expert review."
+      },
+      "current_availability": {
+        "status": "PATTERN_ONLY_AVAILABLE",
+        "pattern_training_pair_count": 32,
+        "simulation_geometry_clean_pair_count": 31,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "collar.width"
+      }
+    },
+    {
+      "axis_id": "neck_depth",
+      "display_name_en": "Front neck depth",
+      "intervention_kind": "DIRECT_INTERVENTION",
+      "source_field": "collar.fc_depth",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "neckline_depth_cm"
+      ],
+      "semantic_definition": "Vertical panel-space separation from FNP to the front SNP level. Back-neck depth remains fixed in this first proof.",
+      "provisional_conservative_range": {
+        "unit": "GarmentCode_normalized_input",
+        "lower": 0.4,
+        "upper": 0.75,
+        "source_safe_range": [
+          0.35,
+          0.9
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "Narrowed from the existing pair range to avoid the overly deep neckline endpoint already identified during expert review."
+      },
+      "current_availability": {
+        "status": "PATTERN_ONLY_AVAILABLE",
+        "pattern_training_pair_count": 32,
+        "simulation_geometry_clean_pair_count": 31,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "collar.fc_depth"
+      }
+    },
+    {
+      "axis_id": "shoulder_slope",
+      "display_name_en": "Shoulder slope",
+      "intervention_kind": "NEW_GENERATOR_REQUIRED",
+      "source_field": null,
+      "proposed_source_field": "shirt.shoulder_slope_residual_deg",
+      "formula_targets": [
+        "front_shoulder_slope_deg",
+        "back_shoulder_slope_deg"
+      ],
+      "semantic_definition": "Angle of the SNP-to-SP shoulder segment relative to the panel horizontal axis, expressed as a residual around the fixed body's shoulder-conditioned prior.",
+      "provisional_conservative_range": {
+        "unit": "degree_residual_from_body_prior",
+        "lower": -2.0,
+        "upper": 2.0,
+        "source_safe_range": null,
+        "expert_validation": "PENDING",
+        "rationale": "GarmentCode currently derives shoulder slope from body._shoulder_incl; a small independent drafting residual is required to preserve the same-body counterfactual contract."
+      },
+      "current_availability": {
+        "status": "NEW_GENERATOR_REQUIRED",
+        "pattern_training_pair_count": 0,
+        "simulation_geometry_clean_pair_count": 0,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": null
+      }
+    },
+    {
+      "axis_id": "armhole_depth",
+      "display_name_en": "Armhole depth",
+      "intervention_kind": "DIRECT_INTERVENTION",
+      "source_field": "sleeve.connecting_width",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "front_armhole_depth_cm",
+        "back_armhole_depth_cm"
+      ],
+      "semantic_definition": "Panel-space vertical separation from SP to the underarm endpoint, retained separately for front and back.",
+      "provisional_conservative_range": {
+        "unit": "GarmentCode_normalized_input",
+        "lower": 0.15,
+        "upper": 0.45,
+        "source_safe_range": [
+          0.1,
+          0.5
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "The field is already supported and sampled as a nuisance variable, but controlled intervention pairs have not yet been generated."
+      },
+      "current_availability": {
+        "status": "CONFIG_SUPPORTED_NO_CONTROLLED_PAIRS",
+        "pattern_training_pair_count": 0,
+        "simulation_geometry_clean_pair_count": 0,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "design.armhole_depth"
+      }
+    },
+    {
+      "axis_id": "bodice_length",
+      "display_name_en": "Bodice length",
+      "intervention_kind": "DIRECT_INTERVENTION",
+      "source_field": "shirt.length",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "front_bodice_length_cm",
+        "back_bodice_length_cm"
+      ],
+      "semantic_definition": "Center-front and center-back vertical length from their neck point to hem, reported separately before aggregation.",
+      "provisional_conservative_range": {
+        "unit": "waist_line_multiplier",
+        "lower": 1.0,
+        "upper": 1.45,
+        "source_safe_range": [
+          0.9,
+          1.7
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "Interior range intended to stay within ordinary T-shirt proportions rather than tunic-length extremes."
+      },
+      "current_availability": {
+        "status": "PATTERN_ONLY_AVAILABLE",
+        "pattern_training_pair_count": 32,
+        "simulation_geometry_clean_pair_count": 31,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "shirt.length"
+      }
+    },
+    {
+      "axis_id": "sleeve_cap",
+      "display_name_en": "Sleeve cap",
+      "intervention_kind": "PROXY_INTERVENTION",
+      "source_field": "sleeve.sleeve_angle",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "front_sleeve_cap_height_cm",
+        "back_sleeve_cap_height_cm",
+        "sleeve_cap_to_armhole_ease_ratio"
+      ],
+      "semantic_definition": "Derived front/back half-sleeve cap height and aggregate sleeve-head/armhole ease. sleeve.sleeve_angle is only the controlled proxy, not the semantic target itself.",
+      "provisional_conservative_range": {
+        "unit": "degree_proxy_input",
+        "lower": 16.0,
+        "upper": 32.0,
+        "source_safe_range": [
+          12.0,
+          38.0
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "Avoids angle endpoints that caused topology or semantic-coverage quarantine. armhole depth and smoothing must remain fixed inside each pair."
+      },
+      "current_availability": {
+        "status": "PATTERN_ONLY_PROXY_PARTIAL",
+        "pattern_training_pair_count": 25,
+        "simulation_geometry_clean_pair_count": 24,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "sleeve.sleeve_angle"
+      }
+    },
+    {
+      "axis_id": "sleeve_length",
+      "display_name_en": "Sleeve length",
+      "intervention_kind": "DIRECT_INTERVENTION",
+      "source_field": "sleeve.length",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "sleeve_length_cm"
+      ],
+      "semantic_definition": "Length from sleeve-cap apex to sleeve hem along the sleeve drafting axis, not merely an underarm edge length.",
+      "provisional_conservative_range": {
+        "unit": "GarmentCode_arm_length_fraction",
+        "lower": 0.25,
+        "upper": 0.7,
+        "source_safe_range": [
+          0.2,
+          0.8
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "Interior subset of the existing controlled range and above the generator's minimum-length clamp region."
+      },
+      "current_availability": {
+        "status": "PATTERN_ONLY_AVAILABLE",
+        "pattern_training_pair_count": 32,
+        "simulation_geometry_clean_pair_count": 31,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "sleeve.length"
+      }
+    },
+    {
+      "axis_id": "sleeve_width",
+      "display_name_en": "Sleeve width",
+      "intervention_kind": "DIRECT_INTERVENTION",
+      "source_field": "sleeve.end_width",
+      "proposed_source_field": null,
+      "formula_targets": [
+        "sleeve_hem_width_cm"
+      ],
+      "semantic_definition": "Sleeve hem/end width. It is intentionally not called bicep width; bicep width is body- and armhole-conditioned and must be added as a separate future axis if required.",
+      "provisional_conservative_range": {
+        "unit": "GarmentCode_end_width_multiplier",
+        "lower": 0.8,
+        "upper": 1.2,
+        "source_safe_range": [
+          0.7,
+          1.3
+        ],
+        "expert_validation": "PENDING",
+        "rationale": "The field is already supported and sampled as a nuisance variable, but a controlled pair and explicit cm formula target are still missing."
+      },
+      "current_availability": {
+        "status": "CONFIG_SUPPORTED_FORMULA_TARGET_REQUIRED",
+        "pattern_training_pair_count": 0,
+        "simulation_geometry_clean_pair_count": 0,
+        "true_four_view_pair_count": 0,
+        "evidence_parameter": "design.sleeve_end_width"
+      }
+    }
+  ],
+  "pairing_contract": {
+    "changed_author_facing_field_count": 1,
+    "baseline_sampling": "Deterministic baseline values inside each axis source-safe range; the same baseline state is reused across all eight axes.",
+    "intervention_sampling": "Reflect the baseline across the provisional conservative range midpoint; reject a zero delta and retain the signed source-input delta.",
+    "fixed_within_pair": [
+      "body_yaml_and_body_mesh",
+      "body_pose",
+      "all_non_intervened_recipe_inputs",
+      "fabric_and_material",
+      "reference_simulator_profile",
+      "simulator_random_seed",
+      "camera_intrinsics_and_extrinsics",
+      "orthographic_pair_union_crop"
+    ],
+    "required_pattern_gates": [
+      "exactly_one_author_facing_input_changed",
+      "pattern_geometry_changed",
+      "topology_stable",
+      "baseline_structural_validation_pass",
+      "intervention_structural_validation_pass",
+      "baseline_not_self_intersecting",
+      "intervention_not_self_intersecting",
+      "required_formula_targets_present"
+    ],
+    "delta_coordinate_frame": "panel_intrinsic_frame_with_translation_rotation_and_reflection_removed",
+    "numeric_delta_tolerance_cm": 0.0001,
+    "proxy_policy": "A proxy input is supervised by the derived physical formula target; proxy value must never be reported as the semantic quantity itself."
+  },
+  "split_contract": {
+    "group_key": "baseline_state_id",
+    "rule": "All eight interventions and both pair members from one baseline state remain in exactly one split.",
+    "forbidden": [
+      "pair_level_random_split",
+      "baseline_member_in_multiple_splits",
+      "near_duplicate_baseline_state_across_splits"
+    ],
+    "recommended_base_state_split": {
+      "train": 24,
+      "validation": 4,
+      "test": 4
+    }
+  },
+  "render_receipt_contract": {
+    "required_simulator": "official_GarmentCode_reference_simulator",
+    "required_views": [
+      "front",
+      "back",
+      "left",
+      "right"
+    ],
+    "required_member_outputs": [
+      "rgb",
+      "alpha",
+      "depth",
+      "surface_normal",
+      "panel_id",
+      "pattern_uv",
+      "camera_json",
+      "simulated_mesh",
+      "simulation_quality_json"
+    ],
+    "required_identity_fields": [
+      "pair_id",
+      "baseline_state_id",
+      "member",
+      "source_specification_sha256",
+      "body_source_sha256",
+      "fixed_state_fingerprint"
+    ],
+    "visual_training_eligible_only_after_receipt_validation": true
+  },
+  "evidence": {
+    "current_pair_config": "benchmark/configs/drafting_counterfactual_pairs.json",
+    "current_pattern_only_training_manifest": "artifacts/drafting_semantics/counterfactual_pairs/corpus32_training_manifest.json",
+    "current_quarantine_manifest": "artifacts/drafting_semantics/counterfactual_pairs/corpus32_quarantine_manifest.json",
+    "creation_formula_manifest": "data/manifests/tshirt_construction_formula_augmented.json",
+    "creation_binding": "benchmark/drafting_semantics/tshirt_creation_binding.py",
+    "formula_target_builder": "benchmark/drafting_semantics/drafting_formula_targets.py",
+    "counterfactual_contract": "benchmark/drafting_semantics/counterfactual_pairs.py"
+  }
+}

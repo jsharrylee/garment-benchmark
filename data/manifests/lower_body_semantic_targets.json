@@ -1,0 +1,66 @@
+{
+  "schema_version": "lower-body-semantic-target-manifest/v2",
+  "ontology_version": "lower-body-landmarks-1.1",
+  "source": "GarmentCodeData v2 batch 0 semantic records",
+  "source_records": "artifacts/drafting_semantics/gcdv2_multigarment/records.jsonl",
+  "source_records_sha256": "2f19f80e39a11f41f8b5ddcb5486d8f7062880fa8ae669c3a4fb853cb1f316a9",
+  "record_count_audited": 2937,
+  "extraction_status": "PASS_ALL_RECORDS_WITHOUT_EXCEPTION",
+  "count_unit": "one lower-body panel observation",
+  "pants": {
+    "panel_count": 1844,
+    "available_landmark_values": 16596,
+    "named_targets": [
+      "CF_WAIST",
+      "CB_WAIST",
+      "CF_HIP",
+      "CB_HIP",
+      "SIDE_WAIST",
+      "SIDE_HIP",
+      "CROTCH_POINT",
+      "KNEE_SIDE",
+      "KNEE_INSEAM",
+      "HEM_SIDE",
+      "HEM_INSEAM"
+    ],
+    "reference_line_inventory": ["WL", "HL", "CL", "KNEE_LINE", "GRAIN"],
+    "reference_line_counts": {
+      "WL": {"available": 1844, "training_eligible": 1844},
+      "HL": {"available": 1844, "training_eligible": 1844},
+      "CL": {"available": 1844, "training_eligible": 1844},
+      "KNEE_LINE": {"available": 1844, "training_eligible": 0},
+      "GRAIN": {"available": 1844, "training_eligible": 1844}
+    }
+  },
+  "skirt": {
+    "panel_count": 7707,
+    "available_landmark_values": 27020,
+    "observable_slit_panel_count": 326,
+    "canonical_panel_role": "skirt_panel",
+    "front_back_policy": "exchangeable unless a dart, slit, zipper, notch, or attachment supplies a visible construction cue",
+    "reference_line_inventory": ["WL", "HL", "GRAIN"],
+    "reference_line_counts": {
+      "WL": {"available": 4793, "training_eligible": 4793},
+      "HL": {"available": 3435, "training_eligible": 3435},
+      "GRAIN": {"available": 4793, "training_eligible": 4793}
+    }
+  },
+  "dart_policy": "Preserve source-observed apex, both legs, intake, and depth.",
+  "unsupported_feature_policy": "Zipper and notches remain explicit unavailable values unless source annotations provide evidence.",
+  "training_policy": {
+    "derived_topology": "eligible inside the GarmentCode domain",
+    "expert_ground_truth": false,
+    "base_lower_body_extractor": {
+      "KNEE_LINE": {
+        "evidence": "synthetic_unvalidated",
+        "training_eligible": false,
+        "policy": "stored for review and masked from base-ontology training"
+      }
+    },
+    "separate_teacher_adapter": {
+      "query_schema": "basic-semantic-query/v3-reference-construction-lines",
+      "KNEE_LINE_to_KL_status": "PROVISIONAL_CONVENTIONAL_HALF_LEG_KNEE_LINE",
+      "policy": "explicit opt-in promotion for the v3 teacher/student experiment only; it does not change the base lower-body evidence or license it as expert truth"
+    }
+  }
+}

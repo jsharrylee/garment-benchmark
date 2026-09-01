@@ -1,0 +1,54 @@
+{
+  "schema_version": "gcdv2-visual-pattern-dsl-retrieval-result-2.0",
+  "status": "PASS_CANONICAL_VISUAL_TO_DSL_RETRIEVAL",
+  "date": "2026-08-29",
+  "edge_feature_schema": "gcd-pattern-dsl-chord-turn/v2",
+  "split_authority": "gcdv2_pattern_dsl_v2 garment-ID-disjoint split",
+  "intersection_split_counts": {
+    "train": 1570,
+    "validation": 194,
+    "test": 198
+  },
+  "training": {
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "best_epoch": 43,
+    "training_seconds": 91.14087299999665,
+    "trainable_bridge_parameters": 890628,
+    "frozen_dsl_teacher_parameters": 950820
+  },
+  "frozen_test_paired_gallery_target_present": {
+    "image_to_dsl_recall_at_1": 0.5,
+    "image_to_dsl_recall_at_5": 0.8636363636363636,
+    "image_to_dsl_recall_at_10": 0.9393939393939394,
+    "image_to_dsl_mrr": 0.6565557459024356,
+    "median_rank": 1.5
+  },
+  "frozen_test_train_bank_target_absent": {
+    "category_match_at_1": 0.9848484848484849,
+    "exact_closed_cycle_primitive_topology_at_1": 0.15656565656565657,
+    "exact_closed_cycle_primitive_topology_at_10": 0.46464646464646464
+  },
+  "retrieved_anchor_resubstitution_diagnostic": {
+    "query_count": 198,
+    "unique_train_anchors": 173,
+    "symbolic_valid_rate": 1.0,
+    "raw_grammar_violations": 17,
+    "projected_grammar_violations": 0,
+    "anchor_seam_f1": 0.618315417063546,
+    "anchor_landmark_f1": 0.8883280757097792
+  },
+  "neural_input_excludes": [
+    "absolute x/y",
+    "sample/source/panel/edge IDs",
+    "semantic role labels",
+    "stitch targets",
+    "split labels",
+    "evaluation topology signature"
+  ],
+  "artifacts_ignored": {
+    "metrics": "artifacts/gcdv2_visual_pattern_dsl_retrieval_v2/metrics.json",
+    "checkpoint": "checkpoints/gcdv2_pattern_dsl_v2/visual_retrieval.pt",
+    "symbolic_anchor_verification": "artifacts/gcdv2_visual_pattern_dsl_retrieval_v2/symbolic_anchor_verification.json"
+  },
+  "claim_boundary": "Four-view retrieval of train-bank canonical DSL programs inside one GCDv2 generator/render domain; not target command generation."
+}

@@ -1,0 +1,30 @@
+{
+  "source": {
+    "name": "MPFB / MakeHuman system assets",
+    "mpfb_version": "2.0.17",
+    "blender_version": "4.5.12 LTS",
+    "asset_pack": "makehuman_system_assets",
+    "asset_license": "CC0",
+    "mpfb_url": "https://extensions.blender.org/add-ons/mpfb/",
+    "asset_pack_url": "https://files2.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",
+    "asset_pack_sha256": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107",
+    "mpfb_archive_sha256": "4f0a879d64a39bf646fbf5f53601ac678855da329d650617dca5737548239a87",
+    "blender_archive_sha256": "317ef64e7a2c3cc79ec810c766ae9828aff865bea78039dc695b3f1118c34b4f"
+  },
+  "samples": [
+    {
+      "sample_id": "mpfb_female_sportsuit",
+      "seed": 20260826,
+      "gender": "female",
+      "garment": "female_sportsuit01",
+      "layer_split_ratio": 0.43
+    },
+    {
+      "sample_id": "mpfb_male_worksuit",
+      "seed": 20260827,
+      "gender": "male",
+      "garment": "male_worksuit01",
+      "layer_split_ratio": 0.46
+    }
+  ]
+}

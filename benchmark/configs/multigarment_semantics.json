@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "model": "hierarchical-panel-garment-transformer",
+  "width": 192,
+  "heads": 6,
+  "local_layers": 4,
+  "global_layers": 3,
+  "feedforward_multiplier": 4,
+  "dropout": 0.1,
+  "maximum_panels": 40,
+  "maximum_edges": 48,
+  "batch_size": 8,
+  "epochs": 36,
+  "learning_rate": 0.00025,
+  "weight_decay": 0.001,
+  "seed": 20260828,
+  "early_stopping_patience": 8,
+  "loss_weights": {
+    "edge": 1.0,
+    "panel": 0.7,
+    "garment": 0.5,
+    "same_path": 0.25,
+    "element_presence": 0.25
+  },
+  "notes": [
+    "source names, panel names, operation ids and target role names are excluded from model input",
+    "unlabeled edges are loss-masked rather than treated as semantic other",
+    "primitive curves are preserved and semantic paths are assembled from predictions"
+  ]
+}

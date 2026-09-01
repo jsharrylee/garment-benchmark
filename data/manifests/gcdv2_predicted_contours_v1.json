@@ -1,0 +1,25 @@
+{
+  "schema_version": "gcdv2-predicted-contours-1.0",
+  "status": "PASS",
+  "panel_count": 15702,
+  "valid_count": 15702,
+  "failure_count": 0,
+  "failures": [],
+  "split_metrics": {
+    "train": {
+      "count": 12668,
+      "mean_symmetric_chamfer_uv": 0.003941777162253857
+    },
+    "validation": {
+      "count": 1531,
+      "mean_symmetric_chamfer_uv": 0.003915069159120321
+    },
+    "test": {
+      "count": 1503,
+      "mean_symmetric_chamfer_uv": 0.0038536773063242435
+    }
+  },
+  "seconds": 319.24975479999557,
+  "source": "learned visual_geometry.pt mask head; largest external contour; equal-arclength 256 samples",
+  "artifact": "artifacts/gcdv2_predicted_contours_v1/predicted_contours.npz"
+}

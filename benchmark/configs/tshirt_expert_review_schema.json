@@ -1,0 +1,66 @@
+{
+  "schema_version": "tshirt-expert-review-1.0",
+  "scope": "basic T-shirt only",
+  "decision_values": [
+    "ACCEPT",
+    "CORRECT",
+    "UNCERTAIN",
+    "NOT_APPLICABLE"
+  ],
+  "edge_roles": [
+    "neckline",
+    "shoulder",
+    "armhole",
+    "side_seam",
+    "center_front",
+    "center_back",
+    "hemline",
+    "sleeve_head",
+    "sleeve_underarm",
+    "sleeve_hem",
+    "other"
+  ],
+  "landmark_names": [
+    "FNP",
+    "BNP",
+    "SNP",
+    "SP",
+    "BP",
+    "NONE"
+  ],
+  "reference_lines": [
+    "BL",
+    "WL",
+    "HL",
+    "NONE"
+  ],
+  "required_edge_review_fields": [
+    "sample_id",
+    "panel_id",
+    "edge_id",
+    "proposed_role",
+    "decision",
+    "corrected_role",
+    "reviewer_note"
+  ],
+  "required_point_review_fields": [
+    "sample_id",
+    "panel_id",
+    "point_id",
+    "proposed_name",
+    "decision",
+    "corrected_name",
+    "reviewer_note"
+  ],
+  "interpretation": {
+    "ACCEPT": "The proposed label is correct within this drafting system",
+    "CORRECT": "Enter the expert label in the corrected field",
+    "UNCERTAIN": "The drafting system or definition does not support a definitive label",
+    "NOT_APPLICABLE": "The element is absent from the basic T-shirt recipe"
+  },
+  "important_absences": {
+    "BP": "Neither GarmentCode Shirt(fitted=False) nor FreeSewing Teagan defines this landmark",
+    "dart": "Absent from this basic T-shirt recipe",
+    "GarmentCode_notch_grainline_seam_allowance": "Not generated; do not mix with the FreeSewing domain"
+  }
+}

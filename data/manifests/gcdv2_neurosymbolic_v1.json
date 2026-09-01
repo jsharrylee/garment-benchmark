@@ -1,0 +1,75 @@
+{
+  "schema_version": "gcdv2-neurosymbolic-panel-1.0",
+  "status": "PASS",
+  "source_panel_index_sha256": "2e1b63902d7bc053278692c6f451053cc5e8f18b585e830445fd8e003ba1dd12",
+  "garment_count": 1983,
+  "panel_count": 15702,
+  "stitch_constraint_count": 41262,
+  "visual_contract": {
+    "size": 128,
+    "dense_contour_samples": 256,
+    "visible_corner_threshold_deg": 12.0,
+    "targets": [
+      "mask",
+      "signed_distance_cm",
+      "dense_contour_uv",
+      "visible_junction_heatmap"
+    ]
+  },
+  "formal_contract": {
+    "objects": [
+      "point",
+      "line",
+      "quadratic_bezier",
+      "cubic_bezier",
+      "circular_arc"
+    ],
+    "relations": [
+      "NEXT",
+      "SHARED_ENDPOINT",
+      "CLOSED_CYCLE",
+      "DEGREE_EQUALS",
+      "SEWN_TO"
+    ],
+    "cyclic_loss_required": true
+  },
+  "split_audit": {
+    "seed": 20260829,
+    "strategy": "category-stratified garment-ID-disjoint 80/10/10",
+    "counts": {
+      "validation": {
+        "pants": 26,
+        "skirt": 80,
+        "top": 92
+      },
+      "test": {
+        "pants": 26,
+        "skirt": 80,
+        "top": 92
+      },
+      "train": {
+        "pants": 207,
+        "skirt": 640,
+        "top": 740
+      }
+    },
+    "garment_disjoint": true
+  },
+  "split_category_counts": {
+    "test:pants": 26,
+    "test:skirt": 80,
+    "test:top": 92,
+    "train:pants": 207,
+    "train:skirt": 640,
+    "train:top": 740,
+    "validation:pants": 26,
+    "validation:skirt": 80,
+    "validation:top": 92
+  },
+  "panel_index": "artifacts/gcdv2_neurosymbolic_v1/panel_index.jsonl",
+  "panel_index_sha256": "f9537086d995e8b6ac8c7340f55382ee387e2cfa1da8b2ae691a850c710badba",
+  "garment_index": "artifacts/gcdv2_neurosymbolic_v1/garment_index.jsonl",
+  "garment_index_sha256": "6a113176bee49398215f77d757fadec37d6fc5edd6391897188df53d3752298d",
+  "failures": [],
+  "claim_boundary": "Visual targets are raster-observable. Latent smooth source subdivisions, exact primitives, and stitch relations are separately marked source-formal supervision."
+}

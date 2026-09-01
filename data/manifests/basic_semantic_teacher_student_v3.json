@@ -1,0 +1,309 @@
+{
+  "schema_version": "basic-semantic-teacher-student-manifest/v3",
+  "verified_date": "2026-08-28",
+  "run_id": "full_spatial_v3_reference_lines",
+  "status": "COMPLETE_WITH_REFERENCE_LINES_AND_VALIDATION_GUARDED_EDITING",
+  "report": "reports/common_basic_pattern_semantic_refinement_ko.md",
+  "historical_compatibility": {
+    "previous_manifest": "data/manifests/basic_semantic_teacher_student_v2.json",
+    "previous_query_schema": "basic-semantic-query/v2-role-specific-lower-body",
+    "previous_query_count": 102,
+    "policy": "Preserve v2 as historical evidence. Its checkpoints fail closed under the exact v3 query-key contract and are not relabeled or overwritten."
+  },
+  "stage_status": {
+    "full_training": "PASS",
+    "static_query_checkpoint_contract": "PASS_128_EXACT_KEYS",
+    "graph_padding": "PASS_NO_TRUNCATION",
+    "direct_four_view_semantic_prediction": "PASS_BOUNDED_SAME_GENERATOR_SAMPLE_ID_UNSEEN",
+    "validation_guarded_residual_editing": "PASS_SMALL_AGGREGATE_IMPROVEMENT",
+    "expert_pattern_validation": "PENDING",
+    "cross_source_validation": "PENDING"
+  },
+  "privacy": {
+    "source_images_in_metrics": false,
+    "source_images_in_predictions": false,
+    "source_paths_in_predictions": false,
+    "source_images_in_edit_evaluation": false,
+    "source_paths_in_edit_evaluation": false,
+    "tracked_original_images": false
+  },
+  "configuration": {
+    "relative_path": "benchmark/configs/basic_semantic_teacher_student.json",
+    "bytes": 2415,
+    "sha256": "becd5698cfde16af478e01ab7f28330a2bd30c6af517ac5793b08b28d5713361",
+    "tracked": true,
+    "seed": 20260901,
+    "visual_feature_mode": "spatial",
+    "view_order": ["front", "back", "left", "right"],
+    "spatial_tokens_per_view": 85,
+    "spatial_feature_dimension": 256,
+    "padding": {
+      "maximum_panels": 10,
+      "maximum_edges_per_panel": 32
+    }
+  },
+  "architecture": {
+    "semantic_query_schema_version": "basic-semantic-query/v3-reference-construction-lines",
+    "semantic_query_count": 128,
+    "query_kind_counts": {
+      "panel": 9,
+      "path": 35,
+      "landmark": 62,
+      "reference_line": 22
+    },
+    "query_category_counts": {
+      "tshirt": 33,
+      "pants": 49,
+      "skirt": 46
+    },
+    "coordinate_contract": {
+      "maximum_dimensions": 8,
+      "panel": ["center_u", "center_v", "width", "height"],
+      "landmark": ["u", "v"],
+      "reference_line": ["start_u", "start_v", "end_u", "end_v"],
+      "frame": "garment_union_left_0_right_1_bottom_0_top_1"
+    },
+    "vector_graph_teacher": {
+      "edge_feature_dimension": 19,
+      "width": 192,
+      "token_dimension": 96,
+      "heads": 6,
+      "encoder_layers": 3,
+      "decoder_layers": 3,
+      "parameter_count": 3228710,
+      "reference_line_token_policy": "non_boundary_valid_attention_token_with_edge_role_target_minus_100",
+      "construction_line_marker_feature_index": 14,
+      "stitch_features_enabled": false
+    },
+    "four_view_student": {
+      "input": "four_precomputed_spatial_feature_tensors_plus_known_category_only",
+      "pattern_input": "REJECTED",
+      "width": 192,
+      "token_dimension": 96,
+      "heads": 6,
+      "encoder_layers": 3,
+      "decoder_layers": 3,
+      "parameter_count": 3624585,
+      "output": "same_fixed_presence_coordinate_and_semantic_token_queries_as_teacher"
+    }
+  },
+  "data": {
+    "split_contract": "deterministic category-stratified sample-ID unseen; not recipe-family-disjoint, renderer-disjoint, body-disjoint, or cross-domain",
+    "provisional_basic_blocks_v3": {
+      "truth_status": "PROVISIONAL_EXPERT_REVIEW",
+      "expert_review": "PENDING",
+      "industrial_pattern_truth": false,
+      "total": 1536,
+      "per_category": 512,
+      "split_counts": {
+        "train": {"total": 1074, "per_category": {"tshirt": 358, "pants": 358, "skirt": 358}},
+        "validation": {"total": 231, "per_category": {"tshirt": 77, "pants": 77, "skirt": 77}},
+        "test": {"total": 231, "per_category": {"tshirt": 77, "pants": 77, "skirt": 77}}
+      }
+    },
+    "garmentcode_v2_strict_common_subset": {
+      "truth_status": "SOURCE_GENERATOR_GEOMETRY_AND_DERIVED_SEMANTICS_NOT_INDUSTRIAL_EXPERT_TRUTH",
+      "total": 517,
+      "category_counts": {"tshirt": 37, "pants": 138, "skirt": 342},
+      "split_seed": 20260902,
+      "natural_split_counts": {
+        "train": {"total": 361, "per_category": {"tshirt": 25, "pants": 96, "skirt": 240}},
+        "validation": {"total": 78, "per_category": {"tshirt": 6, "pants": 21, "skirt": 51}},
+        "test": {"total": 78, "per_category": {"tshirt": 6, "pants": 21, "skirt": 51}}
+      },
+      "effective_train_counts": {
+        "method": "deterministic category oversampling on training partition only",
+        "total": 720,
+        "per_category": {"tshirt": 240, "pants": 240, "skirt": 240},
+        "validation_and_test_remain_natural": true
+      }
+    },
+    "teacher_mixed_counts": {"train": 1794, "validation": 309, "test": 309},
+    "train_only_coordinate_alignment": {
+      "method": "query_isotropic_residual_distribution_alignment",
+      "fitted_coordinate_count": 207,
+      "path_endpoints_changed": false,
+      "reference_line_endpoints_changed": false,
+      "meaning": "provisional transfer alignment; not sample-wise source correction or expert truth"
+    },
+    "graph_padding_audit": {
+      "combined_example_count": 2053,
+      "combined_panel_count": 5664,
+      "observed_maximum_panels": 8,
+      "observed_maximum_edges_per_panel": 26,
+      "configured_maximum_panels": 10,
+      "configured_maximum_edges_per_panel": 32,
+      "status": "PASS_NO_TRUNCATION"
+    },
+    "reference_line_contract": {
+      "queries": {
+        "tshirt": ["front_BL", "back_BL", "front_WL", "back_WL", "front_HL", "back_HL"],
+        "pants": ["front_WL", "back_WL", "front_HL", "back_HL", "front_KL", "back_KL", "front_CL", "back_CL", "front_GRAIN", "back_GRAIN"],
+        "skirt": ["front_WL", "back_WL", "front_HL", "back_HL", "front_GRAIN", "back_GRAIN"]
+      },
+      "real_record_level_coordinate_support": {
+        "tshirt_front_back_BL_WL_each": {"total": 37, "train": 25, "validation": 6, "test": 6},
+        "tshirt_front_back_HL_each": {"stored_presence": 37, "training_eligible": 0},
+        "pants_all_ten_queries_each": {"total": 138, "train": 96, "validation": 21, "test": 21},
+        "skirt_front_WL_GRAIN_each": {"total": 329, "train": 230, "validation": 50, "test": 49},
+        "skirt_front_HL": {"total": 309, "train": 219, "validation": 44, "test": 46},
+        "skirt_back_WL_GRAIN_each": {"total": 335, "train": 234, "validation": 51, "test": 50},
+        "skirt_back_HL": {"total": 315, "train": 223, "validation": 45, "test": 47}
+      },
+      "raw_knee_line": {
+        "source_name": "KNEE_LINE",
+        "query_name": "KL",
+        "base_evidence": "synthetic_unvalidated",
+        "base_training_eligible": false,
+        "teacher_adapter_status": "PROVISIONAL_CONVENTIONAL_HALF_LEG_KNEE_LINE",
+        "expert_truth": false
+      },
+      "presence_metric_warning": "All training-eligible reference-line observations are positive; reference-line presence F1 is not detection evidence."
+    }
+  },
+  "training": {
+    "hardware": {
+      "device": "cuda",
+      "gpu": "NVIDIA GeForce RTX 5070",
+      "peak_cuda_memory_bytes": 1126948864
+    },
+    "teacher": {
+      "best_epoch": 77,
+      "best_selection_score": 0.9690103917898755,
+      "training_seconds": 211.173154100019
+    },
+    "student": {
+      "best_epoch": 151,
+      "best_selection_score": 0.9561647909989592,
+      "training_seconds": 206.86094720001
+    }
+  },
+  "direct_semantic_evaluation": {
+    "scope": "GarmentCodeData v2 same-generator, same-render-style, same-neutral-body sample-ID unseen test",
+    "vector_graph_teacher": {
+      "sample_count": 78,
+      "presence_macro_f1": 1.0,
+      "coordinate_normalized_mae": 0.04172092117704344,
+      "panel_role_macro_f1": 1.0,
+      "edge_role_macro_f1": 0.9959806397938366
+    },
+    "four_view_student": {
+      "sample_count": 78,
+      "presence_macro_f1": 0.9991101730352311,
+      "coordinate_normalized_mae": 0.04238449266238031,
+      "per_category": {
+        "tshirt": {"sample_count": 6, "presence_macro_f1": 1.0, "reference_line_coordinate_mae": 0.03664236950377623, "reference_line_endpoint_uv_l2_mean": 0.05943516199477017},
+        "pants": {"sample_count": 21, "presence_macro_f1": 0.999194847020934, "reference_line_coordinate_mae": 0.038208526585783276, "reference_line_endpoint_uv_l2_mean": 0.060852296634887657},
+        "skirt": {"sample_count": 51, "presence_macro_f1": 0.9981832090265826, "reference_line_coordinate_mae": 0.06174750385335503, "reference_line_endpoint_uv_l2_mean": 0.10143223725566544}
+      }
+    },
+    "category_mean_train_only_baseline": {
+      "sample_count": 78,
+      "presence_macro_f1": 0.991752363403731,
+      "coordinate_normalized_mae": 0.04605915570908933
+    },
+    "student_coordinate_mae_gain_over_baseline": {
+      "absolute": 0.00367466304670902,
+      "relative_percent": 7.97813809249626
+    },
+    "coordinate_confidence": {
+      "schema_version": "semantic-coordinate-confidence/v1",
+      "method": "same-generator validation reliability heuristic",
+      "query_count": 128,
+      "positive_reliability_count": 98,
+      "zero_reliability_count": 30,
+      "minimum_positive_reliability": 0.342999851343616,
+      "maximum_reliability": 0.922099113852784,
+      "calibrated_probability": false
+    }
+  },
+  "end_to_end_edit_evaluation": {
+    "status": "COMPLETE_VALIDATION_GUARDED_SAME_GENERATOR_SAMPLE_ID_UNSEEN",
+    "checkpoint": "checkpoints/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/student_validation_guarded.pt",
+    "evaluation": "artifacts/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/edit_evaluation_guarded.json",
+    "selector": {
+      "schema_version": "semantic-edit-validation-gate/v1",
+      "method": "student_vs_default_anchor_validation_mae",
+      "validation_partition_only": true,
+      "test_ground_truth_used": false,
+      "fallback": "FAIL_CLOSED",
+      "calibrated_query_count": 128,
+      "student_edit_query_count": 41,
+      "anchor_retention_query_count": 32,
+      "missing_query_count": 0
+    },
+    "overall": {
+      "sample_count": 78,
+      "anchor_coordinate_mae_mean": 0.08769467176963537,
+      "edited_coordinate_mae_mean": 0.08578337716810272,
+      "aggregate_relative_change_percent": -2.179487719109571,
+      "improved_samples": 51,
+      "sample_improvement_rate": 0.6538461538461539
+    },
+    "per_category": {
+      "tshirt": {"sample_count": 6, "anchor_mae": 0.16211910338478244, "edited_mae": 0.16211910338478244, "relative_change_percent": 0.0, "improved_samples": 0},
+      "pants": {"sample_count": 21, "anchor_mae": 0.11722613008934783, "edited_mae": 0.11356322034638634, "relative_change_percent": -3.124652959344201, "improved_samples": 10},
+      "skirt": {"sample_count": 51, "anchor_mae": 0.06677884403620706, "edited_mae": 0.06536394453978833, "relative_change_percent": -2.11878405030727, "improved_samples": 41}
+    },
+    "status_counts": {
+      "APPLIED_VALIDATED": 72,
+      "EDIT_REJECTED_SEMANTIC_PROJECTION_FALLBACK_TO_VALIDATED_ANCHOR": 6
+    },
+    "semantic_projection_scale_counts": {"0.00": 6, "0.25": 2, "0.50": 5, "0.75": 6, "1.00": 59},
+    "planner_gated_reason_counts": {"unsupported_one_to_many_query:2_instances": 99},
+    "interpretation": "Direct semantic prediction and actual pattern editing are separate results. Selection does not inspect test ground truth, and an applied edit is not guaranteed to improve against that unknown target."
+  },
+  "input_artifacts": [
+    {"relative_path": "data/manifests/basic_common_pattern_blocks_v3.json", "bytes": 2272, "sha256": "d9ae4b6de6e442ba231eb03a64877d94d371ca13c5c70d15d6d51886042b673e", "tracked": true},
+    {"relative_path": "artifacts/drafting_semantics/basic_blocks/provisional_common_blocks_v3.json", "bytes": 45918856, "sha256": "1dbd5e93bcac3532d2ad722d36733cd33be09cc8dbad49e4fd1839c521c3b7ea", "tracked": false},
+    {"relative_path": "data/manifests/gcdv2_multigarment_semantics.json", "bytes": 2503, "sha256": "a42a2861cc8d1f684c37f8b126edd9eca4827b83079050d00754b3e77bf727cb", "tracked": true},
+    {"relative_path": "data/manifests/lower_body_semantic_targets.json", "bytes": 2735, "sha256": "a0d77f61b2d8953c60296c9c6cd3122eb46ec7217be11570bc1887f6e3979842", "tracked": true},
+    {"relative_path": "artifacts/drafting_semantics/gcdv2_multigarment/records.jsonl", "bytes": 116091515, "sha256": "2f19f80e39a11f41f8b5ddcb5486d8f7062880fa8ae669c3a4fb853cb1f316a9", "tracked": false},
+    {"relative_path": "artifacts/retrieval_v2/garmentcode_v2_batch_0_multiview_index.json", "bytes": 11713461, "sha256": "111e6ca2d92393f76164be34cab6108ca282da91d0fb61d93ff3715444f96c77", "tracked": false},
+    {"relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/resnet50_fpn_tokens_manifest.json", "bytes": 776, "sha256": "5654c189cb420fac6a26e984c99c1984236d1d9be51bb0464fac30c895aae12e", "tracked": false},
+    {"relative_path": "artifacts/drafting_semantics/multiview_curve_parameters/resnet50_fpn_tokens.npz", "bytes": 511449702, "sha256": "b39f9cab3ff36fc701d1c9ae5e65f815ff2dbfbbe7cc52bfbf680571e2f9da0a", "tracked": false}
+  ],
+  "output_artifacts": [
+    {"relative_path": "artifacts/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/metrics.json", "bytes": 556912, "sha256": "e3a23b69c1834255d817e80e0e3a7d5be08a398b000d9af8c47cc3a1786eca9b", "tracked": false},
+    {"relative_path": "artifacts/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/test_predictions.json", "bytes": 3086449, "sha256": "607c7394af4240659592909c0ed22cff18dac01a5fd8c7e08152fa9993c380ef", "tracked": false},
+    {"relative_path": "checkpoints/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/teacher.pt", "bytes": 12988869, "sha256": "8de31f5259df1cd28abc1aee2d2dc968125428b3d66f86c29024752012bcff3f", "tracked": false},
+    {"relative_path": "checkpoints/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/student.pt", "bytes": 14546199, "sha256": "cd7111e84f6ff8904ebec098ce3c30ff731158b14041993527fd198c176333ec", "tracked": false},
+    {"relative_path": "checkpoints/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/student_validation_guarded.pt", "bytes": 14570725, "sha256": "ea5413b1e2eb4c4f0b99c8887e5ae9234c43c6d441764135b457066a9f275608", "tracked": false, "final_inference_checkpoint": true},
+    {"relative_path": "artifacts/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/edit_evaluation_guarded.json", "bytes": 12613, "sha256": "bb45ffd567019d1bb1499b1bdb1f1f711bf438381620b1088dc5a242035d58ee", "tracked": false, "final_edit_evaluation": true}
+  ],
+  "verification": {
+    "final_relevant_unit_tests": {
+      "test_count": 83,
+      "result": "PASS",
+      "coverage": "basic blocks, drafting-record/reference-line schema, lower-body semantics, fixed targets, teacher/student contract, training integration, residual planning, semantic editing, guarded four-view inference"
+    },
+    "guarded_checkpoint": {
+      "exact_v3_query_count": 128,
+      "base_student_weights_unchanged": true,
+      "added_field": "semantic_edit_calibration",
+      "calibration_uses_test_ground_truth": false
+    },
+    "artifact_hashes_recomputed": true
+  },
+  "claim_boundary": [
+    "BasicBlock v3 formulas, targets, and edit anchors remain PROVISIONAL_EXPERT_REVIEW; pattern-expert validation is pending.",
+    "GarmentCode targets are exact or derived relative to that source generator and topology, not independently verified industrial pattern truth.",
+    "The visual test is same-generator, same-render-style, same-neutral-body sample-ID unseen only; it is not family-disjoint or cross-domain evidence.",
+    "Raw pants KNEE_LINE remains synthetic_unvalidated and ineligible in the base lower-body ontology; the teacher adapter promotion is explicitly provisional for this experiment.",
+    "Direct numeric semantic prediction and topology-preserving residual pattern editing are distinct evaluations.",
+    "Reference-line presence labels contain no supervised negatives, so endpoint geometry metrics are primary and line presence F1 is not a detection claim.",
+    "The guarded selector is fitted on validation only and does not use test truth, but it is still same-domain and does not establish CAD validity.",
+    "Topology validation does not establish fit, manufacturability, seam allowance, notch, grain, closure, grading, or expert drafting correctness.",
+    "No source image, image pixel, or per-sample source image path is embedded in this manifest, metrics, predictions, checkpoints, or edit evaluation."
+  ],
+  "remaining_work": [
+    "expert review of formulas, bounds, reference lines, darts, sleeve cap, and vent",
+    "observed or expert-approved knee truth instead of provisional promotion",
+    "family-disjoint, cross-generator, cross-body, cross-renderer, and real-pattern evaluation",
+    "negative and unknown reference-line examples plus endpoint-first reporting",
+    "explicit skirt front/back exchangeability and reference-line schema validation",
+    "separate construction marker from future stitch features and align source coordinate conventions",
+    "safe one-to-many instance identity and stronger T-shirt query-to-CAD editing",
+    "seam mates, notches, allowances, closures, grain approval, grading, simulation, and production validation"
+  ]
+}

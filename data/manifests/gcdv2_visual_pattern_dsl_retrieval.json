@@ -1,0 +1,59 @@
+{
+  "schema_version": "gcdv2-visual-pattern-dsl-retrieval-result-1.0",
+  "status": "PASS_TECHNICAL_VISUAL_TO_DSL_RETRIEVAL",
+  "date": "2026-08-29",
+  "split_authority": "gcdv2_pattern_dsl_v1 garment-ID-disjoint split",
+  "intersection_split_counts": {
+    "train": 1570,
+    "validation": 194,
+    "test": 198
+  },
+  "excluded_dsl_without_fpn": 21,
+  "training": {
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "best_epoch": 46,
+    "training_seconds": 91.05192390002776,
+    "trainable_bridge_parameters": 890628,
+    "frozen_dsl_teacher_parameters": 950820
+  },
+  "frozen_test_paired_gallery_target_present": {
+    "image_to_dsl_recall_at_1": 0.5404040404040404,
+    "image_to_dsl_recall_at_5": 0.898989898989899,
+    "image_to_dsl_recall_at_10": 0.9444444444444444,
+    "image_to_dsl_mrr": 0.6893805511765122,
+    "median_rank": 1.0
+  },
+  "frozen_test_train_bank_target_absent": {
+    "category_match_at_1": 0.9747474747474747,
+    "exact_closed_cycle_primitive_topology_at_1": 0.17676767676767677,
+    "exact_closed_cycle_primitive_topology_at_10": 0.5
+  },
+  "retrieved_anchor_symbolic_verification": {
+    "query_count": 198,
+    "unique_train_anchors": 177,
+    "symbolic_valid_rate": 1.0,
+    "raw_grammar_violations": 42,
+    "projected_grammar_violations": 0,
+    "projected_anchor_edge_role_accuracy": 0.9443896018427114,
+    "anchor_seam_f1": 0.5424975251025315,
+    "anchor_landmark_f1": 0.9178505250154415,
+    "accepted_sewn_to_facts": 2953,
+    "derived_landmark_facts": 875
+  },
+  "neural_input_excludes": [
+    "absolute x/y",
+    "sample/source/panel/edge IDs",
+    "semantic role labels",
+    "stitch targets",
+    "split labels",
+    "evaluation topology signature"
+  ],
+  "artifacts_ignored": {
+    "metrics": "artifacts/gcdv2_visual_pattern_dsl_retrieval/metrics.json",
+    "checkpoint": "checkpoints/gcdv2_pattern_dsl/visual_retrieval.pt",
+    "frozen_dsl_panel_tokens": "artifacts/gcdv2_visual_pattern_dsl_retrieval/frozen_dsl_panel_tokens.npz",
+    "test_predictions": "artifacts/gcdv2_visual_pattern_dsl_retrieval/test_train_bank_predictions.jsonl",
+    "symbolic_anchor_verification": "artifacts/gcdv2_visual_pattern_dsl_retrieval/symbolic_anchor_verification.json"
+  },
+  "claim_boundary": "Four-view to coordinate-free DSL retrieval inside the GCDv2 generator/render domain; not SVG command generation, expert cross-source validation, or proof of production-pattern correctness."
+}

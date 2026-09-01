@@ -1,0 +1,18 @@
+{
+  "sources": {
+    "synbody": {"official_page": "https://synbody.github.io/", "repository": "https://github.com/SynBody/SynBody"},
+    "nova_human": {
+      "paper": "https://arxiv.org/abs/2405.12505",
+      "archived_official_project": "https://web.archive.org/web/20240522033631id_/https://wanghongsheng01.github.io/NOVA-3D/",
+      "provenance_status": "ARCHIVED_OFFICIAL_LINK_LIVE",
+      "license_status": "UNRESOLVED",
+      "usage_status": "PRIVATE_EVALUATION_ONLY",
+      "restricted_root": "data/restricted/nova_human"
+    },
+    "a_kerim_nova_false_match": {
+      "repository": "https://github.com/A-Kerim/NOVA",
+      "classification": "SUPERSEDED_SOURCE_MISMATCH",
+      "note": "Unrelated 2021 Unreal pedestrian-tracking generation framework; retained only as false-match evidence."
+    }
+  }
+}

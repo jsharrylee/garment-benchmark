@@ -1,0 +1,53 @@
+{
+  "schema_version": "gcdv2-pattern-dsl-training-result-2.0",
+  "status": "PASS_CANONICAL_DSL_TRAINED_AND_SYMBOLICALLY_EVALUATED",
+  "date": "2026-08-29",
+  "device": "NVIDIA GeForce RTX 5070",
+  "edge_feature_schema": "gcd-pattern-dsl-chord-turn/v2",
+  "model": {
+    "architecture": "cyclic edge Transformer plus garment-set panel Transformer plus symbolic projection",
+    "parameter_count": 950820,
+    "epochs": 14,
+    "training_seconds": 729.2677370000165,
+    "checkpoint_ignored": "checkpoints/gcdv2_pattern_dsl_v2/unified_transformer.pt"
+  },
+  "split_counts": {
+    "train": 1587,
+    "validation": 198,
+    "test": 198
+  },
+  "frozen_test": {
+    "category_accuracy": 1.0,
+    "panel_role_macro_f1": 0.9302727238859921,
+    "edge_role_accuracy_raw": 0.9439151147682979,
+    "edge_role_macro_f1_raw": 0.9420050694233514,
+    "masked_command_consistency_accuracy": 0.9984084352929474,
+    "seam_mate_recall_at_1": 0.5255076142131979,
+    "seam_pair_f1_raw": 0.4236545232449522,
+    "role_junction_landmark_exact_vertex": 0.9818652849740933
+  },
+  "symbolic_test": {
+    "sample_count": 198,
+    "valid_rate": 1.0,
+    "raw_grammar_violations": 16,
+    "projected_grammar_violations": 0,
+    "changed_role_edges": 15,
+    "edge_role_accuracy_projected": 0.9447812906019922,
+    "seam_precision": 0.6748704663212435,
+    "seam_recall": 0.5289340101522843,
+    "seam_f1": 0.5930563460443938,
+    "landmark_precision": 0.8794901506373117,
+    "landmark_recall": 0.9831606217616581,
+    "landmark_f1": 0.9284403669724771
+  },
+  "v1_comparison": {
+    "edge_role_macro_f1": 0.9371936209409107,
+    "symbolic_seam_f1": 0.5337796713329275,
+    "symbolic_landmark_f1": 0.9306569343065695
+  },
+  "evidence_ignored": {
+    "training_metrics": "artifacts/gcdv2_pattern_dsl_v2_training/metrics.json",
+    "symbolic_proofs": "artifacts/gcdv2_pattern_dsl_v2_training/symbolic_test.json"
+  },
+  "claim_boundary": "Canonical PatternProgram chord-turn geometry to GCDv2-internal derived semantic/seam propositions; not visual target generation or expert cross-source validation."
+}

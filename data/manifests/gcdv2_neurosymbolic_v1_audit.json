@@ -1,0 +1,21 @@
+{
+  "schema_version": "gcdv2-neurosymbolic-audit-1.0",
+  "status": "PASS",
+  "garment_count": 1983,
+  "panel_count": 15702,
+  "point_count": 105242,
+  "curve_count": 105242,
+  "stitch_constraint_count": 41262,
+  "visible_corner_count": 93588,
+  "latent_smooth_source_subdivision_count": 11654,
+  "primitive_counts": {
+    "line": 79911,
+    "quadratic_bezier": 10356,
+    "cubic_bezier": 6867,
+    "circular_arc": 8108
+  },
+  "garment_disjoint_split": true,
+  "audit_failures": 0,
+  "local_artifact_size_gib": 0.32,
+  "claim_boundary": "All visual tensors, formal point-curve incidence, garment panel coverage, stitch references, and split disjointness passed a full audit. Semantic drafting landmarks remain outside this dataset."
+}

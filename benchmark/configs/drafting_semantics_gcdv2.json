@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "scope": "symmetric_bodice_v1",
+  "input_representation": "ordered_vector_panel_edges",
+  "width": 128,
+  "heads": 4,
+  "layers": 3,
+  "feedforward_multiplier": 3,
+  "dropout": 0.1,
+  "maximum_edges": 40,
+  "batch_size": 64,
+  "epochs": 12,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.001,
+  "seed": 2026,
+  "include_stitch_features": false,
+  "boundary_reindex_augmentations": 2,
+  "body_measurement_prediction": false,
+  "body_measurement_prediction_reason": "GarmentCodeData v2 batch_0/default_body has one unique body-measurement payload",
+  "production_marks_training": false,
+  "production_marks_reason": "notches, grainlines and seam allowances are unavailable in the source specification; synthetic marks are audit-only"
+}

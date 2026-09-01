@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "profile": "gcd_reference_transfer_v1",
+  "quality": 10,
+  "mass": 0.22,
+  "air_damping": 6.0,
+  "sewing_force_max": 4.0,
+  "self_distance_min": 0.005,
+  "collision_thickness_outer": 0.0015,
+  "pin_stiffness": 0.7,
+  "use_self_collision": true,
+  "precompensation_scale_blender_xyz": [1.15, 1.2, 1.0],
+  "reference_category": "pants",
+  "reference_sample_count": 259,
+  "reference_extent_ratio_garmentcode_xyz": [0.567843493655455, 0.9263775563199615, 0.6529233296712239],
+  "best_observed_mean_four_view_iou": 0.23678734962125692,
+  "status": "CALIBRATED_BEST_OBSERVED_NOT_VISUAL_PASS"
+}

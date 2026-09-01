@@ -1,0 +1,32 @@
+{
+  "all_views_present_count": 1962,
+  "built_record_count": 1962,
+  "category_counts": {
+    "pants": 259,
+    "skirt": 780,
+    "top": 923
+  },
+  "claim_boundary": "Geometry is source-exact or deterministic geometry derived from GCDv2 specification.json. Packed panel positions are display-only and never geometric truth. Semantic drafting names are outside this schema.",
+  "curve_type_counts": {
+    "circular_arc": 8019,
+    "cubic_bezier": 6863,
+    "line": 79719,
+    "quadratic_bezier": 10354
+  },
+  "dataset": "GarmentCodeData v2",
+  "eligible_record_count": 1962,
+  "failed_record_count": 0,
+  "failures": [],
+  "image_size": 1024,
+  "index_artifact": "artifacts/gcdv2_exact_pairs_v1/index.jsonl",
+  "index_sha256": "6ea3d8bc3398a8ecd1d2ef922ddf78873c74f08c00eac121482c3d0f554ca510",
+  "license": "CC BY 4.0",
+  "non_overlap_pass_count": 1962,
+  "requested_categories": [
+    "top",
+    "skirt",
+    "pants"
+  ],
+  "schema_version": "gcdv2-exact-pair-1.0",
+  "validation_pass_count": 1962
+}

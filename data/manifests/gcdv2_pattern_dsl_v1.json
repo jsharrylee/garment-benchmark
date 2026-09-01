@@ -1,0 +1,85 @@
+{
+  "schema_version": "gcdv2-pattern-dsl-1.0",
+  "status": "PASS",
+  "representation": "exact M/L/Q/C/A/Z-style geometry problem facts plus masked semantic/seam proposition targets",
+  "edge_feature_schema": "gcdv2-intrinsic-tangent-gap/v1",
+  "checkpoint_compatibility": "checkpoints/gcdv2_pattern_dsl/unified_transformer.pt; do not load with the chord-turn v2 corpus",
+  "neural_input_excludes": [
+    "raster image",
+    "absolute x/y",
+    "source panel id",
+    "source edge id",
+    "semantic role",
+    "stitch target"
+  ],
+  "garment_count": 1983,
+  "panel_count": 15702,
+  "edge_count": 105242,
+  "stitch_count": 41262,
+  "semantic_panel_count": 13849,
+  "semantic_edge_count": 93896,
+  "landmark_count": 7424,
+  "split_counts": {
+    "train": 1587,
+    "validation": 198,
+    "test": 198
+  },
+  "vocabulary": {
+    "curve_commands": [
+      "L",
+      "Q",
+      "C",
+      "A"
+    ],
+    "garment_roles": [
+      "top",
+      "pants",
+      "skirt"
+    ],
+    "panel_roles": [
+      "other",
+      "front_bodice",
+      "back_bodice",
+      "front_skirt",
+      "back_skirt",
+      "front_pants",
+      "back_pants",
+      "sleeve",
+      "collar",
+      "cuff",
+      "waistband"
+    ],
+    "edge_roles": [
+      "other",
+      "neckline",
+      "shoulder",
+      "armhole",
+      "center_front",
+      "center_back",
+      "side_seam",
+      "waistline",
+      "hemline",
+      "dart_leg",
+      "sleeve_head",
+      "sleeve_underarm",
+      "sleeve_hem",
+      "cuff_attachment",
+      "inseam",
+      "outseam",
+      "crotch_curve",
+      "collar_attachment"
+    ],
+    "relations": [
+      "MEMBER",
+      "NEXT",
+      "SHARED_ENDPOINT",
+      "SEWN_TO",
+      "LANDMARK"
+    ]
+  },
+  "split_authority": "gcdv2_neurosymbolic garment-ID-disjoint split; semantic-record split ignored",
+  "artifacts": {
+    "arrays": "artifacts/gcdv2_pattern_dsl_v1/programs.npz",
+    "metadata": "artifacts/gcdv2_pattern_dsl_v1/metadata.jsonl"
+  }
+}

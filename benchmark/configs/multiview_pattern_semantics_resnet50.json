@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "input": "four frozen COCO-pretrained ResNet-50 image embeddings from actual 224px orthographic renders",
+  "view_feature_dim": 2048,
+  "target": "paired canonical 2D panel inventory and semantic-path inventory",
+  "width": 256,
+  "heads": 8,
+  "layers": 5,
+  "feedforward_multiplier": 4,
+  "dropout": 0.15,
+  "contrastive_dimension": 128,
+  "batch_size": 96,
+  "epochs": 180,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.002,
+  "temperature": 0.12,
+  "early_stopping_patience": 22,
+  "seed": 20260829,
+  "loss_weights": {
+    "category": 1.0,
+    "pattern": 1.5,
+    "contrastive": 0.2
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "artifact_bytes": 9764518,
+  "artifact_sha256": "e8e29b77686b2efaf6288d84854639f7c1506d1f01c7277505e0283674e7a4f1",
+  "input_record_counts": {
+    "teagan_holdout.jsonl.gz": 80,
+    "tshirt_traces.jsonl.gz": 2592
+  },
+  "mutation_policy": "model geometry and targets projected; raw source artifacts unchanged",
+  "record_count": 2672,
+  "schema_version": "combined-tshirt-semantics-1.0",
+  "training_projection": true
+}

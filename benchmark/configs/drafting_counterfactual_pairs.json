@@ -1,0 +1,108 @@
+{
+  "schema_version": "drafting-counterfactual-config/v1",
+  "seed": 20260828,
+  "claim_boundary": "One author-facing drafting input changes per pair. Generated 2D patterns are ground truth. No claim of a true 3D pair is made until the same fixed simulator/body/material/cameras render both members.",
+  "recommended_pairs_per_parameter": 32,
+  "seeded_baseline_sampler": {
+    "policy": "replicate 0 uses the explicit smoke values below; later replicates deterministically sample the listed safe interior ranges, then reflect the intervention value across the range midpoint",
+    "garmentcode_body_files": [
+      "external/GarmentCode/assets/bodies/mean_all.yaml",
+      "external/GarmentCode/assets/bodies/mean_female.yaml",
+      "external/GarmentCode/assets/bodies/mean_male.yaml"
+    ],
+    "garmentcode_ranges": {
+      "shirt.length": [0.9, 1.7],
+      "shirt.width": [1.02, 1.2],
+      "shirt.flare": [0.85, 1.2],
+      "collar.width": [0.0, 0.55],
+      "collar.fc_depth": [0.35, 0.9],
+      "collar.f_bezier_x": [0.2, 0.8],
+      "collar.f_bezier_y": [0.2, 0.8],
+      "sleeve.length": [0.2, 0.8],
+      "sleeve.connecting_width": [0.1, 0.5],
+      "sleeve.end_width": [0.7, 1.3],
+      "sleeve.sleeve_angle": [12, 38],
+      "sleeve.smoothing_coeff": [0.15, 0.35]
+    },
+    "freesewing_ranges": {
+      "backNeckCutout": [0.03, 0.12],
+      "chestEase": [0.06, 0.24],
+      "hipsEase": [0.08, 0.28],
+      "lengthBonus": [-0.05, 0.5],
+      "necklineBend": [0.2, 0.85],
+      "necklineDepth": [0.18, 0.42],
+      "necklineWidth": [0.18, 0.48],
+      "sleeveLength": [0.2, 0.85]
+    }
+  },
+  "shared_render_state": {
+    "material": {
+      "profile_id": "counterfactual_plain_cotton_v1",
+      "mass_kg_m2": 0.22,
+      "air_damping": 6.0,
+      "collision_thickness_m": 0.0015,
+      "texture": "uniform_white_no_texture"
+    },
+    "simulator": {
+      "profile_id": "counterfactual_deterministic_cloth_v1",
+      "random_seed": 20260828,
+      "frames": 90,
+      "gravity_m_s2": [0.0, 0.0, -9.81],
+      "pose": "fixed_A_pose",
+      "note": "Contract only. Existing Blender sewing proxy has not passed GCD reference-fidelity validation."
+    },
+    "cameras": {
+      "projection": "orthographic",
+      "shared_crop": "pair_union_bounds_with_12_percent_margin",
+      "resolution": [384, 384],
+      "views": {
+        "front": [0.0, -1.0, 0.0],
+        "back": [0.0, 1.0, 0.0],
+        "left": [-1.0, 0.0, 0.0],
+        "right": [1.0, 0.0, 0.0]
+      }
+    }
+  },
+  "garmentcode": {
+    "design_file": "external/GarmentCode/assets/design_params/t-shirt.yaml",
+    "body_file": "external/GarmentCode/assets/bodies/mean_all.yaml",
+    "base_overrides": {
+      "collar.f_collar": "Bezier2NeckHalf",
+      "collar.component.style": null,
+      "sleeve.cuff.type": null
+    },
+    "interventions": [
+      {"id": "body_length", "parameter": "shirt.length", "value": 1.6, "expected_elements": ["center_front", "center_back", "side_seam"]},
+      {"id": "body_width", "parameter": "shirt.width", "value": 1.2, "expected_elements": ["front_bodice_width", "back_bodice_width", "side_seam"]},
+      {"id": "front_neck_depth", "parameter": "collar.fc_depth", "value": 0.9, "expected_elements": ["FNP", "neckline"]},
+      {"id": "neck_width", "parameter": "collar.width", "value": 0.55, "expected_elements": ["SNP", "neckline", "shoulder"]},
+      {"id": "front_neck_bezier_x", "parameter": "collar.f_bezier_x", "value": 0.7, "expected_elements": ["neckline_control_point", "neckline"]},
+      {"id": "front_neck_bezier_y", "parameter": "collar.f_bezier_y", "value": 0.2, "expected_elements": ["neckline_control_point", "neckline"]},
+      {"id": "sleeve_length", "parameter": "sleeve.length", "value": 0.75, "expected_elements": ["sleeve_underarm", "sleeve_head"]},
+      {"id": "sleeve_angle", "parameter": "sleeve.sleeve_angle", "value": 35, "expected_elements": ["armhole", "sleeve_head"]}
+    ]
+  },
+  "freesewing_teagan": {
+    "extractor": "benchmark/scripts/extract_freesewing_teagan.mjs",
+    "body_model": "cisFemaleAdult38",
+    "seam_allowance_mm": 10,
+    "base_options": {
+      "backNeckCutout": 0.06,
+      "chestEase": 0.12,
+      "hipsEase": 0.15,
+      "lengthBonus": 0.1,
+      "necklineBend": 0.5,
+      "necklineDepth": 0.28,
+      "necklineWidth": 0.3,
+      "sleeveLength": 0.35
+    },
+    "interventions": [
+      {"id": "neck_depth", "parameter": "necklineDepth", "value": 0.4, "expected_elements": ["FNP", "neckline"]},
+      {"id": "neck_width", "parameter": "necklineWidth", "value": 0.46, "expected_elements": ["SNP", "neckline", "shoulder"]},
+      {"id": "neck_bend", "parameter": "necklineBend", "value": 0.8, "expected_elements": ["neckline_control_points", "neckline"]},
+      {"id": "sleeve_length", "parameter": "sleeveLength", "value": 0.78, "expected_elements": ["sleeve_underarm", "sleeve_hem"]},
+      {"id": "body_length", "parameter": "lengthBonus", "value": 0.45, "expected_elements": ["center_front", "center_back", "side_seam"]},
+      {"id": "chest_ease", "parameter": "chestEase", "value": 0.22, "expected_elements": ["front_bodice_width", "back_bodice_width", "armhole"]}
+    ]
+  }
+}

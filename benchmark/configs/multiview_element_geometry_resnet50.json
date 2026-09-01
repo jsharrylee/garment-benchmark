@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "input": "four frozen COCO-pretrained ResNet-50 global image embeddings",
+  "target": "masked continuous normalized panel and semantic-path geometry",
+  "view_feature_dim": 2048,
+  "width": 256,
+  "heads": 8,
+  "layers": 5,
+  "decoder_layers": 2,
+  "feedforward_multiplier": 4,
+  "dropout": 0.15,
+  "batch_size": 96,
+  "epochs": 180,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.002,
+  "early_stopping_patience": 24,
+  "view_dropout_probability": 0.35,
+  "seed": 20260830,
+  "loss_weights": {
+    "category": 0.5,
+    "geometry": 1.5,
+    "presence": 0.4
+  }
+}

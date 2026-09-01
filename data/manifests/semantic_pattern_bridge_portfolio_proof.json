@@ -1,0 +1,201 @@
+{
+  "schema_version": "semantic-pattern-bridge-portfolio-proof/v1.1",
+  "date": "2026-08-31",
+  "status": "PASS_LIMITED_SEMANTIC_TRANSFER_AND_GUARDED_EDIT_WITH_NEGATIVE_RETRIEVAL_ABLATION",
+  "headline_claim": "Separate component evaluations show that coordinate-invariant analytic garment semantics are learnable from complete vector patterns, improve compatible primitive-cycle candidate coverage in visual-to-DSL retrieval, transfer to a distinct 128-query four-view student, and support small validation-gated BasicBlock edits. These parser/retrieval and student/editor lanes use different ontologies and checkpoints and are not yet an integrated end-to-end generator; target-topology top-1 selection and causal drafting-parameter inversion remain unsolved.",
+  "corpus": {
+    "canonical_pattern_dsl_patterns": 1983,
+    "exact_four_view_pattern_pairs": 1962,
+    "categories": {
+      "top": 923,
+      "skirt": 780,
+      "pants": 259
+    },
+    "canonical_pattern_dsl_split": {
+      "train": 1587,
+      "validation": 198,
+      "test": 198
+    },
+    "visual_dsl_retrieval_intersection_split": {
+      "train_bank": 1570,
+      "validation": 194,
+      "test": 198
+    },
+    "provisional_basic_block_patterns": 1536,
+    "strict_common_semantic_subset": {
+      "total": 517,
+      "test": 78,
+      "test_by_category": {
+        "tshirt": 6,
+        "pants": 21,
+        "skirt": 51
+      }
+    }
+  },
+  "component_contract": {
+    "implemented_a": "A canonical 0.95M Pattern DSL parser on 1,983 vector patterns plus a separate visual-to-DSL retrieval bridge on the 1,962 exact-pattern/four-view intersection. It retrieves existing train-bank programs and applies symbolic role-cycle projection; it does not generate new commands or feed the guarded BasicBlock editor.",
+    "implemented_b": "A separate 3.23M 128-query vector-graph teacher and 3.62M four-view student trained from 1,536 provisional BasicBlocks plus the 517-record GCD strict-common subset, followed by validation-gated editing of a deterministic category-default BasicBlock. Its ontology is panel/path/landmark/reference-line and excludes seam queries.",
+    "not_integrated": [
+      "canonical DSL parser as the direct teacher of the 128-query student",
+      "retrieved DSL anchor into the guarded BasicBlock editor",
+      "raw ReWeaver output into the parser-verifier-editor bridge",
+      "bridge output into simulation or expert A/B evaluation"
+    ],
+    "future_only": "Target-conditioned topology generation, missing-panel and edge split/merge commands, parametric drafting, a general seam length/direction/ease solver, and simulation/expert validation."
+  },
+  "evidence": {
+    "complete_vector_pattern_semantic_parser": {
+      "input_excludes_absolute_xy_and_source_ids": true,
+      "test_count": 198,
+      "category_accuracy": 1.0,
+      "panel_role_macro_f1": 0.9302727238859921,
+      "edge_role_macro_f1": 0.9420050694233514,
+      "symbolic_landmark_f1": 0.9284403669724771,
+      "symbolic_seam_f1": 0.5930563460443938
+    },
+    "four_view_to_shared_semantic_space": {
+      "test_count": 78,
+      "four_view_student_coordinate_normalized_mae": 0.04238449266238031,
+      "train_only_category_mean_coordinate_normalized_mae": 0.04605915570908933,
+      "relative_mae_reduction_percent": 7.97813809249626,
+      "four_view_student_presence_macro_f1": 0.9991101730352311,
+      "warning": "The presence label distribution is highly positive; coordinate error is the primary transfer metric."
+    },
+    "validation_guarded_pattern_edit": {
+      "test_count": 78,
+      "anchor_coordinate_mae": 0.08769467176963537,
+      "edited_coordinate_mae": 0.08578337716810272,
+      "relative_mae_reduction_percent": 2.179487719109571,
+      "improved_samples": 51,
+      "sample_improvement_rate": 0.6538461538461539,
+      "pants_relative_mae_reduction_percent": 3.124652959344201,
+      "skirt_relative_mae_reduction_percent": 2.11878405030727,
+      "tshirt_relative_mae_reduction_percent": 0.0,
+      "test_ground_truth_used_for_selector": false
+    },
+    "symbolic_candidate_reranking_negative_control": {
+      "rerun_date": "2026-08-30",
+      "test_count": 198,
+      "visual_cosine_exact_topology_top1": 0.15656565656565657,
+      "semantic_symbolic_reranked_exact_topology_top1": 0.15656565656565657,
+      "top10_exact_topology_coverage": 0.46464646464646464,
+      "raw_role_grammar_violations": 168,
+      "projected_role_grammar_violations": 0,
+      "interpretation": "The semantic layer verifies and repairs internal program consistency, but current anchor-side semantics do not tell which valid topology matches the target image."
+    },
+    "fixed_split_raw_fpn_vs_dsl_retrieval": {
+      "test_count": 198,
+      "train_bank_count": 1570,
+      "raw_fpn": {
+        "category_at_1": 0.9949494949494949,
+        "exact_topology_at_1": 0.14646464646464646,
+        "exact_topology_at_10": 0.36363636363636365
+      },
+      "trained_visual_dsl": {
+        "category_at_1": 0.9848484848484849,
+        "exact_topology_at_1": 0.15656565656565657,
+        "exact_topology_at_10": 0.46464646464646464
+      },
+      "dsl_minus_raw_percentage_points": {
+        "category_at_1": -1.0101010101010055,
+        "exact_topology_at_1": 1.010101010101011,
+        "exact_topology_at_10": 10.1010101010101
+      },
+      "warning": "The raw FPN baseline is parameter-free while the DSL dual encoder is trained; this is fixed-split evidence for a better candidate beam, not an architecture-matched semantic-pretraining ablation or a consistent per-category top-1 win."
+    },
+    "strict_tshirt_surface_correspondence_probe": {
+      "all_exact_pair_count": 1962,
+      "top_count": 923,
+      "simple_tshirt_candidates": 61,
+      "superseded_raw_role_accepted_count": 23,
+      "superseded_raw_role_quarantined_count": 38,
+      "superseded_reason": "The surface builder bypassed the existing common-basic role resolver; 75 front-shoulder edges were stale-labeled side_seam even though their exact geometry and shoulder stitch mates existed.",
+      "resolved_complete_count": 61,
+      "resolved_quarantined_count": 0,
+      "resolved_split": {
+        "train": 54,
+        "validation": 5,
+        "test": 2
+      },
+      "visual_model_location_top1_target_score": 0.8210279817288613,
+      "mean_pattern_prior_location_top1_target_score": 0.7836084325287916,
+      "visual_model_top3_hit": 0.9808083745274789,
+      "mean_pattern_prior_top3_hit": 0.9118929921488805,
+      "visual_model_beats_mean_pattern_location_prior": true,
+      "parameters_beating_fold_train_mean_mae": 5,
+      "evaluated_varying_parameters": 7,
+      "parameter_r_squared_range": [-0.05861732932999941, 0.029411303865449656],
+      "interpretation": "The corrected 61-sample model learns element localization beyond the mean-pattern prior, but absolute drafting-parameter regression remains close to a mean predictor and is observational rather than causal."
+    }
+  },
+  "portfolio_claim_boundary": [
+    "The semantic parser is evaluated on GCDv2-internal derived labels, not expert-approved industrial pattern semantics.",
+    "The visual tests are sample-ID unseen but same-generator, same-render-style, and fixed-neutral-body evaluations.",
+    "The result does not establish superiority over ReWeaver, Garment Particles, or another end-to-end image-to-pattern model.",
+    "The reranking ablation is a negative result: semantic projection removes grammar violations but does not improve exact target-topology top-1.",
+    "The guarded editor preserves an existing topology and cannot generate missing panels or repair a topology family mismatch.",
+    "The fixed-split raw-FPN comparison uses a parameter-free baseline against a trained DSL dual encoder; it supports candidate-beam coverage, not a fully architecture-matched ablation.",
+    "Public display and redistribution rights for source dataset images remain separate from technical benchmark results."
+  ],
+  "evidence_files": [
+    {
+      "path": "data/manifests/gcdv2_pattern_dsl_v2_training_result.json",
+      "bytes": 2075,
+      "sha256": "1e8b10b0147f04a159a6b656f6d304725682bff8829a50366cb1ffe73a612ae4"
+    },
+    {
+      "path": "data/manifests/basic_semantic_teacher_student_v3.json",
+      "bytes": 17673,
+      "sha256": "c32b7aecea7815d59300025ceff52a607b010270a5f0ba83d9147134062ec3f9"
+    },
+    {
+      "path": "artifacts/drafting_semantics/basic_semantic_teacher_student/full_spatial_v3_reference_lines/edit_evaluation_guarded.json",
+      "bytes": 12613,
+      "sha256": "bb45ffd567019d1bb1499b1bdb1f1f711bf438381620b1088dc5a242035d58ee",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/gcdv2_visual_pattern_dsl_retrieval_v2/symbolic_candidate_beam_portfolio_rerun.json",
+      "bytes": 107174,
+      "sha256": "d4636bf8336ec7b91298106352dbbbadf2d0f77db0c31605daede50ef05a1401",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/drafting_semantics/tshirt_visual_causality/surface_correspondence_audit.json",
+      "bytes": 9905,
+      "sha256": "67cc1dd1e48e337dce07302ab5a2d61ee1fb4b088c0e29576c0d02b93fba54a1",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/drafting_semantics/tshirt_visual_causality/correspondence_model/metrics.json",
+      "bytes": 7450,
+      "sha256": "5e8f17ad895a758826f3803138239ed241e9d445ffff1eaaf4c25bce0a05b6c7",
+      "status": "SUPERSEDED_RAW_ROLE_INTEGRATION_BUG",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/drafting_semantics/tshirt_visual_causality/surface_correspondence_audit_v3_resolved.json",
+      "bytes": 4909,
+      "sha256": "a5058f8696d490cdb0280e1763e495e845a364c755f4982a12e8caf8d93cc011",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/drafting_semantics/tshirt_visual_causality/correspondence_model_v3_resolved/metrics.json",
+      "bytes": 7449,
+      "sha256": "1b1d5291ab1c4c9b1717ff1bd9ad92f56c1f38c1ec70b22f4d956c967edcf563",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/drafting_semantics/tshirt_visual_causality/surface_correspondence_qa_v3_resolved.png",
+      "bytes": 648608,
+      "sha256": "ecb0abe854a542f66c3f71a92507cf07446615678cd012e948432a0424b4343e",
+      "tracked": false
+    },
+    {
+      "path": "artifacts/gcdv2_visual_pattern_dsl_retrieval_v2/raw_fpn_vs_dsl_ablation.json",
+      "bytes": 4543,
+      "sha256": "a8b33868678e2c02a1d0ede14cb75be7bc85cd17b8529f5f8f49e3a334834749",
+      "tracked": false
+    }
+  ]
+}

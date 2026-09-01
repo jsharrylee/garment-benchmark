@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "dataset": "GarmentCodeData v2",
+  "doi": "https://doi.org/10.3929/ethz-b-000690432",
+  "official_source": "https://libdrive.ethz.ch/public.php/webdav/GarmentCodeData_v2/garments_5000_0/default_body/data.tar.gz",
+  "license": "CC BY 4.0",
+  "batch": "garments_5000_0/default_body",
+  "archive_bytes": 5121727032,
+  "archive_sha256": "66a4ce54c0211f199867da3285b30a52fbeed185f06554f0d8cf7dada382f001",
+  "integrity": "PASS_FULL_TAR_GZIP_SCAN",
+  "archive_member_count": 48301,
+  "archive_uncompressed_bytes": 8028594471,
+  "sample_directory_count": 3450,
+  "specification_count": 3450,
+  "category_counts": {
+    "dress": 1263,
+    "jumpsuit": 204,
+    "pants": 259,
+    "skirt": 800,
+    "top": 924
+  },
+  "suffix_counts": {
+    ".json": 3450,
+    ".pickle": 3450,
+    ".ply": 6900,
+    ".png": 13800,
+    ".svg": 3450,
+    ".txt": 3450,
+    ".yaml": 10350
+  },
+  "official_split_counts": {
+    "not_in_official_paired_split": 497,
+    "test": 165,
+    "training": 2615,
+    "validation": 173
+  },
+  "render_quality_counts": {
+    "PASS": 3429,
+    "REJECT_EMPTY_OR_TINY": 4,
+    "REJECT_IMPLAUSIBLE_VERTICAL_PLACEMENT": 17
+  },
+  "balanced_subset_per_category": 0,
+  "selected_records": [],
+  "extracted_file_count": 0,
+  "extracted_bytes": 0,
+  "full_extraction_performed": true,
+  "full_extracted_file_count": 44850,
+  "full_extracted_bytes": 8028594471,
+  "large_download_performed": true,
+  "additional_batch_downloaded": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "gcdv2-symbolic-candidate-beam-result-2.0",
+  "status": "PASS_CANONICAL_DSL_BEAM_NO_TOP1_GAIN",
+  "date": "2026-08-29",
+  "edge_feature_schema": "gcd-pattern-dsl-chord-turn/v2",
+  "counts": {
+    "train_bank": 1570,
+    "validation_queries": 194,
+    "test_queries": 198,
+    "beam_size": 10,
+    "test_candidate_programs": 1980
+  },
+  "validation_selected_weights": {
+    "similarity": 1.0,
+    "category_agreement": 0.0,
+    "projected_role_confidence": 0.0,
+    "no_repair_fraction": 0.0
+  },
+  "frozen_test": {
+    "raw_top1_category_match": 0.9848484848484849,
+    "raw_top1_exact_primitive_topology": 0.15656565656565657,
+    "symbolic_reranked_top1_category_match": 0.9848484848484849,
+    "symbolic_reranked_top1_exact_primitive_topology": 0.15656565656565657,
+    "beam_exact_primitive_topology_coverage": 0.46464646464646464,
+    "mean_unique_topology_hypotheses": 6.808080808080808,
+    "symbolic_valid_candidate_rate": 1.0,
+    "raw_role_grammar_violations": 168,
+    "projected_role_grammar_violations": 0,
+    "changed_role_edges": 164
+  },
+  "inference_excludes": [
+    "held-out target DSL",
+    "held-out target category",
+    "held-out target topology signature",
+    "source semantic labels",
+    "source stitch labels"
+  ],
+  "evidence_ignored": "artifacts/gcdv2_visual_pattern_dsl_retrieval_v2/symbolic_candidate_beam.json",
+  "claim_boundary": "A symbolic-valid beam over retrieved complete train programs; no new target SVG/DSL commands are generated, and reranking did not improve frozen-test topology top-1."
+}

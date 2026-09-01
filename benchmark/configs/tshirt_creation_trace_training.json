@@ -1,0 +1,55 @@
+{
+  "schema_version": "tshirt-construction-trace-1.0",
+  "scope": "basic_tshirt_only",
+  "mode": "pattern-only",
+  "selection_objective": "edge-primary",
+  "seed": 2027,
+  "width": 128,
+  "heads": 4,
+  "layers": 4,
+  "feedforward_multiplier": 3,
+  "dropout": 0.1,
+  "maximum_edges": 48,
+  "batch_size": 96,
+  "epochs": 30,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.001,
+  "augmentation": {
+    "cyclic_shift": true,
+    "reverse_probability": 0.5,
+    "rotation_degrees": 180.0,
+    "minimum_scale": 0.8,
+    "maximum_scale": 1.2
+  },
+  "loss_weights": {
+    "edge": 1.0,
+    "panel": 0.5,
+    "landmark_existence": 0.5,
+    "landmark_coordinate": 2.0
+  },
+  "split_contract": {
+    "training": ["train"],
+    "validation_only": [
+      "iid_validation",
+      "validation_body",
+      "validation_design",
+      "validation_double"
+    ],
+    "frozen_test": [
+      "iid_test",
+      "test_body",
+      "test_design",
+      "test_double",
+      "unseen_body",
+      "unseen_design",
+      "unseen_double",
+      "unseen_source"
+    ]
+  },
+  "target_contract": {
+    "landmarks": ["FNP", "BNP", "SNP", "SP"],
+    "BP": "UNAVAILABLE_NOT_A_TRAIN_TARGET",
+    "darts": "NOT_APPLICABLE_FALSE_POSITIVES_ONLY",
+    "operation_DAG": "STORED_AS_PROVENANCE_NOT_SCORED"
+  }
+}

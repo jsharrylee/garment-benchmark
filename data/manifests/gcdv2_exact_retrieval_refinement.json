@@ -1,0 +1,110 @@
+{
+  "schema_version": "gcdv2-exact-retrieval-refinement-result-1.0",
+  "generated_date": "2026-08-29",
+  "status": "TECHNICAL_EVALUATION_COMPLETE_WITH_LIMITATIONS",
+  "dataset": {
+    "name": "GarmentCodeData v2",
+    "license": "CC BY 4.0",
+    "categories": {
+      "pants": 259,
+      "skirt": 780,
+      "top": 923
+    },
+    "complete_four_view_pairs": 1962,
+    "quarantined_missing_or_failed_four_view": 21,
+    "exact_roundtrip": {
+      "maximum_curve_parameter_error": 0.0,
+      "maximum_vertex_error_cm": 0.0,
+      "passed_records": 1962
+    },
+    "index": {
+      "bytes": 1715662,
+      "path": "artifacts/gcdv2_exact_pairs_v1/index.jsonl",
+      "sha256": "6ea3d8bc3398a8ecd1d2ef922ddf78873c74f08c00eac121482c3d0f554ca510"
+    }
+  },
+  "stage_1_pattern_parser": {
+    "checkpoint": {
+      "bytes": 28477146,
+      "path": "checkpoints/gcdv2_exact/pattern_set_parser_hungarian.pt",
+      "sha256": "b37e0322c40610c1f233835c41097083f52ae91d37242667c5ae009e9c712816"
+    },
+    "input": "clean packed pattern PNG only",
+    "split": "category-stratified topology-family-disjoint",
+    "test": {
+      "category_accuracy": 0.9959183673469387,
+      "edge_presence_f1_validation_calibrated": 0.7608115697837686,
+      "graph_edge_f1": 0.005616399887672002,
+      "matched_primitive_accuracy": 0.984482244106237,
+      "packed_endpoint_mae_pixels_at_1024": 93.1856975241655,
+      "panel_presence_f1_validation_calibrated": 0.9584803256445047,
+      "predicted_point_f1": 0.19724216186881766
+    },
+    "verdict": "CLASSIFICATION_PASS_CAD_GRAPH_RECONSTRUCTION_FAIL"
+  },
+  "stage_2_crossmodal_retrieval": {
+    "checkpoint": {
+      "bytes": 10192137,
+      "path": "checkpoints/gcdv2_exact/crossmodal_retrieval.pt",
+      "sha256": "bc99b6417bf8ef71eb90f9414a381bfe1978dd138b9e9610aaa59f60eef7a341"
+    },
+    "input": "semantic front/back/left/right frozen FPN tokens",
+    "paired_test_gallery": {
+      "image_to_pattern_mrr": 0.8004830557764231,
+      "image_to_pattern_recall_at_1": 0.6632653061224489,
+      "image_to_pattern_recall_at_10": 0.9846938775510204,
+      "image_to_pattern_recall_at_5": 0.9591836734693877
+    },
+    "target_absent_train_bank": {
+      "category_match_rate": 0.9897959183673469,
+      "exact_topology_compatibility_rate": 0.15816326530612246,
+      "normalized_geometry_distance_mean": 0.2301379440176265,
+      "normalized_geometry_distance_median": 0.17503121559969104
+    },
+    "verdict": "CATEGORY_AND_VISUAL_RETRIEVAL_PASS_TOPOLOGY_SELECTION_PARTIAL"
+  },
+  "stage_3_retrieved_residual": {
+    "checkpoint": {
+      "bytes": 4731949,
+      "path": "checkpoints/gcdv2_exact/retrieved_residual.pt",
+      "sha256": "c4b0ee9cf0965e7444c8cd3bda8529093079d7b6e2ec84cc0ad7a8e7fac9c6f7"
+    },
+    "coverage": {
+      "compatible_records": 837,
+      "fraction": 0.42660550458715596,
+      "total_records": 1962
+    },
+    "evaluation_condition": "oracle exact-target topology compatibility gate; train-bank non-self anchor; no target geometry in ranking",
+    "test": {
+      "curve_parameter_rmse_after_cm": 8.926427979913331,
+      "curve_parameter_rmse_before_cm": 16.269791453304478,
+      "edge_direction_mae_after_deg": 4.316616849587033,
+      "edge_direction_mae_before_deg": 3.4844766846716673,
+      "edge_length_mae_after_cm": 5.344064263357035,
+      "edge_length_mae_before_cm": 6.343255764834513,
+      "pair_count": 85,
+      "shared_endpoint_consistency": 1.0,
+      "vertex_rmse_after_cm": 10.014178363620676,
+      "vertex_rmse_before_cm": 17.016177564320444
+    },
+    "verdict": "COMPATIBLE_TOPOLOGY_GEOMETRY_PARTIAL_DIRECTION_REGRESSION"
+  },
+  "camera_contract": {
+    "back": "CAM000",
+    "front": "CAM001",
+    "left": "CAM002",
+    "right": "CAM003"
+  },
+  "claim_boundaries": [
+    "Packed panel positions are display geometry, not source pattern coordinates.",
+    "The Stage-1 model does not reconstruct a reliable CAD incidence graph.",
+    "Stage-2 paired-gallery retrieval is an identification test; target-absent train-bank retrieval is the deployment-oriented test.",
+    "Stage-3 is not arbitrary-topology generation and uses an oracle topology compatibility gate.",
+    "All large artifacts and checkpoints are ignored local files."
+  ],
+  "report": "reports/gcdv2_exact_retrieval_refinement_ko.md",
+  "tests": {
+    "command": ".venv-garment-particles\\Scripts\\python.exe -m unittest discover -s benchmark\\tests -v",
+    "passed": 245
+  }
+}

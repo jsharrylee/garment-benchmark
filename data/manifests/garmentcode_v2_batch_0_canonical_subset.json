@@ -1,0 +1,1074 @@
+{
+  "schema_version": "1.0",
+  "dataset": "GarmentCodeData v2",
+  "doi": "https://doi.org/10.3929/ethz-b-000690432",
+  "license": "CC BY 4.0",
+  "batch": "garments_5000_0/default_body",
+  "record_count": 40,
+  "accepted_count": 37,
+  "rejected_count": 3,
+  "category_counts": {
+    "dress": 8,
+    "jumpsuit": 8,
+    "pants": 8,
+    "skirt": 8,
+    "top": 8
+  },
+  "records": [
+    {
+      "sample_id": "rand_0BYSXIM9OF",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 36,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 36,
+          "stitch_count": 12,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 9.059012109898396e-16,
+          "max_closure_gap_cm": 7.32410687763558e-15,
+          "mean_seam_length_mismatch": 0.060329074139389115
+        }
+      },
+      "source_artifact_sha256": "f2b3ad3b218d010d4930e5f2bd8d563c9fc0d1743fd0a103d5f150844e1c3e85"
+    },
+    {
+      "sample_id": "rand_0P4YK6HW9O",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 11,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 11,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 2.0105890654355925e-14,
+          "max_closure_gap_cm": 8.526512829121202e-14,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "e7a3225065f66ddbd0a2901bff23940813bad350485be52e9fa78d8de2de2276"
+    },
+    {
+      "sample_id": "rand_0R4HWHVY97",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.01316126426144525
+        }
+      },
+      "source_artifact_sha256": "3760304ab9836f1a23ce5d1e63aa9462cf797e56c921a64fa69a831ec0198aef"
+    },
+    {
+      "sample_id": "rand_1B61MYVOGI",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.013161264261485056
+        }
+      },
+      "source_artifact_sha256": "a49fd5914872b61fcc47e8491c30d49aba3e2a1a01013980a4ec1c5723bd8cb1"
+    },
+    {
+      "sample_id": "rand_1NCR15V3Q7",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 8,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 8,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 9.660948301751044e-15,
+          "max_closure_gap_cm": 2.774758085844075e-14,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "4d84506d22d1a9f37288919cdd557b4d17fb070d83a5340727202a7de597c828"
+    },
+    {
+      "sample_id": "rand_1PSXI9D50T",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 38,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_8",
+            "value": 0.3461589651716062
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_9",
+            "value": 0.346158965171606
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_10",
+            "value": 0.31456162243353186
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_11",
+            "value": 0.31456162243353136
+          }
+        ],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 38,
+          "stitch_count": 12,
+          "error_count": 0,
+          "warning_count": 4,
+          "mean_closure_gap_cm": 9.32658990990182e-16,
+          "max_closure_gap_cm": 8.881784197001252e-15,
+          "mean_seam_length_mismatch": 0.11132461303442787
+        }
+      },
+      "source_artifact_sha256": "959b598d50c3d58266fdec31a0f5c654e27b4c2e4d1e10237cf212e09d054bdd"
+    },
+    {
+      "sample_id": "rand_1TDTWJLQZ9",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 8,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 8,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 6.569462133807431e-15,
+          "max_closure_gap_cm": 1.0395861869767154e-14,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "0559d7f0984815acd77ecb91a65e21ad540591b647192c267b5e14b5daef6164"
+    },
+    {
+      "sample_id": "rand_2A9V8WHFA1",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 24,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 24,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.020267394571083033
+        }
+      },
+      "source_artifact_sha256": "94928c7e5e072ac13e54a3f3c75bc925cb6d2b06df4d79c663e14068fadaf974"
+    },
+    {
+      "sample_id": "rand_2E7LYE4R51",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 26,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 26,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.002095547479788915
+        }
+      },
+      "source_artifact_sha256": "b1b7e30f4c45c2845b261aafc72a43c8bf2428d87bbb798d0a9c0624a6e80edd"
+    },
+    {
+      "sample_id": "rand_2GG2Q1BZGY",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 11,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 11,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.0315488688294631e-14,
+          "max_closure_gap_cm": 2.5618982671915014e-14,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "6bd6634359c119f273746f7a498be07174f093a96fcb2eb3f73937d4475a123a"
+    },
+    {
+      "sample_id": "rand_2UKFBAWXX1",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 35,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": false,
+        "issues": [
+          {
+            "severity": "error",
+            "code": "SELF_INTERSECTION",
+            "subject": "skirt_front",
+            "value": 1
+          },
+          {
+            "severity": "error",
+            "code": "SELF_INTERSECTION",
+            "subject": "skirt_back",
+            "value": 1
+          }
+        ],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 35,
+          "stitch_count": 12,
+          "error_count": 2,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 2.05478017394834e-15,
+          "max_closure_gap_cm": 2.2748467065386707e-14,
+          "mean_seam_length_mismatch": 0.05809733951229673
+        }
+      },
+      "source_artifact_sha256": "8a1eee3b4eb4de1a104cc08e7b0adab838209a947b528c24d20fe82637785d32"
+    },
+    {
+      "sample_id": "rand_2XL9FY0YW4",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.01316126426144523
+        }
+      },
+      "source_artifact_sha256": "f8774e9fc038dd81c9ecd773de6fb595b837f0b6ee3b02cec98b21ec120f8b5e"
+    },
+    {
+      "sample_id": "rand_2YV0SWYVC9",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 11,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 11,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.7631589910668278e-14,
+          "max_closure_gap_cm": 6.204547701064548e-14,
+          "mean_seam_length_mismatch": 9.936092861301649e-17
+        }
+      },
+      "source_artifact_sha256": "cb2782aeaacbb8e3e4ecb3125a40d03c5e7a29d4b41e7cd0efc5e0af1dfdf848"
+    },
+    {
+      "sample_id": "rand_3DU4H85FWN",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 8,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 8,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.9666208512978e-14,
+          "max_closure_gap_cm": 3.552713678800501e-14,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "b5d42d5869af5c8119676643ff64135e62921b04a3e3ce6b39cc75750c769230"
+    },
+    {
+      "sample_id": "rand_3H7FLKJJ77",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.013161264261485044
+        }
+      },
+      "source_artifact_sha256": "409254d7f4e423f5fcc60833866954a35cdeefc797ab1f6b3aaeb1390479d886"
+    },
+    {
+      "sample_id": "rand_3M2ONX1D40",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 24,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 24,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.2632397006674637e-15,
+          "max_closure_gap_cm": 7.944109290391274e-15,
+          "mean_seam_length_mismatch": 0.0012167621365927522
+        }
+      },
+      "source_artifact_sha256": "2c5dae2c4170a4e2d84a0a3770589ccdf0010396a68f5dbdcfabba5805cf7eda"
+    },
+    {
+      "sample_id": "rand_3Q1TNL7ED8",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 24,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 24,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.4245057911947465e-15,
+          "max_closure_gap_cm": 1.464821375527116e-14,
+          "mean_seam_length_mismatch": 0.015027751662748397
+        }
+      },
+      "source_artifact_sha256": "6a247050a124c439fb51d6ae1bca85055bedf6a574de3c9ca44d150a52440352"
+    },
+    {
+      "sample_id": "rand_3SXGFM7CM0",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 28,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 28,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 2.396851285988017e-15,
+          "max_closure_gap_cm": 1.432144669219779e-14,
+          "mean_seam_length_mismatch": 0.01580123819991797
+        }
+      },
+      "source_artifact_sha256": "0abbe8a17d10a28880d6fd436a809abf097b55b2fc7b9d4702ba63ccefa67c0b"
+    },
+    {
+      "sample_id": "rand_3X321OMA2M",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.01316126426144496
+        }
+      },
+      "source_artifact_sha256": "eec869c81e76ce02caf1ffa8f865cd650eb47e30a8e00c9c0566a1ea0c735433"
+    },
+    {
+      "sample_id": "rand_4CW5BC4E6L",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 24,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 24,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 7.401486830834377e-16,
+          "max_closure_gap_cm": 1.0658141036401503e-14,
+          "mean_seam_length_mismatch": 0.040154299283563975
+        }
+      },
+      "source_artifact_sha256": "25cf42e5a46128eef31d9cdaa783aea1412aac320e20ec662eef27395c4b3123"
+    },
+    {
+      "sample_id": "rand_4FE0FNMZCC",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.013161264261485056
+        }
+      },
+      "source_artifact_sha256": "5899c6b0d28450c727daf4dccac0bf9ed4183c9eaa828c2fa11f431572247cb4"
+    },
+    {
+      "sample_id": "rand_4H7PWUVOS9",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 24,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 24,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 7.492603297515452e-16,
+          "max_closure_gap_cm": 7.32410687763558e-15,
+          "mean_seam_length_mismatch": 8.292600390353006e-05
+        }
+      },
+      "source_artifact_sha256": "95366b2fc9ac3885216d2664af481bcca4aeeb13a045be66b24a49e0a30e15b5"
+    },
+    {
+      "sample_id": "rand_4IGHP655P3",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.013161264261428014
+        }
+      },
+      "source_artifact_sha256": "20f690b14cc875bfe95274c74afa43163b0af8034cc42a5c2f0a437669735c0f"
+    },
+    {
+      "sample_id": "rand_4KA3S9QXN4",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 37,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 37,
+          "stitch_count": 12,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 8.349663731190015e-15,
+          "max_closure_gap_cm": 1.464821375527116e-13,
+          "mean_seam_length_mismatch": 0.06456679082521294
+        }
+      },
+      "source_artifact_sha256": "d95a7055298664a52a40839659111f199634296d23095b77248d1157e74e54fc"
+    },
+    {
+      "sample_id": "rand_4KO3BTAM2E",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 84,
+      "stitch_count": 38,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 84,
+          "stitch_count": 38,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.008293876574877795
+        }
+      },
+      "source_artifact_sha256": "f0a8d4cf90b47777a01e7846df6980b7c4bed7e5fdd2335880327030e8339947"
+    },
+    {
+      "sample_id": "rand_5NLGN0KWO1",
+      "category": "pants",
+      "panel_count": 4,
+      "edge_count": 40,
+      "stitch_count": 14,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 40,
+          "stitch_count": 14,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.013161264261592868
+        }
+      },
+      "source_artifact_sha256": "1da1cc43780d1ea73489e9e32ffd87b19834fd0a45dd93ab2a78a7bdff589f98"
+    },
+    {
+      "sample_id": "rand_5OO1IJNXE3",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 8,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 8,
+          "stitch_count": 2,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 6.46662848283023e-15,
+          "max_closure_gap_cm": 7.993605777301127e-15,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "16f4c2040ceafcad4ce9e812bb544a13cf51cd091ce05a7501b27f805583fbbe"
+    },
+    {
+      "sample_id": "rand_63PFHMQZI4",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 37,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_8",
+            "value": 0.3547641787075307
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_9",
+            "value": 0.32250660967837874
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_10",
+            "value": 0.2587235264664649
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_11",
+            "value": 0.2940179892553942
+          }
+        ],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 37,
+          "stitch_count": 12,
+          "error_count": 0,
+          "warning_count": 4,
+          "mean_closure_gap_cm": 5.1949057214036e-15,
+          "max_closure_gap_cm": 3.499017183300205e-14,
+          "mean_seam_length_mismatch": 0.1123416957980131
+        }
+      },
+      "source_artifact_sha256": "ffb6650bacb893133af0194a963767446e2b33327ef4d425c95dc22f5175288b"
+    },
+    {
+      "sample_id": "rand_6JJTJBYY7P",
+      "category": "skirt",
+      "panel_count": 2,
+      "edge_count": 11,
+      "stitch_count": 2,
+      "structural_validation": {
+        "accepted": false,
+        "issues": [
+          {
+            "severity": "error",
+            "code": "SELF_INTERSECTION",
+            "subject": "skirt_front",
+            "value": 2
+          }
+        ],
+        "metrics": {
+          "panel_count": 2,
+          "edge_count": 11,
+          "stitch_count": 2,
+          "error_count": 1,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.372647165257087e-14,
+          "max_closure_gap_cm": 4.322062729257126e-14,
+          "mean_seam_length_mismatch": 0.0
+        }
+      },
+      "source_artifact_sha256": "8360dfe429ebab16d09e712f78d204f53ef59863a72ab8af37dfc0102e5555c5"
+    },
+    {
+      "sample_id": "rand_7M5JV54HV1",
+      "category": "top",
+      "panel_count": 4,
+      "edge_count": 26,
+      "stitch_count": 6,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 4,
+          "edge_count": 26,
+          "stitch_count": 6,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 6.148927521000867e-16,
+          "max_closure_gap_cm": 8.881784197001252e-15,
+          "mean_seam_length_mismatch": 0.01245832060430159
+        }
+      },
+      "source_artifact_sha256": "b78459c4b183b57c11b75bcd5a0c4495b1246d694cc043cece484dbb70e524fe"
+    },
+    {
+      "sample_id": "rand_9JN6KDVCUQ",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 38,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 38,
+          "stitch_count": 12,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.014334022627264548
+        }
+      },
+      "source_artifact_sha256": "273358fe3c5f52c22b4d22274b8e6de4cd61f17a9b60b1d82437b0ac8beb80f2"
+    },
+    {
+      "sample_id": "rand_9N7JZPEIAZ",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 68,
+      "stitch_count": 28,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 68,
+          "stitch_count": 28,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 4.2118219044762627e-16,
+          "max_closure_gap_cm": 7.32410687763558e-15,
+          "mean_seam_length_mismatch": 0.056812592269468325
+        }
+      },
+      "source_artifact_sha256": "949a9be35165566878ecbeb691e5872da1eea25cbf798e69832aa3b51113b049"
+    },
+    {
+      "sample_id": "rand_CCTHI6M37A",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 34,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 34,
+          "stitch_count": 12,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 8.487961314845049e-16,
+          "max_closure_gap_cm": 7.32410687763558e-15,
+          "mean_seam_length_mismatch": 0.022419401473756758
+        }
+      },
+      "source_artifact_sha256": "96b486a7dddbeef93839c9efc938164ba10a5de656ef30ad9e84627c195294dc"
+    },
+    {
+      "sample_id": "rand_DKOX295PH4",
+      "category": "dress",
+      "panel_count": 6,
+      "edge_count": 37,
+      "stitch_count": 12,
+      "structural_validation": {
+        "accepted": false,
+        "issues": [
+          {
+            "severity": "error",
+            "code": "SELF_INTERSECTION",
+            "subject": "skirt_back",
+            "value": 2
+          }
+        ],
+        "metrics": {
+          "panel_count": 6,
+          "edge_count": 37,
+          "stitch_count": 12,
+          "error_count": 1,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.1453893897679415e-08,
+          "max_closure_gap_cm": 2.1189695331713665e-07,
+          "mean_seam_length_mismatch": 0.04895259450304168
+        }
+      },
+      "source_artifact_sha256": "9949ace4501eb512210f5e760aed4413cc629213a375b94798d54928367b89e1"
+    },
+    {
+      "sample_id": "rand_GT4JJ3F725",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 74,
+      "stitch_count": 28,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_20",
+            "value": 0.2569263408328603
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_21",
+            "value": 0.2569263408328603
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_22",
+            "value": 0.2960172393464035
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_23",
+            "value": 0.2960172393464037
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_24",
+            "value": 0.2960172393464024
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_25",
+            "value": 0.2960172393464042
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_26",
+            "value": 0.29601723934640334
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_27",
+            "value": 0.29601723934640223
+          }
+        ],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 74,
+          "stitch_count": 28,
+          "error_count": 0,
+          "warning_count": 8,
+          "mean_closure_gap_cm": 1.9499370588157544e-16,
+          "max_closure_gap_cm": 7.32410687763558e-15,
+          "mean_seam_length_mismatch": 0.08871537704043067
+        }
+      },
+      "source_artifact_sha256": "27e2465b5424ee4c3c3ded89e696f0d256d49a0d6950169649141060a65e9fc5"
+    },
+    {
+      "sample_id": "rand_JLO43S21GX",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 84,
+      "stitch_count": 38,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 84,
+          "stitch_count": 38,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.007221938588697992
+        }
+      },
+      "source_artifact_sha256": "93013a4f234e14574c5b3e9ac66487bea6fd2d146501c9d6cc17bf3e00a343ca"
+    },
+    {
+      "sample_id": "rand_OXI3X7VXX0",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 68,
+      "stitch_count": 28,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 68,
+          "stitch_count": 28,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 1.0449157878825003e-16,
+          "max_closure_gap_cm": 3.552713678800501e-15,
+          "mean_seam_length_mismatch": 0.05376266490952315
+        }
+      },
+      "source_artifact_sha256": "8ec1102c7faeb0563c0ad7b54889ee9a35dc5feb69893da6da4c49c367effe68"
+    },
+    {
+      "sample_id": "rand_QEBH21AMR9",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 72,
+      "stitch_count": 28,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_20",
+            "value": 0.3350046197177278
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_21",
+            "value": 0.3350046197177278
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_22",
+            "value": 0.301344317267582
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_23",
+            "value": 0.3013443172675819
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_24",
+            "value": 0.30134431726758104
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_25",
+            "value": 0.3013443172675828
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_26",
+            "value": 0.3013443172675815
+          },
+          {
+            "severity": "warning",
+            "code": "SEAM_LENGTH_MISMATCH",
+            "subject": "stitch_27",
+            "value": 0.30134431726758104
+          }
+        ],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 72,
+          "stitch_count": 28,
+          "error_count": 0,
+          "warning_count": 8,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.10009708226727167
+        }
+      },
+      "source_artifact_sha256": "d7245e87c6aae0945a83562a4e63109c6557e4b430a6a1b4bdc8a83f171c72e6"
+    },
+    {
+      "sample_id": "rand_UZIV7XVJRD",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 84,
+      "stitch_count": 38,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 84,
+          "stitch_count": 38,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.007221938588314975
+        }
+      },
+      "source_artifact_sha256": "7a2c25330702cb4a1df3584023da6b8a832d154333b2d1094663b1c1e0622807"
+    },
+    {
+      "sample_id": "rand_WGDYK5NCXO",
+      "category": "jumpsuit",
+      "panel_count": 8,
+      "edge_count": 84,
+      "stitch_count": 38,
+      "structural_validation": {
+        "accepted": true,
+        "issues": [],
+        "metrics": {
+          "panel_count": 8,
+          "edge_count": 84,
+          "stitch_count": 38,
+          "error_count": 0,
+          "warning_count": 0,
+          "mean_closure_gap_cm": 0.0,
+          "max_closure_gap_cm": 0.0,
+          "mean_seam_length_mismatch": 0.007221938588697979
+        }
+      },
+      "source_artifact_sha256": "e1dd7c7d98fc04b1d30af43c555456c8a77e43b9c73336d0a1a0deac706418c5"
+    }
+  ]
+}

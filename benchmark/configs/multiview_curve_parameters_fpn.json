@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "input": "four actual orthographic RGB views encoded by a frozen locally-loaded Mask R-CNN v2 ResNet-50-FPN backbone",
+  "target": "masked named neckline/front-back-armhole/sleeve-head landmarks, scale metrics, and two-cubic semantic-path formulas",
+  "image_size": 256,
+  "pyramid_levels": ["0", "1", "2", "3"],
+  "pyramid_grid_sizes": [8, 4, 2, 1],
+  "spatial_feature_dim": 256,
+  "width": 256,
+  "heads": 8,
+  "memory_layers": 2,
+  "decoder_layers": 4,
+  "feedforward_multiplier": 4,
+  "dropout": 0.12,
+  "precomputed_feature_batch_size": 64,
+  "end_to_end_image_batch_size": 4,
+  "epochs": 220,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.002,
+  "early_stopping_patience": 30,
+  "view_dropout_probability": 0.25,
+  "seed": 20260831,
+  "loss_weights": {
+    "parameter": 1.0,
+    "sampled_curve": 0.35,
+    "presence": 0.3
+  },
+  "network_download": false,
+  "notes": [
+    "The backbone path is supplied at runtime and must point to a local checkpoint.",
+    "An armhole is one role query whose formula contains two child cubic segments.",
+    "The first experiment freezes the FPN and trains only the spatial token encoder, role decoder, and heads."
+  ]
+}

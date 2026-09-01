@@ -1,0 +1,166 @@
+{
+  "audit": {
+    "all_relations_training_eligible": true,
+    "all_targets_training_eligible": true,
+    "completed_topology_role_inference_used": false,
+    "creation_edge_evidence_required": "creation_event_binding",
+    "existing_metadata_preserved": true,
+    "preserved_fields_checked_per_record": [
+      "sample_id",
+      "split",
+      "source",
+      "body",
+      "design",
+      "provenance",
+      "panels",
+      "operations",
+      "recipe_id",
+      "garment_type",
+      "reference_lines",
+      "darts",
+      "named_paths",
+      "notches",
+      "grainlines",
+      "seam_allowances"
+    ],
+    "runtime_operation_output_membership_verified": true
+  },
+  "compression": {
+    "embedded_filename": "",
+    "format": "gzip",
+    "level": 6,
+    "mtime": 0
+  },
+  "eligible_seam_relation_count": 2592,
+  "eligible_target_count": 31104,
+  "limitations": {
+    "counterfactual_3d_renders": "not part of this migration",
+    "expert_validation": "PENDING",
+    "formula_target_scope": "neckline, armhole, sleeve_head only",
+    "freesewing_included": false,
+    "garment_scope": "bounded GarmentCode Shirt(fitted=False) basic T-shirt recipe",
+    "seam_relation": "aggregate per record; exact sleeve segment to front/back pairing not asserted",
+    "semantic_dimensions": "panel-axis endpoint measures and chord-local cap height; not yet expert-approved block definitions",
+    "sleeve_topology": "GarmentCode left/right front/back half-sleeve generator pieces"
+  },
+  "migration_version": "tshirt-formula-target-augmentation-1.0",
+  "output_artifact": "artifacts/drafting_semantics/tshirt_traces_formula_augmented.jsonl.gz",
+  "output_artifact_bytes": 106123151,
+  "output_artifact_sha256": "cc9dff2d0a3bf376521f5008cab7a9d7af879cd3e54a47f9d82c603b6ebc3a3e",
+  "output_uncompressed_canonical_rows_sha256": "f43345bd04a88fa99053b512e30bcb39314a9be78e45df27ee9037bb2c77a2f8",
+  "panel_role_target_counts": {
+    "back:armhole": 5184,
+    "back:neckline": 5184,
+    "front:armhole": 5184,
+    "front:neckline": 5184,
+    "sleeve:sleeve_head": 10368
+  },
+  "record_count": 2592,
+  "schema_version": "tshirt-formula-augmentation-manifest-1.0",
+  "seam_relation_count": 2592,
+  "seam_relation_count_distribution_per_record": {
+    "1": 2592
+  },
+  "seam_relation_value_summary": {
+    "armhole_length_cm": {
+      "count": 2592,
+      "max": 166.40214590799766,
+      "mean": 111.78545990847144,
+      "min": 76.31867046463451
+    },
+    "ease_difference_cm": {
+      "count": 2592,
+      "max": 0.04831272949581944,
+      "mean": -0.00538626528712658,
+      "min": -0.08203264897839802
+    },
+    "ease_ratio": {
+      "count": 2592,
+      "max": 1.0005247742877301,
+      "mean": 0.9999499571560072,
+      "min": 0.9991402387785815
+    },
+    "sleeve_head_length_cm": {
+      "count": 2592,
+      "max": 166.39054236650975,
+      "mean": 111.78007364318431,
+      "min": 76.31715107183136
+    }
+  },
+  "segment_bezier_control_mask_counts": {
+    "(False, False)": 10368,
+    "(True, True)": 25168
+  },
+  "segment_count": 35536,
+  "segment_geometry_kind_counts": {
+    "arc": 10368,
+    "cubic_bezier": 25168
+  },
+  "semantic_value_support_counts": {
+    "armhole_depth_cm": 10368,
+    "neckline_depth_cm": 10368,
+    "neckline_width_cm": 10368,
+    "sleeve_cap_height_cm": 10368
+  },
+  "source_artifact": "artifacts/drafting_semantics/tshirt_traces.jsonl.gz",
+  "source_artifact_bytes": 96373427,
+  "source_artifact_sha256_after": "81eafd546bdb65b36ea5fb94e88c0eb66b6152b0578e2864402025212279aaa4",
+  "source_artifact_sha256_before": "81eafd546bdb65b36ea5fb94e88c0eb66b6152b0578e2864402025212279aaa4",
+  "source_formula_parameter_support_counts": {
+    "body._armscye_depth": 20736,
+    "body._base_sleeve_balance": 20736,
+    "body._bust_line": 10368,
+    "body._shoulder_incl": 31104,
+    "body.back_width": 20736,
+    "body.bust": 20736,
+    "body.neck_w": 10368,
+    "body.shoulder_w": 20736,
+    "design.armhole_depth": 20736,
+    "design.armhole_smoothing": 20736,
+    "design.back_neck_depth": 10368,
+    "design.front_neck_depth": 10368,
+    "design.neck_width": 10368,
+    "design.sleeve_angle": 20736,
+    "evaluated.angle": 20736,
+    "evaluated.bottom_angle_mix": 20736,
+    "evaluated.depth": 10368,
+    "evaluated.incl": 20736,
+    "evaluated.kwargs.angle": 10368,
+    "evaluated.kwargs.incl_coeff": 20736,
+    "evaluated.kwargs.w_coeff": 20736,
+    "evaluated.kwargs.x": 10368,
+    "evaluated.kwargs.y": 10368,
+    "evaluated.width": 31104
+  },
+  "source_preserved": true,
+  "source_schema_counts": {
+    "tshirt-construction-trace-1.0": 2592
+  },
+  "split_counts": {
+    "iid_test": 128,
+    "iid_validation": 128,
+    "test_body": 256,
+    "test_design": 256,
+    "test_double": 64,
+    "train": 768,
+    "unseen_body": 256,
+    "unseen_design": 256,
+    "unseen_double": 64,
+    "validation_body": 128,
+    "validation_design": 256,
+    "validation_double": 32
+  },
+  "target_count": 31104,
+  "target_count_distribution_per_record": {
+    "12": 2592
+  },
+  "target_evidence_counts": {
+    "creation_event_formula_and_live_geometry": 31104
+  },
+  "target_role_counts": {
+    "armhole": 10368,
+    "neckline": 10368,
+    "sleeve_head": 10368
+  },
+  "unique_sample_id_count": 2592
+}

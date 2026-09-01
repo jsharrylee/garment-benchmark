@@ -1,0 +1,33 @@
+{
+  "model": {
+    "width": 128,
+    "heads": 4,
+    "layers": 4,
+    "feedforward_multiplier": 3,
+    "dropout": 0.05,
+    "max_displacement": 1.5,
+    "maximum_nodes": 256
+  },
+  "training_reference": {
+    "steps": 1800,
+    "batch_size": 32,
+    "learning_rate": 0.0003,
+    "seed": 20260826,
+    "validation_samples": 256,
+    "synthetic_corruptions": [
+      "segment_reverse",
+      "cross_swap",
+      "inward_spike",
+      "mixed_noise"
+    ],
+    "clean_canonical_mix_probability": 0.3
+  },
+  "inference": {
+    "strengths": [0.25, 0.5, 0.75, 1.0],
+    "maximum_passes": 3,
+    "repair_only_invalid_panels": true,
+    "accept_only_validator_improvement": true,
+    "topology_changes_allowed": false,
+    "template_retrieval": false
+  }
+}

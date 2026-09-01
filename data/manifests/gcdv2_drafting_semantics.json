@@ -1,0 +1,80 @@
+{
+  "body_measurement_prediction": "DISABLED_CONSTANT_TARGET",
+  "construction_evidence_counts": {
+    "recipe_reconstruction": 11218
+  },
+  "dart_counts": {
+    "side_dart": 2188,
+    "waist_dart": 8464
+  },
+  "dart_evidence_counts": {
+    "observed_source": 10652
+  },
+  "dataset": "GarmentCodeData v2",
+  "doi": "https://doi.org/10.3929/ethz-b-000690432",
+  "edge_evidence_counts": {
+    "derived_topology": 124455,
+    "observed_source": 48115
+  },
+  "edge_role_counts": {
+    "armhole": 6522,
+    "center_back": 3968,
+    "center_front": 3968,
+    "dart_leg": 21304,
+    "hemline": 19348,
+    "neckline": 7796,
+    "other": 72303,
+    "shoulder": 5782,
+    "side_seam": 13582,
+    "waistline": 17997
+  },
+  "landmark_counts": {
+    "BNP": 3526,
+    "BP": 3968,
+    "FNP": 3526,
+    "SNP": 5782,
+    "SP": 5782
+  },
+  "landmark_evidence_counts": {
+    "derived_generator_formula": 3968,
+    "derived_topology": 18616
+  },
+  "license": "CC BY 4.0",
+  "panel_role_counts": {
+    "back_bodice": 3968,
+    "back_pants": 352,
+    "back_skirt": 2862,
+    "collar": 2070,
+    "cuff": 4320,
+    "front_bodice": 3968,
+    "front_pants": 352,
+    "front_skirt": 1660,
+    "sleeve": 4324,
+    "waistband": 1814
+  },
+  "production_synthetic_marks_included": false,
+  "production_synthetic_training_eligible": false,
+  "record_count": 1984,
+  "records_artifact": "artifacts/drafting_semantics/gcdv2_batch0/records.jsonl",
+  "records_sha256": "ce1c6aaf63677df2ed9f4eed056d71ea100a2062fc7ebd3d3fb4391867148c6c",
+  "reference_line_evidence_counts": {
+    "derived_generator_formula": 23808
+  },
+  "rejected_scope_counts": {
+    "asymmetric_excluded": 407,
+    "no_supported_upper": 1059
+  },
+  "schema_version": "drafting-semantic-manifest-1.0",
+  "scope": "symmetric_bodice_v1",
+  "split_counts": {
+    "not_in_official_paired_split": 351,
+    "test": 98,
+    "training": 1448,
+    "validation": 87
+  },
+  "unique_body_measurement_hashes": 1,
+  "upper_type_counts": {
+    "FittedShirt": 1094,
+    "Shirt": 890
+  }
+}

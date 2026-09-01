@@ -1,0 +1,84 @@
+{
+  "artifact_bytes": 96373427,
+  "artifact_sha256": "81eafd546bdb65b36ea5fb94e88c0eb66b6152b0578e2864402025212279aaa4",
+  "attempted_count": 2592,
+  "creation_contract_distribution": [
+    {
+      "contract": {
+        "all_operations_reachable_from_recipe_inputs": true,
+        "canonical_creation_points": 12,
+        "canonical_points_verified_as_operation_outputs": true,
+        "completed_panel_topology_used_for_semantic_labels": false,
+        "operation_count": 64,
+        "semantic_edges_verified_as_operation_outputs": true,
+        "training_edges": 40,
+        "unbound_snapshot_edges": 0,
+        "unbound_snapshot_points": 0
+      },
+      "count": 1484
+    },
+    {
+      "contract": {
+        "all_operations_reachable_from_recipe_inputs": true,
+        "canonical_creation_points": 12,
+        "canonical_points_verified_as_operation_outputs": true,
+        "completed_panel_topology_used_for_semantic_labels": false,
+        "operation_count": 64,
+        "semantic_edges_verified_as_operation_outputs": true,
+        "training_edges": 44,
+        "unbound_snapshot_edges": 0,
+        "unbound_snapshot_points": 2
+      },
+      "count": 1108
+    }
+  ],
+  "elapsed_seconds": 852.484,
+  "failure_count": 0,
+  "failure_split_counts": {},
+  "failures": [],
+  "full_plan_count": 2592,
+  "full_plan_split_counts": {
+    "iid_test": 128,
+    "iid_validation": 128,
+    "test_body": 256,
+    "test_design": 256,
+    "test_double": 64,
+    "train": 768,
+    "unseen_body": 256,
+    "unseen_design": 256,
+    "unseen_double": 64,
+    "validation_body": 128,
+    "validation_design": 256,
+    "validation_double": 32
+  },
+  "generated_count": 2592,
+  "is_full_corpus": true,
+  "limitations": {
+    "BP": "NOT_DEFINED_BY_RECIPE",
+    "darts": "NOT_APPLICABLE_TO_BASIC_TSHIRT",
+    "expert_validation": "PENDING",
+    "notches_grainline_seam_allowance": "NOT_CREATED_BY_GARMENTCODE_RECIPE",
+    "reference_lines": "separate anthropometric_adapter domain"
+  },
+  "plan_sha256": "2170a3daa37e06093001722c752f5bd6551495ba030d89778da2f0821d61fc56",
+  "recipe": "Shirt(fitted=False), symmetric CircleNeckHalf + ArmholeCurve + two half-sleeves per side",
+  "requested_splits": null,
+  "schema_version": "tshirt-construction-corpus-1.0",
+  "source": "maria-korosteleva/GarmentCode",
+  "split_counts": {
+    "iid_test": 128,
+    "iid_validation": 128,
+    "test_body": 256,
+    "test_design": 256,
+    "test_double": 64,
+    "train": 768,
+    "unseen_body": 256,
+    "unseen_design": 256,
+    "unseen_double": 64,
+    "validation_body": 128,
+    "validation_design": 256,
+    "validation_double": 32
+  },
+  "truth_policy": "creation-time runtime operations and live pre-assembly geometry",
+  "workers": 8
+}

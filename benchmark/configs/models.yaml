@@ -1,0 +1,18 @@
+{
+  "models": {
+    "reweaver": {
+      "repository": "https://github.com/SII-LiMing/ReWeaver-Code",
+      "commit": "e5640769f89d9540d118a9cc605ebe2d7404bc02",
+      "checkpoint_repository": "https://huggingface.co/SII-LiMing/ReWeaver",
+      "checkpoint_revision": "1112e56f58acfe744733b8a9964a9b9f3bc9669d",
+      "checkpoint_variant": "tileable"
+    },
+    "garment_particles": {
+      "repository": "https://github.com/garment-particles/GarmentParticles",
+      "commit": "328e9735a46b7638cf6f0348a85c5a146b16cd69",
+      "checkpoint_repository": "https://huggingface.co/georgeNakayama/GarmentParticles",
+      "checkpoint_revision": "2c463e6cc48cb3263d1e0e1e052a3ec0fc760db6",
+      "checkpoint_variants": ["pgf_image", "edge"]
+    }
+  }
+}

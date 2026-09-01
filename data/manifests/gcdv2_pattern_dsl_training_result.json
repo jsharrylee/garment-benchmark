@@ -1,0 +1,50 @@
+{
+  "schema_version": "gcdv2-pattern-dsl-training-result-1.0",
+  "status": "PASS_TRAINED_AND_SYMBOLICALLY_EVALUATED",
+  "date": "2026-08-29",
+  "device": "NVIDIA GeForce RTX 5070",
+  "model": {
+    "architecture": "cyclic edge Transformer plus garment-set panel Transformer plus symbolic projection",
+    "edge_feature_schema": "gcdv2-intrinsic-tangent-gap/v1",
+    "migration_note": "Reported metrics use tangent-gap slots 14:16. A chord-turn PatternProgram v2 corpus requires rebuilding and retraining; these numbers must not be relabeled as v2.",
+    "parameter_count": 950820,
+    "epochs": 14,
+    "training_seconds": 729.8529946999915,
+    "checkpoint_ignored": "checkpoints/gcdv2_pattern_dsl/unified_transformer.pt"
+  },
+  "split_counts": {
+    "train": 1587,
+    "validation": 198,
+    "test": 198
+  },
+  "frozen_test": {
+    "category_accuracy": 1.0,
+    "panel_role_macro_f1": 0.9338141702228551,
+    "edge_role_accuracy_raw": 0.9376353399740147,
+    "edge_role_macro_f1_raw": 0.9371936209409107,
+    "masked_command_accuracy": 0.9931363772008356,
+    "seam_mate_recall_at_1": 0.5553299492385787,
+    "seam_pair_f1_raw": 0.43154530534680835,
+    "target_landmark_exact_vertex_decode": 0.9896373056994818
+  },
+  "symbolic_test": {
+    "sample_count": 198,
+    "valid_rate": 1.0,
+    "raw_grammar_violations": 65,
+    "projected_grammar_violations": 0,
+    "changed_role_edges": 50,
+    "edge_role_accuracy_projected": 0.9411000433087917,
+    "seam_precision": 0.6664133738601824,
+    "seam_recall": 0.4451776649746193,
+    "seam_f1": 0.5337796713329275,
+    "landmark_precision": 0.8772935779816514,
+    "landmark_recall": 0.9909326424870466,
+    "landmark_f1": 0.9306569343065695
+  },
+  "evidence_ignored": {
+    "training_metrics": "artifacts/gcdv2_pattern_dsl_training/metrics.json",
+    "symbolic_proofs": "artifacts/gcdv2_pattern_dsl_training/symbolic_test.json",
+    "review_directory": "artifacts/gcdv2_pattern_dsl_predicted_review"
+  },
+  "claim_boundary": "Exact GCDv2 vector geometry to internal derived semantic/seam propositions; not image-to-DSL or expert cross-source validation."
+}

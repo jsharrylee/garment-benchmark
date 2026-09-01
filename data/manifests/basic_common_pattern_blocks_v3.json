@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "bytes": 45918856,
+    "relative_path": "artifacts/drafting_semantics/basic_blocks/provisional_common_blocks_v3.json",
+    "sha256": "1dbd5e93bcac3532d2ad722d36733cd33be09cc8dbad49e4fd1839c521c3b7ea",
+    "tracked": false
+  },
+  "block_schema_version": "basic-garment-blocks/v3",
+  "category_counts": {
+    "pants": 512,
+    "skirt": 512,
+    "tshirt": 512
+  },
+  "correlated_variation_policy": {
+    "family_disjoint": false,
+    "pants_skirt": "waist <= hip - 12 cm",
+    "tshirt": "waist <= bust + 4 cm and hip >= waist + 4 cm"
+  },
+  "expert_review": "PENDING",
+  "generator": "benchmark.drafting_semantics.basic_blocks",
+  "generator_method": "bounded_correlated_parametric_basic_block_v3",
+  "geometric_validation": {
+    "accepted": 1536,
+    "curve_samples_per_cubic": 12,
+    "error_counts": {},
+    "rejected": 0
+  },
+  "industrial_pattern_truth": false,
+  "record_count": 1536,
+  "review_contract": "Use as provisional synthetic supervision and edit anchors only until a pattern expert accepts or revises the ranges and formulas.",
+  "schema_version": "basic-garment-block-manifest/v3",
+  "scope": [
+    "basic short-sleeve T-shirt",
+    "straight-leg pants",
+    "two-panel pencil skirt with a provisional back vent"
+  ],
+  "seed": 20260901,
+  "semantic_content": [
+    "named landmarks and construction levels",
+    "explicit front/back centre-hip landmarks on lower-body centre paths",
+    "named boundary paths and cubic control geometry",
+    "reference-line geometry exposed as non-boundary teacher tokens",
+    "separate front/back lower-body waist darts",
+    "panel symmetry and checked seam compatibility relations"
+  ],
+  "status": "PROVISIONAL_EXPERT_REVIEW",
+  "tshirt_cap_armhole_ratio": {
+    "back": {
+      "maximum": 1.0189852109168707,
+      "minimum": 1.0135107641725971,
+      "outside_declared_12_percent": 0
+    },
+    "front": {
+      "maximum": 1.0064847008045728,
+      "minimum": 1.0010421546154888,
+      "outside_declared_12_percent": 0
+    }
+  },
+  "unsupported_production_claims": [
+    "expert-approved industrial fit",
+    "zipper or closure geometry without source evidence",
+    "notches, seam allowance, or approved grain direction"
+  ]
+}
