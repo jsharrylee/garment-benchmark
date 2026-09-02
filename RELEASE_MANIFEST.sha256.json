@@ -1,8 +1,13 @@
 {
   "algorithm": "sha256",
   "archive_root": "game-garment-benchmark/",
-  "file_count": 389,
+  "file_count": 391,
   "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "09c0e16d16031212c7da8c896fcfb2c56efb0bc52e15b8b87a21f8c7839ca650",
+      "size_bytes": 60
+    },
     {
       "path": ".gitignore",
       "sha256": "55fc4744cc9de838537cb471c442e825d7da1d35f690359793e4accad7e71e28",
@@ -205,8 +210,8 @@
     },
     {
       "path": "benchmark/drafting_semantics/basic_blocks.py",
-      "sha256": "0300165e8b5b23929f12849fe5683b8f1aaccea76ac95d8a518c1be683834819",
-      "size_bytes": 80138
+      "sha256": "b4c5db57e5b05db42644503cc34ac71d907f3a88e4b180fcb2ec56a1f346b6ab",
+      "size_bytes": 80152
     },
     {
       "path": "benchmark/drafting_semantics/basic_semantic_targets.py",
@@ -390,8 +395,8 @@
     },
     {
       "path": "benchmark/gcdv2_exact/geometry.py",
-      "sha256": "85553c954fcab6a1af7685a4228acf74d0986a26ae096f5a393407e10cd95c83",
-      "size_bytes": 24002
+      "sha256": "88d3ce204a9b00f5d61a3753f3570c5f1b065bf5cb711b97f31955ad388004b7",
+      "size_bytes": 24047
     },
     {
       "path": "benchmark/gcdv2_exact/intrinsic_graph_learning.py",
@@ -560,8 +565,8 @@
     },
     {
       "path": "benchmark/pattern_pipeline/schema.py",
-      "sha256": "8a0f6f8dc053668ede6bcdf2330d6b87626cfe8b1a26921ccf43b71da40ccc39",
-      "size_bytes": 3493
+      "sha256": "b537ee41f3622534dacde3f0d888e7991133077f68327adb266c9c6bf8be1bc0",
+      "size_bytes": 3554
     },
     {
       "path": "benchmark/pattern_pipeline/semantic_editing.py",
@@ -665,8 +670,8 @@
     },
     {
       "path": "benchmark/retrieval/index.py",
-      "sha256": "d54036ad8e08c0bbee4e8e19a784837fe791df8a45229e154ff5cb9e532a0900",
-      "size_bytes": 7225
+      "sha256": "75308706d6380d79ebea61837c2888179b08eff8ddcac259da687bbcc073e334",
+      "size_bytes": 7251
     },
     {
       "path": "benchmark/scripts/__init__.py",
@@ -725,8 +730,8 @@
     },
     {
       "path": "benchmark/scripts/audit_gcdv2_semantic_landmarks.py",
-      "sha256": "47b11630e83d9fefab7777a460f2fa951db6c1f0f839bcc6c64b14ae8b5c48db",
-      "size_bytes": 2875
+      "sha256": "0c1f2b4eb3a4585dcbcb4d88af69d322c087687d4ebd74eb8cd2412a4a3eb6aa",
+      "size_bytes": 2920
     },
     {
       "path": "benchmark/scripts/audit_multiview_pattern_exactness.py",
@@ -735,8 +740,8 @@
     },
     {
       "path": "benchmark/scripts/augment_tshirt_formula_targets.py",
-      "sha256": "c0dd44c4441cff10b1648492b9c1879cfab784e13c1a4162402592c3d59bf414",
-      "size_bytes": 17004
+      "sha256": "3ee80b2d0e807164f1f261f7c75d26610470b4ba7ba4766a7dad9f7933449eec",
+      "size_bytes": 17026
     },
     {
       "path": "benchmark/scripts/build_drafting_counterfactual_pairs.py",
@@ -770,8 +775,8 @@
     },
     {
       "path": "benchmark/scripts/build_garmentcode_v2_canonical_subset.py",
-      "sha256": "d3e93508845dd97ea5a08b861e5595d7a598c8f3d37f298ce4303feeef21bb35",
-      "size_bytes": 4080
+      "sha256": "abd30f540f6a7ee439905d173e85bcc0cdc95ec433ecebb82b73364ef399867a",
+      "size_bytes": 4125
     },
     {
       "path": "benchmark/scripts/build_garmentcode_v2_multiview_board.py",
@@ -780,8 +785,8 @@
     },
     {
       "path": "benchmark/scripts/build_garmentcode_v2_multiview_index.py",
-      "sha256": "b4b7a1f52fb5d065c87db6cd4317daee7d6026a1f8cce5dd0a544a8bc5c04b3a",
-      "size_bytes": 4033
+      "sha256": "cd9a6fe6ff49293f5a0dcb8a40ed0293681abf9bb7690ae1235204622374bbb6",
+      "size_bytes": 4078
     },
     {
       "path": "benchmark/scripts/build_garmentcode_v2_review_board.py",
@@ -790,43 +795,43 @@
     },
     {
       "path": "benchmark/scripts/build_gcdv2_drafting_semantics.py",
-      "sha256": "cf8df55d2facd28ccaaec0f37a75c6adb65bd17a823692a8a798ad238d30a0d3",
-      "size_bytes": 8705
+      "sha256": "fca6c62d257359042844980648184594d3e801183f9f8797d28df73e05c0b1da",
+      "size_bytes": 8764
     },
     {
       "path": "benchmark/scripts/build_gcdv2_exact_pairs.py",
-      "sha256": "d91c8ef8a7e5f51b1a9775e3dc7c43a099cc5dfc002d91b34d330dd30237d71b",
-      "size_bytes": 6997
+      "sha256": "56ba0541c7f6321c689e67857a1700b3abd3bed74fdfad147510b88f37f9876f",
+      "size_bytes": 7087
     },
     {
       "path": "benchmark/scripts/build_gcdv2_intrinsic_graph_dataset.py",
-      "sha256": "03400f1c165da9b5dfb43a261ce13e9f91a82a804962a920869b62e367073aba",
-      "size_bytes": 3019
+      "sha256": "5666dadfa78ffd2638c193d1d4f18d85332aab03650754ddb482e0e249f0110b",
+      "size_bytes": 3064
     },
     {
       "path": "benchmark/scripts/build_gcdv2_merged_visible_semantics.py",
-      "sha256": "2c63e31a9137981277da5a2af552ecd9d4ec3cc3e4748b2e3ee7e629513975b6",
-      "size_bytes": 2881
+      "sha256": "58afd30e9c00683a780626aee0b8a71e6e9cc051c9df118f8f7f85d24898f8e0",
+      "size_bytes": 2971
     },
     {
       "path": "benchmark/scripts/build_gcdv2_neurosymbolic_dataset.py",
-      "sha256": "217acc0ed6dafbadc82ab8f6d4f9852ae7ea283300a9448abbefa5c82487f956",
-      "size_bytes": 8869
+      "sha256": "426b57469eb3391910ad1bda9e35a56cd8cb04d59c93b7548867cab33452a0a4",
+      "size_bytes": 9178
     },
     {
       "path": "benchmark/scripts/build_gcdv2_panel_dataset.py",
-      "sha256": "de263d393baa830336781d758cc72a86020ef88be6cb7f264abf8aac6a110271",
-      "size_bytes": 9189
+      "sha256": "70347992be54ca24f1ca4f5218f9541fd4b6997435f910e4a639e700175784ab",
+      "size_bytes": 9290
     },
     {
       "path": "benchmark/scripts/build_gcdv2_pattern_dsl_dataset.py",
-      "sha256": "75da60956ebfa6a4442f0d0bc5a08dd80c240845f9ca79ccfeb3a6605b38276e",
-      "size_bytes": 4242
+      "sha256": "c9a92f84119cc0304917f27b5605f28ec40b35ead839c473a08a4330fe7a60f4",
+      "size_bytes": 4332
     },
     {
       "path": "benchmark/scripts/build_github_release_zip.py",
-      "sha256": "2fba3ca5a76c14a72fbf540ec2559928a1907bee98a0ee9d15d36bf5a24e772e",
-      "size_bytes": 21589
+      "sha256": "1ba4097e55e4ebe511e3cdead2a0165d1f0de7ff90550984d960aa850838f863",
+      "size_bytes": 24446
     },
     {
       "path": "benchmark/scripts/build_layered_review_board.py",
@@ -865,8 +870,8 @@
     },
     {
       "path": "benchmark/scripts/build_tshirt_construction_corpus.py",
-      "sha256": "6fa8d839d671fb8a05aaf0e8d0b39505b2ebea76715ff84f8828cd443287fab5",
-      "size_bytes": 6692
+      "sha256": "46d749e9a003671011bf896b97edb8b4a1bc1f593f4a955e9d0f8f42f177a485",
+      "size_bytes": 6737
     },
     {
       "path": "benchmark/scripts/build_tshirt_expert_review.py",
@@ -895,8 +900,8 @@
     },
     {
       "path": "benchmark/scripts/combine_tshirt_semantic_records.py",
-      "sha256": "3ce10ff069b2506c01a8bbba9fcfda0a6cfa58d917451bbec126a0aa0760fce0",
-      "size_bytes": 6489
+      "sha256": "9314af768ce20c8b9cd3f4f07bf6417f2851dd5ccbcab0f311650b103d1af5ed",
+      "size_bytes": 6550
     },
     {
       "path": "benchmark/scripts/compare_garment_particles_binding.py",
@@ -1015,8 +1020,8 @@
     },
     {
       "path": "benchmark/scripts/extract_gcdv2_predicted_contours.py",
-      "sha256": "3639382bec9b9daef8d997a1ee49d89942317b63a627ac636b3832899dfb0f75",
-      "size_bytes": 4383
+      "sha256": "fe49d969abf3bcc9f22e2b87c9be8dbafedf4a25f262f6064b5b6a17426396a7",
+      "size_bytes": 4428
     },
     {
       "path": "benchmark/scripts/extract_multiview_resnet50_features.py",
@@ -1030,8 +1035,8 @@
     },
     {
       "path": "benchmark/scripts/generate_basic_block_corpus.py",
-      "sha256": "2aeb429a631a922c597bded2bda07edcc8acf154448ec995bbdc83aa468b78f9",
-      "size_bytes": 5715
+      "sha256": "1138c41c14028a529f9bac1b38a5e8ca3411b9f9d7ebcef1cc05aad49587c369",
+      "size_bytes": 5776
     },
     {
       "path": "benchmark/scripts/generate_blender_studio_sample.py",
@@ -1040,8 +1045,8 @@
     },
     {
       "path": "benchmark/scripts/generate_garmentcode_anchor_bank.py",
-      "sha256": "66a1fc5fecdbced69e9f291182f8ca8dc555d9d0e3c7db6ad07671d9f572b3b9",
-      "size_bytes": 4871
+      "sha256": "a3582b5ff0a5ead0f1aa2aeb51642fabf8ea1d70da31a8ecec9778a6eade7cf9",
+      "size_bytes": 4977
     },
     {
       "path": "benchmark/scripts/generate_mpfb_samples.py",
@@ -1060,8 +1065,8 @@
     },
     {
       "path": "benchmark/scripts/inspect_garmentcode_v2_batch.py",
-      "sha256": "69d790a11da1cc34c385480ac212bffe7a9fb1abb1523ec38ff2bf393527a60e",
-      "size_bytes": 13396
+      "sha256": "2d2a25183621495b484193742be2673457aebd89db5597ce27134a2b3e54e12f",
+      "size_bytes": 13508
     },
     {
       "path": "benchmark/scripts/inspect_synbody.py",
@@ -1489,6 +1494,11 @@
       "size_bytes": 1435
     },
     {
+      "path": "benchmark/tests/test_github_release_zip.py",
+      "sha256": "df29ce20d4dc70c3cea714a58d1c78256003c929775ad57ac0476d8652457728",
+      "size_bytes": 2274
+    },
+    {
       "path": "benchmark/tests/test_global_curve_feature_ablation.py",
       "sha256": "c02d79f642a74df0e430ff311ded372c24709b353abdd49007f29f9ab4359450",
       "size_bytes": 4521
@@ -1705,13 +1715,13 @@
     },
     {
       "path": "data/manifests/basic_common_pattern_blocks.json",
-      "sha256": "44216dc47aa76ddf9d17f391a1a4c49dc1a4bd3a3592f58af6961c7818d2b5ca",
-      "size_bytes": 2121
+      "sha256": "ce781885b3b42225070c2183b1c33dfa18c15a265e4e1491ce9136e7d8f270fd",
+      "size_bytes": 2059
     },
     {
       "path": "data/manifests/basic_common_pattern_blocks_v3.json",
-      "sha256": "d9ae4b6de6e442ba231eb03a64877d94d371ca13c5c70d15d6d51886042b673e",
-      "size_bytes": 2272
+      "sha256": "ed46e37766df8baccd5ed1d0ecc16da155b97dcad1742cf0b547e8d4ece6155d",
+      "size_bytes": 2208
     },
     {
       "path": "data/manifests/basic_semantic_teacher_student_v2.json",
@@ -1725,53 +1735,53 @@
     },
     {
       "path": "data/manifests/garmentcode_anchor_bank.json",
-      "sha256": "a72b06f84722de4c118c536ec6224a2ce51cc3ba59a0a1f1a74ffc1311f826ef",
-      "size_bytes": 2196
+      "sha256": "f2decd5f35bd9321e25455b184a00ef040df3a2c67b9115419524e7fd5a1b4d6",
+      "size_bytes": 2139
     },
     {
       "path": "data/manifests/garmentcode_v2_batch_0.json",
-      "sha256": "987517aba46b4f09d45608d05730ff7bdec2bd2ae313e0b1680460e09f071047",
-      "size_bytes": 1517
+      "sha256": "ecf68fa0496024c08ae4a33781eab3f01b02c9554241e896dd1969bbcd0c4be4",
+      "size_bytes": 1466
     },
     {
       "path": "data/manifests/garmentcode_v2_batch_0_canonical_subset.json",
-      "sha256": "9d24f01d841f5b803c77c3a838f7e3bd0e864a24e54b17969b20b24d709ade50",
-      "size_bytes": 33219
+      "sha256": "0bab4d77c321bcd50f5109893e35c622d10192559c622f5d780b6642cbe94740",
+      "size_bytes": 32145
     },
     {
       "path": "data/manifests/garmentcode_v2_batch_0_full_canonical.json",
-      "sha256": "100bbf6ea22700435b94d8ad7134b485d8c866c5b613777b9bac4fbe71459f94",
-      "size_bytes": 889655
+      "sha256": "ce630eb0ff2d20746b46fc8313f311c81a34cbaecb8a988df2f778e35430d170",
+      "size_bytes": 860431
     },
     {
       "path": "data/manifests/garmentcode_v2_batch_0_multiview_index.json",
-      "sha256": "21962a7006015228e03dd8e8c01cfc546f42fa6171a47141e8ac84f7cd84047e",
-      "size_bytes": 608
+      "sha256": "b9b2e6d9496a5073c201c2d9d35c578118181ce141f75578d8d6907bc9261934",
+      "size_bytes": 587
     },
     {
       "path": "data/manifests/gcdv2_drafting_semantics.json",
-      "sha256": "5ef651a2a13799c47abd5f7212d45cf7bfaf42c941e4b444c26578cd38b57545",
-      "size_bytes": 2085
+      "sha256": "c13ae7613c66bc4462b367cd2a998d2d0cceddd0e29ac74f1a5793a95c0a8af4",
+      "size_bytes": 2005
     },
     {
       "path": "data/manifests/gcdv2_exact_pairs_smoke.json",
-      "sha256": "135021b99a3767643c838f727c70b74c1dee585b53e502fa8fabbb5363585a9f",
-      "size_bytes": 1004
+      "sha256": "521ca73100c28638268e8cdc0200040e12ef45f1d8d524c4f2c6c9cfffb77af2",
+      "size_bytes": 972
     },
     {
       "path": "data/manifests/gcdv2_exact_pairs_v1.json",
-      "sha256": "6085eadbd78c4ec801178404117a3bfba1168ba90d53ae143786d72c03998de6",
-      "size_bytes": 1033
+      "sha256": "a764b172c7a91498780c5860b201ee860085b3c9c1eb5d21229299adfcabbf59",
+      "size_bytes": 1001
     },
     {
       "path": "data/manifests/gcdv2_exact_pairs_v1_quarantine.json",
-      "sha256": "44727bfce2516f949f12ab62374a8a13c6560b0bb82a7ee008dd96c546c3a775",
-      "size_bytes": 1053
+      "sha256": "10999be7eb12c2d98c071e15b926f0278966811b1f23c3c3a8de093b44420328",
+      "size_bytes": 1021
     },
     {
       "path": "data/manifests/gcdv2_exact_panels_v1.json",
-      "sha256": "ecf0d14d2c0942e6374a486e536c4ab042b4e23f970a4999708af3a511c300c8",
-      "size_bytes": 2196
+      "sha256": "a5776b8cf208ee9c807a186cfe215eb43ed4c4aa030dfdc48a7fb934b7ff7d1b",
+      "size_bytes": 2131
     },
     {
       "path": "data/manifests/gcdv2_exact_retrieval_refinement.json",
@@ -1785,28 +1795,28 @@
     },
     {
       "path": "data/manifests/gcdv2_intrinsic_graph_predicted_v1.json",
-      "sha256": "fe4fb2f466ccb78a7caef94ad83959916cf9dad74613b76c1d98d0bb418017bc",
-      "size_bytes": 933
+      "sha256": "2f7a6ff823490b3b1574507ee03586237048b8748d84d348c155d2698f1606a4",
+      "size_bytes": 906
     },
     {
       "path": "data/manifests/gcdv2_intrinsic_graph_v1.json",
-      "sha256": "fb9d28a6918cb599eb07a95ce25edb3bebb307fde8593bc7b432f55ee8114fe6",
-      "size_bytes": 779
+      "sha256": "d43244fd0147da36417710f077e1e83a683cb4ea5875bce837c6abc271057c16",
+      "size_bytes": 754
     },
     {
       "path": "data/manifests/gcdv2_merged_visible_semantics_v1.json",
-      "sha256": "8db26f581fa5be208a4d679b35b51437f38d4cc57c8cccdd2999537278bf850b",
-      "size_bytes": 858
+      "sha256": "844b9bc018ca82b0b608d9b12f7bb8d402dfa81e50d987050609fa310c815184",
+      "size_bytes": 827
     },
     {
       "path": "data/manifests/gcdv2_multigarment_semantics.json",
-      "sha256": "a42a2861cc8d1f684c37f8b126edd9eca4827b83079050d00754b3e77bf727cb",
-      "size_bytes": 2503
+      "sha256": "a15196c72044134498da21ac94262ae3c1eff46a986ebcb58b25488de7b4ca34",
+      "size_bytes": 2407
     },
     {
       "path": "data/manifests/gcdv2_neurosymbolic_v1.json",
-      "sha256": "d6baee5fbb43abf576f048730764f30f1e2ca828561a295f4b9bbfeabb3838cf",
-      "size_bytes": 2102
+      "sha256": "8a701325e75fdaa7b234f57bb06caa64637614517b6d042edb914ccd10c12c7a",
+      "size_bytes": 2027
     },
     {
       "path": "data/manifests/gcdv2_neurosymbolic_v1_audit.json",
@@ -1820,13 +1830,13 @@
     },
     {
       "path": "data/manifests/gcdv2_pattern_dsl_v1.json",
-      "sha256": "16ffc8643decff01f4ff83fc84894ba624e8113da0f95442e3bea0f7dd5b88ee",
-      "size_bytes": 2031
+      "sha256": "38dd2001cb06a2e71fb7b0e9a4a9aed9d7cb9a711153b9129bd716ee03e8d9fd",
+      "size_bytes": 1950
     },
     {
       "path": "data/manifests/gcdv2_pattern_dsl_v2.json",
-      "sha256": "c462aac6aac54408a5a5fc8adf9e5a20b918efaefa1a5e552507c17e75f00bda",
-      "size_bytes": 2117
+      "sha256": "f2bd1a50556714a83dcda1a34e677e81098662fdcd715cd964a5c0e18683f47f",
+      "size_bytes": 2033
     },
     {
       "path": "data/manifests/gcdv2_pattern_dsl_v2_training_result.json",
@@ -1835,13 +1845,13 @@
     },
     {
       "path": "data/manifests/gcdv2_predicted_contours_v1.json",
-      "sha256": "0a3fa95b9f1e9d03a2fa3063e6a61a417a89f98a01b322a883d35c5ff4cc549d",
-      "size_bytes": 734
+      "sha256": "fc404874c57ccfa7249b7b4a6f0b781e9047f02ad3756c28527e601afa7614e5",
+      "size_bytes": 709
     },
     {
       "path": "data/manifests/gcdv2_semantic_landmark_audit.json",
-      "sha256": "b75478bdf2825db528d00b229595061598a2b9fa18427269fa8c2149d75b8d3a",
-      "size_bytes": 566
+      "sha256": "57e9e6526d3aacab4bb6088e4d8c6f6a2b3319fd6fe0106c544138988c3dad9f",
+      "size_bytes": 545
     },
     {
       "path": "data/manifests/gcdv2_symbolic_candidate_beam.json",
@@ -1885,18 +1895,18 @@
     },
     {
       "path": "data/manifests/tshirt_construction_formula_augmented.json",
-      "sha256": "1a1dbc66520389c0df5a2fff63d90dda7e45fb8c7512235e4961ebc1832f23f0",
-      "size_bytes": 5377
+      "sha256": "386297982c4190871213e68285df14fea106ed076c42de4a7c0e2209463fca17",
+      "size_bytes": 5211
     },
     {
       "path": "data/manifests/tshirt_construction_truth.json",
-      "sha256": "0549045bf0745b7335fdc26f674e1fc3f706deb5f4719fd9633360a5433bb54e",
-      "size_bytes": 2762
+      "sha256": "b4cc73a730a898947f06340af759c11d27a695654ab2013d51872829b97de950",
+      "size_bytes": 2709
     },
     {
       "path": "data/manifests/tshirt_semantics_combined.json",
-      "sha256": "5bf54a1affb8fd5824c8e8bb617e2a17d51026d7b5ea9f9d383ec2657728c514",
-      "size_bytes": 436
+      "sha256": "3cd9b74196dab2aac16d997139f392b496cd39f57ddc2474c70bcf40b4c09752",
+      "size_bytes": 424
     },
     {
       "path": "data/manifests/tshirt_semantics_training_results.json",
@@ -1964,5 +1974,5 @@
     "maximum_file_bytes": 10485760
   },
   "schema_version": 1,
-  "total_bytes": 5186037
+  "total_bytes": 5161255
 }

@@ -50,7 +50,11 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(args.output, **arrays)
     args.metadata.parent.mkdir(parents=True, exist_ok=True)
-    args.metadata.write_text("".join(json.dumps(row) + "\n" for row in metadata), encoding="utf-8")
+    args.metadata.write_text(
+        "".join(json.dumps(row) + "\n" for row in metadata),
+        encoding="utf-8",
+        newline="\n",
+    )
     split_names = {0: "train", 1: "validation", 2: "test"}
     manifest = {
         "schema_version": f"gcdv2-pattern-dsl-{version[1:]}.0",
@@ -82,7 +86,11 @@ def main() -> None:
         "artifacts": {"arrays": args.output.as_posix(), "metadata": args.metadata.as_posix()},
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest, indent=2))
 
 

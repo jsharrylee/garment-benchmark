@@ -105,7 +105,11 @@ def main() -> None:
                 print(json.dumps({"processed": index, "total": len(futures), "failures": len(failures)}), flush=True)
     records.sort(key=lambda value: value["sample_id"])
     index_path = args.output / args.index_name
-    index_path.write_text("".join(json.dumps(value, sort_keys=True) + "\n" for value in records), encoding="utf-8")
+    index_path.write_text(
+        "".join(json.dumps(value, sort_keys=True) + "\n" for value in records),
+        encoding="utf-8",
+        newline="\n",
+    )
     category_counts = Counter(value["category"] for value in records)
     curve_counts = Counter()
     for record in records:
@@ -131,7 +135,11 @@ def main() -> None:
         "claim_boundary": "Geometry is source-exact or deterministic geometry derived from GCDv2 specification.json. Packed panel positions are display-only and never geometric truth. Semantic drafting names are outside this schema.",
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest, indent=2))
 
 

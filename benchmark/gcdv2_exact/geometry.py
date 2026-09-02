@@ -446,7 +446,11 @@ def build_exact_sample(
     validation = validate_exact_label(label)
     label["validation"] = validation
     output_dir.mkdir(parents=True, exist_ok=True)
-    label_path.write_text(json.dumps(label, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    label_path.write_text(
+        json.dumps(label, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     _render_label(label, pattern_path, overlay=False, size=image_size)
     if render_overlay:
         _render_label(label, overlay_path, overlay=True, size=image_size)

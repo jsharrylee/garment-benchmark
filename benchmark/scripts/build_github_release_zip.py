@@ -33,6 +33,7 @@ MAX_METADATA_CHUNK_BYTES = 1024 * 1024
 FIXED_ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 
 ROOT_FILES = (
+    Path(".gitattributes"),
     Path(".gitignore"),
     Path("pyproject.toml"),
     Path("README.md"),
@@ -82,6 +83,7 @@ EXCLUDED_PUBLIC_REPORT_NAMES = {
 BENCHMARK_SUFFIXES = {".py", ".json", ".yaml", ".yml", ".md", ".mjs", ".gitkeep"}
 MANIFEST_SUFFIXES = {".json", ".yaml", ".yml", ".md", ".gitkeep"}
 REPORT_SUFFIXES = {".md", ".png", ".svg", ".json", ".gitkeep"}
+BINARY_RELEASE_SUFFIXES = {".docx", ".png"}
 IGNORED_PARTS = {"__pycache__", ".pytest_cache"}
 SENSITIVE_SUFFIXES = {".pem", ".key", ".p12", ".pfx", ".kdbx"}
 SENSITIVE_NAMES = {
@@ -374,8 +376,22 @@ def _validate_file(path: Path) -> ReleaseFile:
     if len(data) != size_bytes:
         raise ReleaseValidationError(f"file changed while being read: {relative}")
 
-    _validate_text(data.decode("utf-8", errors="ignore"), relative.as_posix())
     suffix = path.suffix.lower()
+    if suffix not in BINARY_RELEASE_SUFFIXES:
+        try:
+            text = data.decode("utf-8")
+        except UnicodeDecodeError as exc:
+            raise ReleaseValidationError(
+                f"public text file is not valid UTF-8: {relative}"
+            ) from exc
+        if "\r" in text:
+            raise ReleaseValidationError(
+                f"public text file contains a carriage return; use canonical LF: {relative}"
+            )
+        _validate_text(text, relative.as_posix())
+    else:
+        _validate_text(data.decode("utf-8", errors="ignore"), relative.as_posix())
+
     if suffix == ".docx":
         _scan_docx(data, relative.as_posix())
     elif suffix == ".png":
@@ -493,7 +509,42 @@ def _resolve_output(value: Path) -> Path:
     return path
 
 
-def build_archive(output: Path, release_files: Sequence[ReleaseFile], overwrite: bool) -> None:
+def _resolve_manifest_output(value: Path) -> Path:
+    path = value if value.is_absolute() else ROOT / value
+    path = path.resolve()
+    try:
+        path.relative_to(ROOT.resolve())
+    except ValueError as exc:
+        raise ReleaseValidationError("manifest output must remain inside the repository root") from exc
+    if path.suffix.lower() != ".json":
+        raise ReleaseValidationError("manifest output filename must end in .json")
+    expected = (ROOT / MANIFEST_NAME).resolve()
+    if path != expected:
+        raise ReleaseValidationError(
+            f"manifest output must be the non-recursive root manifest: {MANIFEST_NAME}"
+        )
+    return path
+
+
+def _write_atomic_bytes(path: Path, payload: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        dir=path.parent,
+    )
+    temporary_path = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "wb") as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary_path, path)
+    finally:
+        temporary_path.unlink(missing_ok=True)
+
+
+def build_archive(output: Path, release_files: Sequence[ReleaseFile], overwrite: bool) -> bytes:
     if output.exists() and not overwrite:
         raise ReleaseValidationError(
             f"output already exists: {output.relative_to(ROOT)}; pass --overwrite to replace it"
@@ -513,6 +564,7 @@ def build_archive(output: Path, release_files: Sequence[ReleaseFile], overwrite:
         if output.exists() and not overwrite:
             raise ReleaseValidationError(f"output appeared during build: {output.relative_to(ROOT)}")
         os.replace(temporary_path, output)
+        return manifest_bytes
     finally:
         temporary_path.unlink(missing_ok=True)
 
@@ -539,6 +591,15 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="replace the exact output ZIP if it already exists",
     )
+    parser.add_argument(
+        "--manifest-output",
+        type=Path,
+        default=Path(MANIFEST_NAME),
+        help=(
+            "external manifest path relative to the repository root "
+            f"(default: {MANIFEST_NAME})"
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -546,16 +607,28 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
     try:
         output = _resolve_output(args.output)
+        manifest_output = _resolve_manifest_output(args.manifest_output)
+        if manifest_output == output:
+            raise ReleaseValidationError("ZIP output and manifest output must be different files")
         release_files = validate_release_files(collect_candidate_paths())
         total_bytes = sum(item.size_bytes for item in release_files)
         print(f"Validated {len(release_files)} public files ({_format_mib(total_bytes)}).")
         if args.check_only:
             print("Check-only mode: no archive was created.")
             return 0
-        build_archive(output, release_files, overwrite=args.overwrite)
+        if manifest_output.exists() and not args.overwrite:
+            raise ReleaseValidationError(
+                f"manifest output already exists: {manifest_output.relative_to(ROOT)}; "
+                "pass --overwrite to replace it"
+            )
+        manifest_bytes = build_archive(output, release_files, overwrite=args.overwrite)
+        _write_atomic_bytes(manifest_output, manifest_bytes)
+        if manifest_output.read_bytes() != manifest_bytes:
+            raise ReleaseValidationError("external manifest content mismatch after write")
         print(f"Created {output.relative_to(ROOT)}")
         print(f"Archive root: {ARCHIVE_ROOT}/")
         print(f"Manifest: {ARCHIVE_ROOT}/{MANIFEST_NAME}")
+        print(f"External manifest: {manifest_output.relative_to(ROOT)}")
         return 0
     except (OSError, ReleaseValidationError, zipfile.BadZipFile, zlib.error) as exc:
         print(f"Release build failed: {exc}")

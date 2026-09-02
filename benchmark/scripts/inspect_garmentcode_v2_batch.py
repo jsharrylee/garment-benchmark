@@ -230,7 +230,11 @@ def extract_all(archive: Path, output: Path) -> tuple[int, int]:
         "file_count": file_count,
         "extracted_bytes": total_bytes,
     }
-    (output / "_extraction_receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    (output / "_extraction_receipt.json").write_text(
+        json.dumps(receipt, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     return file_count, total_bytes
 
 
@@ -278,6 +282,7 @@ def main() -> None:
         )
         + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     manifest = {
         "schema_version": "1.0",
@@ -301,7 +306,11 @@ def main() -> None:
         "additional_batch_downloaded": False,
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(
         json.dumps(
             {

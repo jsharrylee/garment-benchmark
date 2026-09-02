@@ -742,7 +742,7 @@ def write_corpus_json(corpus: BasicBlockCorpus, path: str | Path) -> Path:
 
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(corpus.to_json() + "\n", encoding="utf-8")
+    destination.write_text(corpus.to_json() + "\n", encoding="utf-8", newline="\n")
     return destination
 
 

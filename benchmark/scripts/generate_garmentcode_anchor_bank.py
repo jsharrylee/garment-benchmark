@@ -92,7 +92,11 @@ def main() -> None:
             with_printable=False,
         )
         design_path = anchor_dir / "design.yaml"
-        design_path.write_text(yaml.safe_dump({"design": design}, sort_keys=False), encoding="utf-8")
+        design_path.write_text(
+            yaml.safe_dump({"design": design}, sort_keys=False),
+            encoding="utf-8",
+            newline="\n",
+        )
         specification = next(anchor_dir.glob("*_specification.json"))
         raw = json.loads(specification.read_text(encoding="utf-8"))
         records.append(
@@ -119,7 +123,11 @@ def main() -> None:
         "records": records,
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest))
 
 

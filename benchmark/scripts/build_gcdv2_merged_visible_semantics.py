@@ -25,7 +25,11 @@ def main() -> None:
         arrays, metadata = build_merged_visible_arrays(rows, predicted["contours"], args.records)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(args.output, **arrays)
-    args.metadata.write_text("".join(json.dumps(row) + "\n" for row in metadata), encoding="utf-8")
+    args.metadata.write_text(
+        "".join(json.dumps(row) + "\n" for row in metadata),
+        encoding="utf-8",
+        newline="\n",
+    )
     split_names = {0: "train", 1: "validation", 2: "test"}
     manifest = {
         "schema_version": "gcdv2-merged-visible-semantics-1.0", "status": "PASS", "panel_count": len(metadata),
@@ -38,7 +42,11 @@ def main() -> None:
         "artifact": args.output.as_posix(),
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest, indent=2))
 
 

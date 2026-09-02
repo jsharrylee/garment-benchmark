@@ -80,7 +80,7 @@ def main() -> None:
     body_hashes: set[str] = set()
     rejected_scope: Counter[str] = Counter()
     category_counts: Counter[str] = Counter()
-    with args.output.open("w", encoding="utf-8") as stream:
+    with args.output.open("w", encoding="utf-8", newline="\n") as stream:
         for specification in specifications:
             sample_id = _sample_id(specification)
             if accepted_ids is not None and sample_id not in accepted_ids:
@@ -167,7 +167,11 @@ def main() -> None:
         "sample_index": None if args.sample_index is None else args.sample_index.as_posix(),
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest, indent=2))
 
 

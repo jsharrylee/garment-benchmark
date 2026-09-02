@@ -111,6 +111,7 @@ class PatternIndex:
             json.dumps({"schema_version": "2.0", "mode": "retrieval_anchored_v2", "records": [record.to_dict() for record in self.records]}, indent=2)
             + "\n",
             encoding="utf-8",
+            newline="\n",
         )
 
     def search(self, query: QueryEvidence, *, top_k: int = 5, minimum_score: float = 0.45) -> RetrievalResult:

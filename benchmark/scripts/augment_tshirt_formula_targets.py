@@ -355,6 +355,7 @@ def _write_manifest(path: Path, manifest: dict[str, Any]) -> None:
     temporary.write_text(
         json.dumps(manifest, indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     os.replace(temporary, path)
 

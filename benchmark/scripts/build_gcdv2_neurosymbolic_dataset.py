@@ -64,7 +64,12 @@ def main() -> None:
             visual_path = panel_dir / "visual_truth.npz"
             if args.force or not graph_path.is_file():
                 graph_path.parent.mkdir(parents=True, exist_ok=True)
-                graph_path.write_text(json.dumps(formal_graph(target), sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+                graph_path.write_text(
+                    json.dumps(formal_graph(target), sort_keys=True, separators=(",", ":"))
+                    + "\n",
+                    encoding="utf-8",
+                    newline="\n",
+                )
             if args.force or not visual_path.is_file():
                 visual_path.parent.mkdir(parents=True, exist_ok=True)
                 temporary_visual_path = visual_path.with_suffix(".tmp.npz")
@@ -101,7 +106,11 @@ def main() -> None:
             "supervision_order": ["visual_contour", "visible_junctions", "formal_graph", "garment_stitch_constraints"],
         }
         garment_path.parent.mkdir(parents=True, exist_ok=True)
-        garment_path.write_text(json.dumps(garment, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+        garment_path.write_text(
+            json.dumps(garment, sort_keys=True, separators=(",", ":")) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
         return panel_records, {
             "sample_id": sample_id,
             "garment_category": sample_rows[0]["garment_category"],
@@ -129,8 +138,16 @@ def main() -> None:
     garment_records.sort(key=lambda value: value["sample_id"])
     panel_index = args.output / "panel_index.jsonl"
     garment_index = args.output / "garment_index.jsonl"
-    panel_index.write_text("".join(json.dumps(value, sort_keys=True) + "\n" for value in panel_records), encoding="utf-8")
-    garment_index.write_text("".join(json.dumps(value, sort_keys=True) + "\n" for value in garment_records), encoding="utf-8")
+    panel_index.write_text(
+        "".join(json.dumps(value, sort_keys=True) + "\n" for value in panel_records),
+        encoding="utf-8",
+        newline="\n",
+    )
+    garment_index.write_text(
+        "".join(json.dumps(value, sort_keys=True) + "\n" for value in garment_records),
+        encoding="utf-8",
+        newline="\n",
+    )
     split_counts = Counter((value["split"], value["garment_category"]) for value in garment_records)
     manifest = {
         "schema_version": SCHEMA_VERSION,
@@ -151,7 +168,11 @@ def main() -> None:
         "claim_boundary": "Visual targets are raster-observable. Latent smooth source subdivisions, exact primitives, and stitch relations are separately marked source-formal supervision.",
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest, indent=2))
     if failures:
         raise SystemExit(1)

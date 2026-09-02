@@ -96,6 +96,7 @@ def main() -> None:
                 target_path.write_text(
                     json.dumps(target, sort_keys=True, separators=(",", ":")) + "\n",
                     encoding="utf-8",
+                    newline="\n",
                 )
             role = target["role_labels"]
             records.append(
@@ -142,6 +143,7 @@ def main() -> None:
     index_path.write_text(
         "".join(json.dumps(row, sort_keys=True) + "\n" for row in records),
         encoding="utf-8",
+        newline="\n",
     )
 
     categories = Counter(row["garment_category"] for row in records)
@@ -192,7 +194,11 @@ def main() -> None:
         ),
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(manifest, indent=2))
     if failures:
         raise SystemExit(1)

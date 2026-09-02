@@ -67,7 +67,11 @@ def main() -> None:
     if not args.compact_manifest:
         manifest["records"] = records
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    args.manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps({"records": len(records), "accepted": accepted, "rejected": len(records) - accepted, "accepted_clean_panels": accepted_panel_count}))
 
 
