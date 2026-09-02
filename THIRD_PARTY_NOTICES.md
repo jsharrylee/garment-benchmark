@@ -5,8 +5,8 @@ benchmark. The public release does **not** vendor an upstream source tree,
 dataset payload, pretrained weight, executable, restricted image, or private
 cloud-storage link. Project-authored reports may retain citations and aggregate
 experimental findings. Rights in third-party material remain governed by the
-upstream terms described below; the repository's lack of a blanket project
-license does not replace or narrow those upstream licenses.
+upstream terms described below; the MIT license for project-authored code does
+not replace or narrow those upstream licenses.
 
 ## GarmentCodeData v2
 

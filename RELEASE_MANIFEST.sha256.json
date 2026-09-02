@@ -835,8 +835,8 @@
     },
     {
       "path": "benchmark/scripts/build_github_release_zip.py",
-      "sha256": "2d0704de26043332fe389e0357d3684713e036eeede095e050397da702a9ab9f",
-      "size_bytes": 24527
+      "sha256": "4c9e397d788e09116b97ef875b3e140f6501392475e675968d1b698e24267779",
+      "size_bytes": 24512
     },
     {
       "path": "benchmark/scripts/build_layered_review_board.py",
@@ -1500,8 +1500,8 @@
     },
     {
       "path": "benchmark/tests/test_github_release_zip.py",
-      "sha256": "3b7211fee982bb3c0a12e10be40646e5a3db6d624de8a19b9e61e68ea3b28b8a",
-      "size_bytes": 2434
+      "sha256": "5b3ae24ca2c11df4be1f9b4864e912ccd35a6cbe34395df04db80ce79b666773",
+      "size_bytes": 2556
     },
     {
       "path": "benchmark/tests/test_global_curve_feature_ablation.py",
@@ -1924,14 +1924,14 @@
       "size_bytes": 8056
     },
     {
-      "path": "GITHUB_UPLOAD_GUIDE.md",
-      "sha256": "84c62b55f6e93d15e4b7616d6e3001110f9bfbdf1b12e5f2f96cf12cb2ac329f",
-      "size_bytes": 3740
+      "path": "LICENSE",
+      "sha256": "10e5636dfe198e4ba6ca06a016bdd47e4c2458dace1c8f4beb4714267fbf6b5b",
+      "size_bytes": 1068
     },
     {
       "path": "LICENSE_NOTICE.md",
-      "sha256": "6cd83eb6b48f0338ab4e9d7d6b6f9ecac89fe83b505cc1f16eebb9752b65b2b3",
-      "size_bytes": 2385
+      "sha256": "6252ae111b4f8cad277e562d144b57f3c35648d7fefedf689265d933203034b0",
+      "size_bytes": 2547
     },
     {
       "path": "output/docx/semantic_pattern_bridge_portfolio_en.docx",
@@ -1945,8 +1945,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "75e0718721dc8a7565b241f03a08742d0f9f289aaa11cfc9aab6baff76711cd8",
-      "size_bytes": 6877
+      "sha256": "55d0476ae2fd4afe76aa3a3cc7d6111a583416ef582bfdaba3d17dea07bbf500",
+      "size_bytes": 9089
     },
     {
       "path": "reports/figures/pattern_dsl_semantic_example_en.png",
@@ -1965,8 +1965,8 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "4f64e295bfeecbd8d64fee5bc7b881c3a5dfb5e07fb78de4877f02517bd79df3",
-      "size_bytes": 4878
+      "sha256": "1f9571fac17bc7261fb493fe3397f485c2ba34e634bb96514cabb9341426132e",
+      "size_bytes": 4869
     },
     {
       "path": "verify_release_manifest.py",
@@ -1989,5 +1989,5 @@
     "maximum_file_bytes": 10485760
   },
   "schema_version": 1,
-  "total_bytes": 5178342
+  "total_bytes": 5178142
 }
