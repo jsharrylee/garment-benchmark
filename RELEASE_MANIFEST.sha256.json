@@ -1,12 +1,17 @@
 {
   "algorithm": "sha256",
   "archive_root": "game-garment-benchmark/",
-  "file_count": 391,
+  "file_count": 394,
   "files": [
     {
       "path": ".gitattributes",
       "sha256": "09c0e16d16031212c7da8c896fcfb2c56efb0bc52e15b8b87a21f8c7839ca650",
       "size_bytes": 60
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "sha256": "a131de40418ebd2aa269066738b90f58a318cf19f5a949e495e6426dd600d0a8",
+      "size_bytes": 1586
     },
     {
       "path": ".gitignore",
@@ -830,8 +835,8 @@
     },
     {
       "path": "benchmark/scripts/build_github_release_zip.py",
-      "sha256": "1ba4097e55e4ebe511e3cdead2a0165d1f0de7ff90550984d960aa850838f863",
-      "size_bytes": 24446
+      "sha256": "2d0704de26043332fe389e0357d3684713e036eeede095e050397da702a9ab9f",
+      "size_bytes": 24527
     },
     {
       "path": "benchmark/scripts/build_layered_review_board.py",
@@ -1495,8 +1500,8 @@
     },
     {
       "path": "benchmark/tests/test_github_release_zip.py",
-      "sha256": "df29ce20d4dc70c3cea714a58d1c78256003c929775ad57ac0476d8652457728",
-      "size_bytes": 2274
+      "sha256": "3b7211fee982bb3c0a12e10be40646e5a3db6d624de8a19b9e61e68ea3b28b8a",
+      "size_bytes": 2434
     },
     {
       "path": "benchmark/tests/test_global_curve_feature_ablation.py",
@@ -1617,6 +1622,11 @@
       "path": "benchmark/tests/test_reference_line_learning.py",
       "sha256": "2c1886fa867a67f8150b9088d3b1dd8fadd0e8c74a4358f05a866e7dd9083aac",
       "size_bytes": 486
+    },
+    {
+      "path": "benchmark/tests/test_release_manifest_verifier.py",
+      "sha256": "fb7c33ebbc7128aeab41b57a1b6e4fc1c9016aea263066b0c6c6cdf54844c072",
+      "size_bytes": 4004
     },
     {
       "path": "benchmark/tests/test_retrieval.py",
@@ -1930,8 +1940,8 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "8edca1e1571bc28ce5713f92573d096a25d64c5bd1c3ee49b8c294b193bb08c2",
-      "size_bytes": 410
+      "sha256": "395e14addf1e6ada3c74132ca7cc2228add1a5d2cfb5e149c98b7d024c39c2e7",
+      "size_bytes": 821
     },
     {
       "path": "README.md",
@@ -1957,6 +1967,11 @@
       "path": "THIRD_PARTY_NOTICES.md",
       "sha256": "4f64e295bfeecbd8d64fee5bc7b881c3a5dfb5e07fb78de4877f02517bd79df3",
       "size_bytes": 4878
+    },
+    {
+      "path": "verify_release_manifest.py",
+      "sha256": "f5ec83bf4a6aef40269880e8cf228886bd7076fc35e257b05379b5a183d47949",
+      "size_bytes": 10845
     }
   ],
   "manifest_note": "The manifest does not recursively hash itself.",
@@ -1974,5 +1989,5 @@
     "maximum_file_bytes": 10485760
   },
   "schema_version": 1,
-  "total_bytes": 5161255
+  "total_bytes": 5178342
 }

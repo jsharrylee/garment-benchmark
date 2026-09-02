@@ -50,8 +50,10 @@ class GithubReleaseZipTests(unittest.TestCase):
             parsed = json.loads(external.decode("utf-8"))
             self.assertNotIn(release.MANIFEST_NAME, {item["path"] for item in parsed["files"]})
 
-    def test_phase_one_allowlist_includes_gitattributes_but_not_root_manifest(self):
+    def test_release_allowlist_includes_verification_files_but_not_root_manifest(self):
         self.assertIn(Path(".gitattributes"), release.ROOT_FILES)
+        self.assertIn(Path(".github/workflows/tests.yml"), release.ROOT_FILES)
+        self.assertIn(Path("verify_release_manifest.py"), release.ROOT_FILES)
         self.assertNotIn(Path(release.MANIFEST_NAME), release.ROOT_FILES)
 
 

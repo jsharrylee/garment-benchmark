@@ -1,0 +1,58 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+
+    steps:
+      - name: Check out committed release
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Verify committed release manifest
+        run: python verify_release_manifest.py
+
+      - name: Install CPU-only test environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.1"
+          python -m pip install -e ".[test,vision]"
+
+      - name: Confirm headless OpenCV and CPU-only PyTorch
+        run: python -c "import cv2, torch; assert torch.version.cuda is None, torch.version.cuda"
+
+      - name: Run public test suite
+        run: python -m pytest -q -ra --durations=10 benchmark/tests
+
+      - name: Recheck provenance and public-release inputs
+        run: |
+          python verify_release_manifest.py
+          python -m benchmark.scripts.build_github_release_zip --check-only

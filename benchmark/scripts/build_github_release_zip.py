@@ -34,6 +34,7 @@ FIXED_ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 
 ROOT_FILES = (
     Path(".gitattributes"),
+    Path(".github/workflows/tests.yml"),
     Path(".gitignore"),
     Path("pyproject.toml"),
     Path("README.md"),
@@ -41,6 +42,7 @@ ROOT_FILES = (
     Path("LICENSE_NOTICE.md"),
     Path("THIRD_PARTY_NOTICES.md"),
     Path("THIRD_PARTY_LICENSES/GarmentParticles-MIT.txt"),
+    Path("verify_release_manifest.py"),
 )
 FINAL_DOCX = Path("output/docx/semantic_pattern_bridge_portfolio_en.docx")
 PUBLIC_REPORT_FILES = (
