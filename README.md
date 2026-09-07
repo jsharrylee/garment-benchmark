@@ -87,7 +87,7 @@ The four-view inputs are orthographic re-renders of GarmentCode meshes with a fi
 
 ## Portfolio artifacts
 
-- [English technical portfolio](output/docx/semantic_pattern_bridge_portfolio_en.docx)
+- [English technical portfolio - four-view RGB study as the main narrative](output/docx/semantic_pattern_bridge_portfolio_en.docx)
 - [System schematic](reports/figures/pattern_semantic_parser_schematic_en.png)
 - [Analytic DSL example](reports/figures/pattern_dsl_semantic_example_en.png)
 - [Four-view RGB-to-pattern research report](reports/rgb_pattern_prediction/README.md)

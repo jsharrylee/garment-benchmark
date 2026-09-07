@@ -1975,8 +1975,8 @@
     },
     {
       "path": "output/docx/semantic_pattern_bridge_portfolio_en.docx",
-      "sha256": "8a8bf029ea0403b671f0999c9e6fceb2556f861eb886f18bc468449feb8670cb",
-      "size_bytes": 446178
+      "sha256": "2067a89918a66b01ae86853eef54ff9b69deeb054f85a2dbee53bf7520a1bede",
+      "size_bytes": 2330490
     },
     {
       "path": "pyproject.toml",
@@ -1985,8 +1985,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "739b95bf424c46e1d838e7a2a712ec13507abb96ae9ceb296724b3c7bfa6d3a5",
-      "size_bytes": 11535
+      "sha256": "1eb8106fc3342059c4ac4d24eec53ce4600f4e63b8553b76f951362e818e6478",
+      "size_bytes": 11579
     },
     {
       "path": "reports/figures/pattern_dsl_semantic_example_en.png",
@@ -2099,5 +2099,5 @@
     "maximum_file_bytes": 10485760
   },
   "schema_version": 1,
-  "total_bytes": 7604825
+  "total_bytes": 9489181
 }
