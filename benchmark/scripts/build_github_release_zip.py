@@ -48,6 +48,20 @@ FINAL_DOCX = Path("output/docx/semantic_pattern_bridge_portfolio_en.docx")
 PUBLIC_REPORT_FILES = (
     Path("reports/figures/pattern_semantic_parser_schematic_en.png"),
     Path("reports/figures/pattern_dsl_semantic_example_en.png"),
+    Path("reports/rgb_pattern_prediction/README.md"),
+    Path("reports/rgb_pattern_prediction/README_KO.md"),
+    Path("reports/rgb_pattern_prediction/RESEARCH_REPORT_KO.md"),
+    Path("reports/rgb_pattern_prediction/CLAIM_BOUNDARY_KO.md"),
+    Path("reports/rgb_pattern_prediction/FUTURE_WORK_LINE_MASK_PRETRAINING_KO.md"),
+    Path("reports/rgb_pattern_prediction/FIGURE_PROVENANCE.md"),
+    Path("reports/rgb_pattern_prediction/figures/panel-mask-target-policy-old-vs-new.png"),
+    Path("reports/rgb_pattern_prediction/figures/panel-mask-ordinary-strong-cases.png"),
+    Path("reports/rgb_pattern_prediction/figures/panel-mask-error-cases.png"),
+    Path("reports/rgb_pattern_prediction/figures/ordinary-garment-stronger-cases.png"),
+    Path("reports/rgb_pattern_prediction/figures/set-graph-relative-improvement.png"),
+    Path("reports/rgb_pattern_prediction/figures/set-graph-regression.png"),
+    Path("reports/rgb_pattern_prediction/figures/line-configuration-correct-cases.png"),
+    Path("reports/rgb_pattern_prediction/figures/line-configuration-error-cases.png"),
 )
 
 EXCLUDED_PUBLIC_BENCHMARK_PATHS = {

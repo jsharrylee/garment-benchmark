@@ -1,7 +1,7 @@
 {
   "algorithm": "sha256",
   "archive_root": "game-garment-benchmark/",
-  "file_count": 394,
+  "file_count": 416,
   "files": [
     {
       "path": ".gitattributes",
@@ -679,6 +679,16 @@
       "size_bytes": 7251
     },
     {
+      "path": "benchmark/rgb_pattern_prediction/__init__.py",
+      "sha256": "c44a58793164f46e5916a0a665e510b1ee74fd7033dc062a0f9b0e9aaa5c5ec7",
+      "size_bytes": 76
+    },
+    {
+      "path": "benchmark/rgb_pattern_prediction/signature_utils.py",
+      "sha256": "947cf364c7f01282da3c7db0174e33a934b0539a6475c9e4f2df1f2d4db8ce2f",
+      "size_bytes": 2581
+    },
+    {
       "path": "benchmark/scripts/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size_bytes": 0
@@ -835,8 +845,8 @@
     },
     {
       "path": "benchmark/scripts/build_github_release_zip.py",
-      "sha256": "4c9e397d788e09116b97ef875b3e140f6501392475e675968d1b698e24267779",
-      "size_bytes": 24512
+      "sha256": "13c010e1d06b752dda6c05fb61f0de8347574d762e007aab8f9317b3cf76a68f",
+      "size_bytes": 25591
     },
     {
       "path": "benchmark/scripts/build_layered_review_board.py",
@@ -872,6 +882,11 @@
       "path": "benchmark/scripts/build_reweaver_perturbation.py",
       "sha256": "65c4c12aad17ac680f77f190a81d0cd6b552d2750d51a23639d677df0e8fa165",
       "size_bytes": 1200
+    },
+    {
+      "path": "benchmark/scripts/build_rgb_pattern_representative_figures.py",
+      "sha256": "4841c72042263e056c4865437ff51164f3937b9f3f5ca04715123377f7cfc8cb",
+      "size_bytes": 22416
     },
     {
       "path": "benchmark/scripts/build_tshirt_construction_corpus.py",
@@ -1500,8 +1515,8 @@
     },
     {
       "path": "benchmark/tests/test_github_release_zip.py",
-      "sha256": "5b3ae24ca2c11df4be1f9b4864e912ccd35a6cbe34395df04db80ce79b666773",
-      "size_bytes": 2556
+      "sha256": "3523b2c73e06ea7196f433424ceed683c03e3d883e12894a7dfe049af1a36110",
+      "size_bytes": 2875
     },
     {
       "path": "benchmark/tests/test_global_curve_feature_ablation.py",
@@ -1637,6 +1652,11 @@
       "path": "benchmark/tests/test_reweaver_adapter.py",
       "sha256": "f9d187619bcdb778eeda8d9505e8b84401bbd222bd2ab8bd7e46adb4903f1868",
       "size_bytes": 3686
+    },
+    {
+      "path": "benchmark/tests/test_rgb_pattern_signature_utils.py",
+      "sha256": "a3047f2c3b69591813d9300eab97efbf3efc1a68c48c01f7d6cab303d598677b",
+      "size_bytes": 1231
     },
     {
       "path": "benchmark/tests/test_semantic_editing.py",
@@ -1899,6 +1919,26 @@
       "size_bytes": 3783
     },
     {
+      "path": "data/manifests/rgb_pattern_prediction/line_configuration_error_summary.json",
+      "sha256": "28f01ad6548765f54fe1d6a6861db5636e3420dc5cd4333f07d022b84831cd29",
+      "size_bytes": 2542
+    },
+    {
+      "path": "data/manifests/rgb_pattern_prediction/line_configuration_selected_examples.json",
+      "sha256": "cd2609b4119ee1fb071fd3c9ee4563bad42f383b22e7bba0a9b89d9eb25ba635",
+      "size_bytes": 4692
+    },
+    {
+      "path": "data/manifests/rgb_pattern_prediction/panel_mask_selected_examples.json",
+      "sha256": "6beff858ed21368d92ce69d667b8ff201ce07bb5216eac054726ce14df3e6334",
+      "size_bytes": 2879
+    },
+    {
+      "path": "data/manifests/rgb_pattern_prediction/summary_metrics.json",
+      "sha256": "d195106430e7a6201c5354a296664cf4829d40ada4b5ab33f1e07ee7efe0aeeb",
+      "size_bytes": 6061
+    },
+    {
       "path": "data/manifests/semantic_pattern_bridge_portfolio_proof.json",
       "sha256": "2b205a0d00e249eaf3d3820199a86f8c0279f8830a1394a79fb391d966bc0ccf",
       "size_bytes": 10441
@@ -1945,8 +1985,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "55d0476ae2fd4afe76aa3a3cc7d6111a583416ef582bfdaba3d17dea07bbf500",
-      "size_bytes": 9089
+      "sha256": "739b95bf424c46e1d838e7a2a712ec13507abb96ae9ceb296724b3c7bfa6d3a5",
+      "size_bytes": 11535
     },
     {
       "path": "reports/figures/pattern_dsl_semantic_example_en.png",
@@ -1959,14 +1999,84 @@
       "size_bytes": 124748
     },
     {
+      "path": "reports/rgb_pattern_prediction/CLAIM_BOUNDARY_KO.md",
+      "sha256": "445505d035746d53c12099d9a72c03e37d927d6d31b71c720a23ee2cd82dd8fc",
+      "size_bytes": 2756
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/FIGURE_PROVENANCE.md",
+      "sha256": "4d7484972982b82a636c9833cc25303a8178717c37fc09e67268db102e929b30",
+      "size_bytes": 3306
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/line-configuration-correct-cases.png",
+      "sha256": "26fbbb67ea12476477ec9ce23d43363df43967886b154fc14d1c3fdfdc654577",
+      "size_bytes": 407586
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/line-configuration-error-cases.png",
+      "sha256": "aa2b6fdacde7c042825c0071fb00d654f2909e7d26ce99d420b22aeec6138af5",
+      "size_bytes": 405214
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/ordinary-garment-stronger-cases.png",
+      "sha256": "a2a6ce8157d18fa8fafca5e9ff8bae5799ac2df3219ba737f286d55682f640c9",
+      "size_bytes": 260550
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/panel-mask-error-cases.png",
+      "sha256": "9f2169ba6828d4cacc1b82553bf1109865bed3567fee81b207e0c32adea1b9ce",
+      "size_bytes": 436992
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/panel-mask-ordinary-strong-cases.png",
+      "sha256": "0637d71a0ccec9411a16226431b2b20d516cef16cbae7f58c0608de61c7d699e",
+      "size_bytes": 385449
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/panel-mask-target-policy-old-vs-new.png",
+      "sha256": "37aba68a3e62fb6c338b40107c785ce713385ceaa57d52258830c16499966479",
+      "size_bytes": 168592
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/set-graph-regression.png",
+      "sha256": "c93e1296a8e13b70e9cc62d76df8dec7f44c84a4327dec2c28380267c8ffc373",
+      "size_bytes": 129516
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/figures/set-graph-relative-improvement.png",
+      "sha256": "4b72ba90bb3ab7b3778f3dacf9c579cc548969ec1199cc5f5f8c5779f1d85b96",
+      "size_bytes": 143761
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/FUTURE_WORK_LINE_MASK_PRETRAINING_KO.md",
+      "sha256": "0858035e7ae713fc1711f92182d561ed23a7822423bcdf518832e95d05d21a54",
+      "size_bytes": 9919
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/README.md",
+      "sha256": "1f78b736943ba6821b520af0da4afaa20d7fd7b2e19f65ca762988db31a411f7",
+      "size_bytes": 2412
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/README_KO.md",
+      "sha256": "0f5efd2050f4e75b4bcd46ef8290b6ec71c0fbfa4c27ab55dc5f532c959969d1",
+      "size_bytes": 2076
+    },
+    {
+      "path": "reports/rgb_pattern_prediction/RESEARCH_REPORT_KO.md",
+      "sha256": "dcd0457d1eb80b1a2f09551e6f4a0bcb8aef777404b57653018803cf0d0f7e27",
+      "size_bytes": 21792
+    },
+    {
       "path": "THIRD_PARTY_LICENSES/GarmentParticles-MIT.txt",
       "sha256": "5f15e675e793c4b56ff4faf5bed589c09764eae101f1610aae7321a6dea88b12",
       "size_bytes": 1074
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "1f9571fac17bc7261fb493fe3397f485c2ba34e634bb96514cabb9341426132e",
-      "size_bytes": 4869
+      "sha256": "d78d5b9c64a5c5b6b21602b4e5e0e30d49a188615af208a789b6271a5b982751",
+      "size_bytes": 5309
     },
     {
       "path": "verify_release_manifest.py",
@@ -1989,5 +2099,5 @@
     "maximum_file_bytes": 10485760
   },
   "schema_version": 1,
-  "total_bytes": 5178142
+  "total_bytes": 7604825
 }

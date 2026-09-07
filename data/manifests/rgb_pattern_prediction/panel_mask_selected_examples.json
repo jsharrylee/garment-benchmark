@@ -1,0 +1,96 @@
+{
+  "good_ordinary": [
+    {
+      "sample_id": "rand_WDI9CL3VNE",
+      "description": "straight skirt",
+      "whole_iou": 0.9033878743648529,
+      "interpanel_boundary_iou": 0.6748635598147908,
+      "outer_boundary_iou": 0.9377937664588293,
+      "target_panels": 4,
+      "predicted_panels": 4
+    },
+    {
+      "sample_id": "rand_9048W5H2M7",
+      "description": "sleeveless top",
+      "whole_iou": 0.8399950365225474,
+      "interpanel_boundary_iou": 0.7244532545407613,
+      "outer_boundary_iou": 0.7812083899974823,
+      "target_panels": 4,
+      "predicted_panels": 4
+    },
+    {
+      "sample_id": "rand_WHLZHHDMI2",
+      "description": "tank top",
+      "whole_iou": 0.7606493774801493,
+      "interpanel_boundary_iou": 0.530253067612648,
+      "outer_boundary_iou": 0.6840484738349915,
+      "target_panels": 4,
+      "predicted_panels": 4
+    },
+    {
+      "sample_id": "rand_AGJAABUCUK",
+      "description": "shorts",
+      "whole_iou": 0.832003167933888,
+      "interpanel_boundary_iou": 0.6400901046064165,
+      "outer_boundary_iou": 0.8036872065729566,
+      "target_panels": 6,
+      "predicted_panels": 6
+    },
+    {
+      "sample_id": "rand_SIFH5D3WLC",
+      "description": "straight trousers",
+      "whole_iou": 0.7580217747461229,
+      "interpanel_boundary_iou": 0.6863913763137091,
+      "outer_boundary_iou": 0.7487358564422244,
+      "target_panels": 6,
+      "predicted_panels": 6
+    }
+  ],
+  "worst": [
+    {
+      "sample_id": "rand_2FPTWA78B3",
+      "description": "lowest IoU",
+      "whole_iou": 0.26520225552043747,
+      "interpanel_boundary_iou": 0.27162879053503275,
+      "outer_boundary_iou": 0.2312019636322345,
+      "target_panels": 7,
+      "predicted_panels": 10
+    },
+    {
+      "sample_id": "rand_B32KOAGHI0",
+      "description": "2nd-lowest IoU",
+      "whole_iou": 0.3217427482579271,
+      "interpanel_boundary_iou": 0.2868658171730562,
+      "outer_boundary_iou": 0.3135439608660009,
+      "target_panels": 25,
+      "predicted_panels": 25
+    },
+    {
+      "sample_id": "rand_B2C5B8V0SO",
+      "description": "3rd-lowest IoU",
+      "whole_iou": 0.3597202826740927,
+      "interpanel_boundary_iou": 0.2697173935072175,
+      "outer_boundary_iou": 0.29190094113863746,
+      "target_panels": 8,
+      "predicted_panels": 8
+    },
+    {
+      "sample_id": "rand_OLVSBMGNZ0",
+      "description": "4th-lowest IoU",
+      "whole_iou": 0.36722199166459696,
+      "interpanel_boundary_iou": 0.3228874407708645,
+      "outer_boundary_iou": 0.37530073976765077,
+      "target_panels": 26,
+      "predicted_panels": 28
+    },
+    {
+      "sample_id": "rand_BPLV7VAHFS",
+      "description": "5th-lowest IoU",
+      "whole_iou": 0.37192221730947495,
+      "interpanel_boundary_iou": 0.2842165853442817,
+      "outer_boundary_iou": 0.40365830153740684,
+      "target_panels": 8,
+      "predicted_panels": 7
+    }
+  ]
+}

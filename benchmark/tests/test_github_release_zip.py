@@ -57,6 +57,14 @@ class GithubReleaseZipTests(unittest.TestCase):
         self.assertIn(Path("verify_release_manifest.py"), release.ROOT_FILES)
         self.assertNotIn(Path("GITHUB_UPLOAD_GUIDE.md"), release.ROOT_FILES)
         self.assertNotIn(Path(release.MANIFEST_NAME), release.ROOT_FILES)
+        self.assertIn(
+            Path("reports/rgb_pattern_prediction/RESEARCH_REPORT_KO.md"),
+            release.PUBLIC_REPORT_FILES,
+        )
+        self.assertIn(
+            Path("reports/rgb_pattern_prediction/figures/line-configuration-correct-cases.png"),
+            release.PUBLIC_REPORT_FILES,
+        )
 
 
 if __name__ == "__main__":

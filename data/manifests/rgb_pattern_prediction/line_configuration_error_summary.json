@@ -1,0 +1,103 @@
+{
+  "schema": "boundary-inclusive-line-configuration-error-summary/v1",
+  "scope": "single-seed internal selection; exact legacy visible-panel population",
+  "counts": {
+    "all": 2027,
+    "target_in_top10": 1886,
+    "target_not_in_top10": 141,
+    "stage1_correct": 1069,
+    "final_correct": 1195,
+    "reranker_wrong_despite_target_in_top10": 691,
+    "stage1_errors_recovered": 270,
+    "stage1_correct_harmed": 144,
+    "net_correct_gain": 126
+  },
+  "rates": {
+    "stage1_top1": 0.5273803650715343,
+    "top10_coverage": 0.9304390725209669,
+    "reranked_top1_overall": 0.5895411938825851,
+    "reranked_top1_conditional_on_coverage": 0.6336161187698833
+  },
+  "covered_errors": {
+    "count": 691,
+    "edit_distance_one_or_two_count": 398,
+    "edit_distance_one_or_two_rate": 0.5759768451519537,
+    "edge_count_equal_or_plus_minus_one_count": 504,
+    "edge_count_equal_or_plus_minus_one_rate": 0.7293777134587555
+  },
+  "top_confusions": [
+    {
+      "target": "4:LALA",
+      "predicted": "4:LLLL",
+      "count": 44,
+      "edit_distance": 2
+    },
+    {
+      "target": "4:LLLC",
+      "predicted": "5:LLLCC",
+      "count": 29,
+      "edit_distance": 1
+    },
+    {
+      "target": "4:LLLL",
+      "predicted": "4:LLLA",
+      "count": 21,
+      "edit_distance": 1
+    },
+    {
+      "target": "5:LLLLC",
+      "predicted": "4:LLLC",
+      "count": 20,
+      "edit_distance": 1
+    },
+    {
+      "target": "8:LLLLLLCC",
+      "predicted": "7:LLLCCLA",
+      "count": 19,
+      "edit_distance": 4
+    },
+    {
+      "target": "5:LLLCC",
+      "predicted": "4:LLLC",
+      "count": 19,
+      "edit_distance": 1
+    },
+    {
+      "target": "4:LLLL",
+      "predicted": "4:LALA",
+      "count": 18,
+      "edit_distance": 2
+    },
+    {
+      "target": "7:LLQLLQQ",
+      "predicted": "7:LLQQLQQ",
+      "count": 17,
+      "edit_distance": 1
+    },
+    {
+      "target": "13:LLLLLLLLQLLQQ",
+      "predicted": "13:LLLLLLLLQQLQQ",
+      "count": 15,
+      "edit_distance": 1
+    },
+    {
+      "target": "6:LLLCLA",
+      "predicted": "13:LLQLLQLLQLALC",
+      "count": 13,
+      "edit_distance": 8
+    },
+    {
+      "target": "9:LALAAAAAA",
+      "predicted": "9:LLLLLLLLL",
+      "count": 13,
+      "edit_distance": 7
+    },
+    {
+      "target": "13:LLQLLQLLQLALC",
+      "predicted": "6:LLLCLA",
+      "count": 12,
+      "edit_distance": 8
+    }
+  ],
+  "claim_boundary": "Canonical L/Q/C/A cycle classification only. Panel correspondence uses GT-mask Hungarian matching; this is not end-to-end pattern reconstruction."
+}

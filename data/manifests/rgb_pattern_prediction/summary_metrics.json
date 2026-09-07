@@ -1,0 +1,179 @@
+{
+  "schema": "rgb-to-sewing-pattern-public-summary/v2",
+  "as_of": "2026-09-07",
+  "scope": "synthetic GCDv2 internal development experiments; single-seed unless stated otherwise",
+  "dataset": {
+    "garments": 3450,
+    "views_per_garment": 4,
+    "rgb_images": 13800,
+    "image_resolution": [384, 384],
+    "panels": 37031,
+    "edges": 251335,
+    "stitches": 104064,
+    "primitive_counts": {
+      "L": 190505,
+      "Q": 22191,
+      "C": 17260,
+      "A": 21379
+    },
+    "split": {
+      "training": 2615,
+      "effective_training_after_exact_duplicate_exclusion": 2613,
+      "validation": 173,
+      "test_untouched": 165,
+      "unassigned": 497
+    }
+  },
+  "panel_mask_generation": {
+    "target_garments": 3450,
+    "accepted_garments": 2995,
+    "accepted_views": 11980,
+    "excluded_or_failed_garments": 455,
+    "unprocessed_garments": 0,
+    "semantic_source_edge_supervision_approved": false
+  },
+  "historical_panel_pretraining_v1": {
+    "gradient_train_garments": 2259,
+    "checkpoint_selection_garments": 154,
+    "selected_checkpoint_epoch": 9,
+    "historical_target_matched_iou": 0.8601982315832918,
+    "downstream_validation_overlap_count": 154,
+    "claim_boundary": "exploratory historical target; not directly comparable to boundary-inclusive target"
+  },
+  "boundary_inclusive_panel_pretraining_v3": {
+    "input": "four-view RGB",
+    "seed": 17,
+    "gradient_train_garments": 2259,
+    "checkpoint_selection_garments": 154,
+    "selected_checkpoint_epoch": 14,
+    "stopped_after_epoch": 19,
+    "official_test_evaluated": false,
+    "same_new_target_ab": {
+      "historical_epoch9": {
+        "matched_panel_iou": 0.6003,
+        "interpanel_boundary_band_iou": 0.4475,
+        "outer_boundary_band_iou": 0.4924,
+        "panel_count_mae": 1.5584
+      },
+      "boundary_inclusive_epoch14": {
+        "matched_panel_iou": 0.6813,
+        "interpanel_boundary_band_iou": 0.5212,
+        "outer_boundary_band_iou": 0.6474,
+        "panel_count_mae": 1.7727
+      }
+    }
+  },
+  "autoregressive_encoder_ablation": {
+    "input": "single front RGB",
+    "seed": 17,
+    "development_validation_garments": 173,
+    "generic": {
+      "teacher_command_accuracy": 0.9320,
+      "teacher_numeric_mae": 0.2461,
+      "panel_count_mae": 2.6590,
+      "edge_count_mae": 16.4046,
+      "mean_max_closure_gap_cm": 52.3205,
+      "seam_macro_f1": 0.1056,
+      "valid_pattern_rate": 0.0
+    },
+    "historical_panel_pretrained": {
+      "teacher_command_accuracy": 0.9288,
+      "teacher_numeric_mae": 0.2476,
+      "panel_count_mae": 2.5202,
+      "edge_count_mae": 14.4162,
+      "mean_max_closure_gap_cm": 47.7303,
+      "seam_macro_f1": 0.0979,
+      "valid_pattern_rate": 0.0
+    },
+    "decision": "STOP_AFTER_SEED17_GATE",
+    "test_evaluated": false
+  },
+  "set_cycle_graph_encoder_ablation": {
+    "input": "single front RGB",
+    "seed": 17,
+    "development_validation_garments": 173,
+    "generic": {
+      "panel_count_mae": 2.9133,
+      "edge_count_mae": 20.0751,
+      "panel_and_edge_count_exact_rate": 0.0289,
+      "typed_edge_accuracy": 0.4880,
+      "scale_normalized_geometry_error": 0.9752,
+      "quotient_seam_macro_f1": 0.2274
+    },
+    "historical_panel_pretrained": {
+      "panel_count_mae": 2.5549,
+      "edge_count_mae": 17.9827,
+      "panel_and_edge_count_exact_rate": 0.0694,
+      "typed_edge_accuracy": 0.4941,
+      "scale_normalized_geometry_error": 0.9664,
+      "quotient_seam_macro_f1": 0.2355
+    },
+    "decision": "STOP_AFTER_SEED17_GATE",
+    "test_evaluated": false
+  },
+  "panel_bank": {
+    "effective_train": {
+      "garments": 2613,
+      "panels": 27098,
+      "edges": 186935
+    },
+    "generated_extension_without_rgb": {
+      "garments": 10000,
+      "panels": 102210,
+      "edges": 705599
+    },
+    "total": {
+      "garments": 12613,
+      "panels": 129308,
+      "edges": 892534
+    },
+    "oracle_structure_coverage": {
+      "covered_validation_panels": 1761,
+      "validation_panels": 1763,
+      "panel_rate": 0.9988655700510494,
+      "garments_with_all_panels_covered": 171,
+      "validation_garments": 173,
+      "garment_rate": 0.988439306358
+    }
+  },
+  "essential_geometry_retrieval_v4_1": {
+    "structure_hit_at_5": 0.4144,
+    "near_geometry_recall_at_5": 0.0099,
+    "decision": "reduce target to canonical line configuration before geometry"
+  },
+  "strict_same_population_downstream_ab": {
+    "train_visible_panels": 17744,
+    "selection_visible_panels": 2027,
+    "classes_total": 346,
+    "historical_encoder": {
+      "line_configuration_top1": 0.5027133822441101,
+      "line_configuration_top5": 0.8579180836677551,
+      "line_configuration_macro_recall": 0.200055051365724,
+      "top10_coverage": 0.9225456118583679,
+      "reranked_top1": 0.5663542151451111,
+      "reranked_conditional_top1": 0.6139037609100342
+    },
+    "boundary_inclusive_encoder": {
+      "line_configuration_top1": 0.5273803472518921,
+      "line_configuration_top5": 0.8658115267753601,
+      "line_configuration_macro_recall": 0.23972810002473685,
+      "top10_coverage": 0.9304390549659729,
+      "reranked_top1": 0.5895411968231201,
+      "reranked_conditional_top1": 0.6336160898208618,
+      "stage1_errors_recovered": 270,
+      "stage1_correct_harmed": 144,
+      "net_correct_gain": 126
+    },
+    "claim_boundary": "GT-mask-Hungarian-matched visible panel queries; canonical L/Q/C/A cycle classification only"
+  },
+  "latest_line_configuration_errors": {
+    "target_in_top10": 1886,
+    "target_not_in_top10": 141,
+    "reranker_wrong_despite_target_in_top10": 691,
+    "covered_error_edit_distance_le_2": 398,
+    "covered_error_edit_distance_le_2_rate": 0.5759768451519537,
+    "covered_error_edge_count_equal_or_plus_minus_one": 504,
+    "covered_error_edge_count_equal_or_plus_minus_one_rate": 0.7293777134587555
+  },
+  "global_claim_boundary": "No full-pattern reconstruction, continuous-geometry recovery, seam validity, fit, CLO simulation success, external-photo generalization, multi-seed result, or untouched official-test claim is made."
+}

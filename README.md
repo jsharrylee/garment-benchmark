@@ -4,7 +4,7 @@
 
 This project tests a specific intermediate step toward inverse garment design: whether a model can read a completed analytic sewing pattern and recover its semantic structure. The motivating application is game-character clothing, but this repository does **not** claim to reconstruct production patterns or 3D assets from game images.
 
-The implemented result is a semantic parser for vector pattern panels. It identifies garment and panel roles, names boundary segments, derives landmarks from shared edge junctions, and proposes seam mates. The image-to-pattern and simulation stages remain separate experiments or future work.
+The implemented result is a semantic parser for vector pattern panels. It identifies garment and panel roles, names boundary segments, derives landmarks from shared edge junctions, and proposes seam mates. The image-to-pattern and simulation stages remain separate component studies and are not integrated with this parser.
 
 ![Semantic 2D pattern parser overview](reports/figures/pattern_semantic_parser_schematic_en.png)
 
@@ -33,9 +33,27 @@ These are component studies, not one integrated end-to-end system.
 | Seam-mate reconstruction | **Main bottleneck**: raw seam-pair F1 `0.424`, symbolic seam F1 `0.593`, mate recall@1 `0.526` | Same 198-garment test set and parser |
 | Four views to semantic coordinates | **Weak positive result**: normalized MAE `0.0424`, versus `0.0461` for a train-only category mean and `0.0417` for the vector-input teacher | 78 sample-ID-unseen garments; same generator, render style, and fixed neutral body |
 | Four views to named curve parameterizations | **Partial**: parameter R² `0.259`, versus `0.204` for a matched global-token ablation | 144 same-domain test garments; fitted two-cubic targets, not original drafting formulas |
+| Four views to visible-panel decomposition | **Internal target-policy A/B**: matched-panel IoU `0.6003 → 0.6813` and inter-panel boundary IoU `0.4475 → 0.5212`; panel-count MAE worsened `1.5584 → 1.7727` | Same corrected target on 154 internal-selection garments; seed 17; official test untouched |
+| GT-matched panel query to boundary primitive cycle | **Partial internal result**: top-1 `52.74%`, target-in-top-10 `93.04%`, reranked top-1 `58.95%` | 2,027 internal-selection visible panels; GT-mask Hungarian matching; canonical `L/Q/C/A` cycle only |
 | Simulator-ready export | **Incomplete**: generic R12 outline DXF and separate stitch JSON exist; seam-aware CAD and predicted-pattern OBJ export do not | Implementation boundary, not a benchmark result |
 
 The strongest current result is semantic interpretation of a complete vector pattern inside one generator domain. The seam graph, cross-source transfer, and precise pixel-to-CAD recovery are not solved.
+
+## Four-view RGB to panel-boundary diagnostics
+
+A newer component study connected 3,450 GCDv2 garments to 13,800 neutral four-view renders and round-trip-checked analytic pattern records. It first trained a ViT-B/16 model to decompose visible garment pixels into source panels, then tested whether a GT-matched panel query could select the panel's cyclic boundary primitive configuration.
+
+Correcting the mask target so that panel interfaces were supervised instead of discarded as a thick gray ignore band improved both boundary IoU and downstream `L/Q/C/A` configuration selection on the same internal population. The drawing in the center of the figure below is **GT geometry for interpretation**, not model-generated geometry; the actual model output shown on the right is only a primitive-type sequence.
+
+![Internal line-configuration examples](reports/rgb_pattern_prediction/figures/line-configuration-correct-cases.png)
+
+- [English overview](reports/rgb_pattern_prediction/README.md)
+- [Full Korean research report](reports/rgb_pattern_prediction/RESEARCH_REPORT_KO.md)
+- [Exact claim boundary](reports/rgb_pattern_prediction/CLAIM_BOUNDARY_KO.md)
+- [Next experiment: source-edge-aware pretraining](reports/rgb_pattern_prediction/FUTURE_WORK_LINE_MASK_PRETRAINING_KO.md)
+- [Figure provenance](reports/rgb_pattern_prediction/FIGURE_PROVENANCE.md)
+
+This study does **not** demonstrate continuous geometry recovery, seam prediction, a drawable pattern, fit, simulation readiness, external-photo generalization, multi-seed stability, or untouched-test performance.
 
 ## Negative results that define the boundary
 
@@ -60,6 +78,7 @@ The evidence supports same-generator parsing of GCDv2-derived weak semantic labe
 - expert-approved industrial drafting semantics;
 - recipe-family, body, renderer, generator, or real-image generalization;
 - end-to-end four-view-to-pattern generation;
+- direct recovery of boundary coordinates, lengths, curvature, control points, or source-edge splits from RGB;
 - complete seam-graph recovery;
 - CAD validity, fit, sewability, manufacturability, or simulation readiness;
 - superiority to ReWeaver, Garment Particles, or another image-to-pattern model.
@@ -71,6 +90,7 @@ The four-view inputs are orthographic re-renders of GarmentCode meshes with a fi
 - [English technical portfolio](output/docx/semantic_pattern_bridge_portfolio_en.docx)
 - [System schematic](reports/figures/pattern_semantic_parser_schematic_en.png)
 - [Analytic DSL example](reports/figures/pattern_dsl_semantic_example_en.png)
+- [Four-view RGB-to-pattern research report](reports/rgb_pattern_prediction/README.md)
 
 The figures are project-produced adaptations that include an attributed GarmentCodeData v2 panel contour. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the source, modifications, and CC BY 4.0 attribution.
 
@@ -120,6 +140,7 @@ The DOCX and figures are prebuilt review artifacts. Their builder is retained fo
 benchmark/           parser, retrieval, preprocessing, evaluation, and tests
 data/manifests/      split contracts, provenance, hashes, metrics, and claim boundaries
 reports/figures/     attributed public figures
+reports/rgb_pattern_prediction/  four-view component report and attributed diagnostics
 output/docx/         prebuilt technical portfolio
 ```
 

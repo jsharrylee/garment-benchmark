@@ -28,6 +28,14 @@ scale, colour, and labels are project adaptations. The public release excludes
 the original dataset archives, vector records, renders, meshes, and other source
 payloads. No endorsement by the creators is implied.
 
+The four-view RGB-to-pattern component adds eight compact derivative diagnostic
+figures. Project changes include neutral four-view compositing, panel-mask target
+and prediction visualization, analytic edge plotting, labels, resizing, and
+multi-panel layouts. Source sample IDs and the exact scope of every figure are
+listed in
+`reports/rgb_pattern_prediction/FIGURE_PROVENANCE.md`. The full RGB and mask
+collections are not redistributed.
+
 ## GarmentCode
 
 - Official repository: https://github.com/maria-korosteleva/GarmentCode
