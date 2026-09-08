@@ -22,7 +22,7 @@ No endorsement by the dataset creators is implied.
 
 | File | Source sample(s) | Purpose and exact scope |
 |---|---|---|
-| `panel-mask-target-policy-old-vs-new.png` | `rand_0BYYF4ET0T` | Same RGB with the historical gray ignore-band target and the boundary-inclusive majority-ID target. This is a target-policy illustration, not a prediction. |
+| `panel-mask-target-policy-old-vs-new.png` | `rand_WDI9CL3VNE` | Ordinary straight-skirt example showing the same RGB with the historical gray ignore-band target and the boundary-inclusive majority-ID target. This is a target-policy illustration, not a prediction. |
 | `panel-mask-ordinary-strong-cases.png` | `rand_WDI9CL3VNE`, `rand_9048W5H2M7`, `rand_WHLZHHDMI2`, `rand_AGJAABUCUK`, `rand_SIFH5D3WLC` | Post-hoc internal examples with familiar silhouettes, exact panel count, and relatively strong mask geometry. |
 | `panel-mask-error-cases.png` | `rand_2FPTWA78B3`, `rand_B32KOAGHI0`, `rand_B2C5B8V0SO`, `rand_OLVSBMGNZ0`, `rand_BPLV7VAHFS` | Five lowest-IoU internal examples used to inspect small panels, overlap, and over/under-segmentation. |
 | `ordinary-garment-stronger-cases.png` | `rand_ZLFD860PWX`, `rand_2BWWUFZYF0`, `rand_NF31FYNRTZ` | Familiar silhouettes with relatively strong historical set/cycle/graph metrics. Not exact reconstruction. |

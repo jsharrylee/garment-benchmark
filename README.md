@@ -1,31 +1,45 @@
-# Garment Pattern Semantics Benchmark
+# Four-view RGB to Editable Sewing Patterns
 
 [![Tests](https://github.com/jsharrylee/garment-benchmark/actions/workflows/tests.yml/badge.svg)](https://github.com/jsharrylee/garment-benchmark/actions/workflows/tests.yml)
 
-This project tests a specific intermediate step toward inverse garment design: whether a model can read a completed analytic sewing pattern and recover its semantic structure. The motivating application is game-character clothing, but this repository does **not** claim to reconstruct production patterns or 3D assets from game images.
+This repository studies an inverse-design pipeline that starts from neutral front, back, left, and right garment renders and aims to recover an editable analytic 2D sewing pattern. The intended downstream path is pattern editing, seam assembly, and CLO simulation, but the current public evidence covers only the intermediate stages described below—not completed image-to-CAD reconstruction.
 
-The implemented result is a semantic parser for vector pattern panels. It identifies garment and panel roles, names boundary segments, derives landmarks from shared edge junctions, and proposes seam mates. The image-to-pattern and simulation stages remain separate component studies and are not integrated with this parser.
+An initial autoregressive model attempted to generate panel topology, continuous geometry, and seams together. It failed to produce a valid closed pattern on all 173 internal validation garments. That negative result motivated a staged formulation:
 
-![Semantic 2D pattern parser overview](reports/figures/pattern_semantic_parser_schematic_en.png)
+```text
+four-view RGB
+    -> visible-panel discovery
+    -> discrete panel-structure retrieval
+    -> continuous geometry refinement
+    -> seam graph
+    -> validation and CLO export
+```
 
-## What the model reads and predicts
+The implemented public results currently reach the first two stages. Continuous coordinate/control-point refinement, seam-graph recovery, and end-to-end CLO export remain unfinished.
 
-One input garment is a set of separate vector panels. Each panel is represented as an ordered cycle of line, quadratic Bezier, cubic Bezier, and circular-arc commands in a panel-local frame. Absolute canvas coordinates and source identifiers are withheld from the network.
+![Ordinary garments: four-view input, visible-panel ground truth, and model prediction](reports/rgb_pattern_prediction/figures/panel-mask-ordinary-strong-cases.png)
 
-The 950,820-parameter Transformer predicts:
+## Paired data and analytic target
 
-- garment category and panel role;
-- edge roles such as neckline, shoulder, armhole, side seam, and hem;
-- FNP/SNP/SP-style landmarks derived from predicted edge-role junctions;
-- candidate seam relations between panel edges.
+The study connects 3,450 GarmentCodeData v2 garments to 13,800 neutral orthographic renders: front, back, left, and right. Their 37,031 source panels are represented as ordered cycles of line (`L`), quadratic Bezier (`Q`), cubic Bezier (`C`), and circular-arc (`A`) primitives. The source pattern, analytic representation, and decoded geometry were round-trip checked before model experiments.
 
-Training used 1,983 top/skirt/pants patterns from one GarmentCodeData v2 batch, split into 1,587/198/198 garments by sample ID. The split is disjoint, but all three partitions come from the same generator.
+Pixel-aligned visible-panel supervision passed quality gates for 2,995 garments and 11,980 views. Raw patterns, RGB/mask collections, meshes, and checkpoints are not redistributed in this public snapshot.
 
-In plain language, it reads geometry that already exists and explains what the pieces and boundary segments mean. It does not draw a new pattern.
+## Why the problem was decomposed
+
+The direct baseline asked one decoder to decide variable panel counts, edge counts and primitive types while also regressing lengths, angles, curve controls, and seam relations. In free generation, early structural errors cascaded into open panels and invalid downstream seams; valid-pattern rate was `0/173` on the internal validation split.
+
+The revised experiments therefore ask smaller diagnostic questions:
+
+1. Can a four-view encoder separate the visible source panels?
+2. Given a GT-matched panel query, can it retrieve the panel's rotation/reversal-invariant cyclic `L/Q/C/A` boundary configuration from a train-only bank?
+3. Only after those stages are reliable, can a model refine actual length, angle, endpoint, and control-point values and recover seams?
+
+This decomposition makes failures attributable to visual grounding, discrete structure selection, continuous geometry, or sewing constraints instead of collapsing them into one invalid output.
 
 ## Results at a glance
 
-These are component studies, not one integrated end-to-end system.
+These are component studies, not one integrated end-to-end system. The four-view results use an internal selection population and must not be read as full-pattern reconstruction rates.
 
 | Stage | Result | Evidence and scope |
 |---|---|---|
@@ -37,7 +51,7 @@ These are component studies, not one integrated end-to-end system.
 | GT-matched panel query to boundary primitive cycle | **Partial internal result**: top-1 `52.74%`, target-in-top-10 `93.04%`, reranked top-1 `58.95%` | 2,027 internal-selection visible panels; GT-mask Hungarian matching; canonical `L/Q/C/A` cycle only |
 | Simulator-ready export | **Incomplete**: generic R12 outline DXF and separate stitch JSON exist; seam-aware CAD and predicted-pattern OBJ export do not | Implementation boundary, not a benchmark result |
 
-The strongest current result is semantic interpretation of a complete vector pattern inside one generator domain. The seam graph, cross-source transfer, and precise pixel-to-CAD recovery are not solved.
+The strongest current image-based result is visible-panel decomposition followed by canonical boundary-primitive selection under GT panel matching. The seam graph, continuous geometry, cross-source transfer, and precise pixel-to-CAD recovery are not solved.
 
 ## Four-view RGB to panel-boundary diagnostics
 
@@ -54,6 +68,14 @@ Correcting the mask target so that panel interfaces were supervised instead of d
 - [Figure provenance](reports/rgb_pattern_prediction/FIGURE_PROVENANCE.md)
 
 This study does **not** demonstrate continuous geometry recovery, seam prediction, a drawable pattern, fit, simulation readiness, external-photo generalization, multi-seed stability, or untouched-test performance.
+
+## Supporting benchmark: semantics of completed vector patterns
+
+Before the image-based study, this repository built a 950,820-parameter Transformer that reads an already completed set of analytic vector panels and predicts garment category, panel and edge roles, role-junction landmarks, and candidate seam mates. This supporting benchmark established the pattern representation and exposed seam matching as a separate bottleneck; it is not the same model as the four-view pipeline.
+
+On 198 sample-ID-disjoint garments from the same GarmentCode generator, it recorded panel-role macro-F1 `0.930`, edge-role macro-F1 `0.942`, role-junction landmark F1 `0.928`, and symbolic seam F1 `0.593` from a raw `0.424`.
+
+![Supporting semantic-parser schematic](reports/figures/pattern_semantic_parser_schematic_en.png)
 
 ## Negative results that define the boundary
 
@@ -87,10 +109,12 @@ The four-view inputs are orthographic re-renders of GarmentCode meshes with a fi
 
 ## Portfolio artifacts
 
-- [English technical portfolio - four-view RGB study as the main narrative](output/docx/semantic_pattern_bridge_portfolio_en.docx)
+- [English technical portfolio — four-view RGB study as the main narrative](output/docx/Jinseob_Lee_CLO_Portfolio_v9_RGB_to_Pattern.docx)
+- [Four-view RGB-to-pattern research report](reports/rgb_pattern_prediction/README.md)
+- [Full Korean research report](reports/rgb_pattern_prediction/RESEARCH_REPORT_KO.md)
+- [Exact claim boundary](reports/rgb_pattern_prediction/CLAIM_BOUNDARY_KO.md)
 - [System schematic](reports/figures/pattern_semantic_parser_schematic_en.png)
 - [Analytic DSL example](reports/figures/pattern_dsl_semantic_example_en.png)
-- [Four-view RGB-to-pattern research report](reports/rgb_pattern_prediction/README.md)
 
 The figures are project-produced adaptations that include an attributed GarmentCodeData v2 panel contour. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the source, modifications, and CC BY 4.0 attribution.
 

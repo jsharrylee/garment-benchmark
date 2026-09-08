@@ -44,7 +44,7 @@ ROOT_FILES = (
     Path("THIRD_PARTY_LICENSES/GarmentParticles-MIT.txt"),
     Path("verify_release_manifest.py"),
 )
-FINAL_DOCX = Path("output/docx/semantic_pattern_bridge_portfolio_en.docx")
+FINAL_DOCX = Path("output/docx/Jinseob_Lee_CLO_Portfolio_v9_RGB_to_Pattern.docx")
 PUBLIC_REPORT_FILES = (
     Path("reports/figures/pattern_semantic_parser_schematic_en.png"),
     Path("reports/figures/pattern_dsl_semantic_example_en.png"),
